@@ -121,10 +121,31 @@ export class MainMenu extends Component {
             const { activeItem } = this.props;
             return (
                 <Grid.Row only='mobile tablet computer'>
+                    
                     <Menu.Item>
                         <img src='/images/favicon.png' />
                     </Menu.Item>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/colis'
+                        name='colis'
+                        active={activeItem === '/colis'}
+                        content='Colis'
+                        //onClick={this.handleItemClick.bind(this)}
+                    />
+
+                    <Menu.Item
+                        as={Link}
+                        to='/resas'
+                        name='resas'
+                        active={activeItem === '/resas'}
+                        content='Resas'
+                        //onClick={this.handleItemClick.bind(this)}
+                    />
                 </Grid.Row>
+
+
             )
         }
     }
