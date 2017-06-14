@@ -24,5 +24,8 @@
     "request": "^2.81.0",
     "semantic-ui-react": "^0.68.3",
     "simpl-schema": "0.0.3"
+  },
+  "engines": {
+    "node":"4.8.2"
   }
 }
