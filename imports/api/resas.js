@@ -51,7 +51,7 @@ if ( Meteor.isServer ) {
             }
 
             Resas.insert({
-                resa : resa,
+                resa,
                 cni,
                 phone,
                 name,

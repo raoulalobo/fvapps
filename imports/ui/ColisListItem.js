@@ -70,7 +70,7 @@ export class ColisLisItem extends Component {
                                     position='left center'
                                     content={
                                         <div>
-                                            {this.props.col.code}
+                                            {this.props.col.code}-{this.props.col.code}
                                             <Divider fitted />
                                             {moment(this.props.col.DateTimeExp).format('L')}
                                             <Divider fitted />
