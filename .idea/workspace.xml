@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/colis.js" afterPath="$PROJECT_DIR$/imports/api/colis.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/resas.js" afterPath="$PROJECT_DIR$/imports/api/resas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/ColisList.js" afterPath="$PROJECT_DIR$/imports/ui/ColisList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/ColisListItem.js" afterPath="$PROJECT_DIR$/imports/ui/ColisListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/ResaAdd.js" afterPath="$PROJECT_DIR$/imports/ui/ResaAdd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/ResaList.js" afterPath="$PROJECT_DIR$/imports/ui/ResaList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/ResaListItem.js" afterPath="$PROJECT_DIR$/imports/ui/ResaListItem.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="resas.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/resas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="25" />
+            <state relative-caret-position="-1048">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -39,7 +33,7 @@
       <file leaf-file-name="ResaListItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/ResaListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="90">
               <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -78,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colis.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="colis.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2134">
-              <caret line="172" column="17" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="30" />
+            <state relative-caret-position="1980">
+              <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -156,10 +150,10 @@
         <option value="$PROJECT_DIR$/imports/ui/ColisList.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/ResaAdd.js" />
-        <option value="$PROJECT_DIR$/imports/api/resas.js" />
-        <option value="$PROJECT_DIR$/imports/api/colis.js" />
         <option value="$PROJECT_DIR$/imports/ui/ResaListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/ResaList.js" />
+        <option value="$PROJECT_DIR$/imports/api/colis.js" />
+        <option value="$PROJECT_DIR$/imports/api/resas.js" />
       </list>
     </option>
   </component>
@@ -420,12 +414,12 @@
       <workItem from="1497353137229" duration="599000" />
       <workItem from="1497438795362" duration="4704000" />
       <workItem from="1497542476746" duration="636000" />
-      <workItem from="1497612543702" duration="7896000" />
+      <workItem from="1497612543702" duration="8822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239836000" />
+    <option name="totallyTimeSpent" value="240762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
@@ -833,16 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/ResaListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/ColisList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -859,22 +843,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/ResaListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2134">
-          <caret line="172" column="17" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="30" />
+        <state relative-caret-position="90">
+          <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/resas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="25" />
+        <state relative-caret-position="-1048">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
