@@ -15,15 +15,15 @@ import ColisListEmptyItem from './ColisListEmptyItem';
 
 
 
-export class ColisList extends React.Component{
+export class ResaList extends React.Component{
     componentDidMount() {
         
     }
     componentWillReceiveProps(nextProps) {
         const { resas } = nextProps;
         this.props.Session.set('resas', resas);
-        console.log(nextProps);
-        console.log(this.props.Session.get('resas'));
+        //console.log(nextProps);
+        //console.log(this.props.Session.get('resas'));
     }
     componentWillUnmount() {
     }
@@ -42,7 +42,7 @@ export class ColisList extends React.Component{
     }
 };
 
-ColisList.propTypes = {
+ResaList.propTypes = {
     resas: PropTypes.array.isRequired
 };
 
@@ -57,6 +57,6 @@ export default createContainer(() => {
         Session,
         loading,
         getPhone,
-        resas : Resas.find({}).fetch()
+        resas : Resas.find({visible: false}).fetch()
     };
-}, ColisList);
+}, ResaList);

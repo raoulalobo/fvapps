@@ -52,13 +52,13 @@ Meteor.methods({
         }
 
         Resas.insert({
-            resa : resa.getTime(),
+            resa : resa,
             cni,
             phone,
             name,
             desc,
             userId: this.userId,
-            visible: false
+            visible: true
         } , (err)=>{ if (!err)  {
             if ( Meteor.isServer ) {
                 const sender = 'FINEXS VOYAGES' ;
@@ -77,6 +77,28 @@ Meteor.methods({
             throw new Meteor.Error('not-authorized');
         }
         Resas.update( _id, { $set: { visible } } );
+    },
+    'resa.deleted'(_id ) {
+        if (!this.userId) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        new SimpleSchema({
+            _id: {
+                type: String,
+                min: 1
+            }
+        }).validate({ _id });
+
+        Resas.update({
+            _id
+        }, {
+            $set: {
+                deletedAt : new Date().getTime(),
+                visible: false,
+                userIdDeleted : this.userId
+            }
+        });
     }
 
 

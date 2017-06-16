@@ -76,6 +76,6 @@ export default createContainer(() => {
         getPhone,
         StartedDate,
         EndedDate,
-        colis: Colis.find({}).fetch()
+        colis: Colis.find({visible: true}).fetch()
     };
 }, ColisList);

@@ -24,7 +24,7 @@ export default class ResaAdd extends React.Component {
 
         if ( resa && phone && name && desc ) {
 
-            Meteor.call('resas.insert', resa , cni.trim().toUpperCase() , phone , name.trim().toUpperCase() , desc , (err, res) => {
+            Meteor.call('resas.insert', resa.getTime() , cni.trim().toUpperCase() , phone , name.trim().toUpperCase() , desc , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( 'Reservation ajoutee avec succes.', 'danger', 'growl-top-right', 'fa-check'  )

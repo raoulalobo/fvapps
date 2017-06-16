@@ -153,7 +153,7 @@ Meteor.methods({
         });
 
     },
-    'colis.deleted'(_id, cniDest) {
+    'colis.deleted'(_id ) {
         if (!this.userId) {
             throw new Meteor.Error('not-authorized');
         }
@@ -163,14 +163,15 @@ Meteor.methods({
                 type: String,
                 min: 1
             }
-        }).validate({ _id, cniDest });
+        }).validate({ _id });
 
         Colis.update({
             _id
         }, {
             $set: {
-                updatedAt : new Date().getTime(),
-                visible: false
+                deletedAt : new Date().getTime(),
+                visible: false,
+                userIdDeleted : this.userId
             }
         });
     }
