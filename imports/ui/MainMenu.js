@@ -121,7 +121,7 @@ export class MainMenu extends Component {
             const { activeItem } = this.props;
             return (
                 <Grid.Row only='mobile tablet computer'>
-                    
+
                     <Menu.Item>
                         <img src='/images/favicon.png' />
                     </Menu.Item>
@@ -173,7 +173,7 @@ export class MainMenu extends Component {
                             dimmer='blurring'
                             size='small'
                             trigger={<Menu.Item onClick={this.handleOpen.bind(this)}>Changer de mot de passe</Menu.Item>}>
-                            <Modal.Header>Changer votre mot de passe</Modal.Header>
+                            <Modal.Header>Changer votre mot de passe </Modal.Header>
                             <Modal.Content >
                                 {this.state.error ?
                                     <Message negative>
