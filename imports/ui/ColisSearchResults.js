@@ -24,7 +24,7 @@ export class ColisSearchResults extends React.Component{
     render(){
         const getState = this.props.getState ;
         const getId = this.props.getId ;
-        const getPhone = this.props.getPhone ;
+        const getDest = this.props.getDest ;
         const StartedDate = this.props.StartedDate ;
         const EndedDate = this.props.EndedDate ;
         return (
@@ -37,7 +37,7 @@ export class ColisSearchResults extends React.Component{
                         _.chain(this.state.colis)
                             .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
                             .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
-                            .filter(function(coli) { return coli.telExp.match(  new RegExp( getPhone, 'i') ); })
+                            .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
                             .filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
                             .filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
                             .value(), function (err, csv) {
@@ -53,7 +53,7 @@ export class ColisSearchResults extends React.Component{
                     {(_.chain(this.state.colis)
                         .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
                         .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
-                        .filter(function(coli) { return coli.telExp.match(  new RegExp( getPhone, 'i') ); })
+                        .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
                         .filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
                         .filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
                         .value() ).length} elements .
@@ -78,7 +78,7 @@ export default createContainer(() => {
     const activeItem = Session.get('state');
     const getState = Session.get('state') || undefined ;
     const getId = Session.get('searchColis') || undefined ;
-    const getPhone = Session.get('searchVille') || undefined ;
+    const getDest = Session.get('searchVille') || undefined ;
     const StartedDate = Session.get('StartedDate') || new Date('1970-01-01') ;
     const EndedDate = Session.get('EndedDate') || new Date();
 
@@ -88,7 +88,7 @@ export default createContainer(() => {
         getColis,
         getState,
         getId,
-        getPhone,
+        getDest,
         EndedDate,
         activeItem,
         StartedDate

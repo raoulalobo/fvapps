@@ -31,7 +31,7 @@ export class ColisList extends React.Component{
     render(){
         const getState = this.props.getState ;
         const getId = this.props.getId ;
-        const getPhone = this.props.getPhone ;
+        const getDest = this.props.getDest ;
         const StartedDate = this.props.StartedDate ;
         const EndedDate = this.props.EndedDate ;
         return (
@@ -41,7 +41,7 @@ export class ColisList extends React.Component{
                 {!!this.props.colis.length && !this.props.loading ? (_.chain(this.props.colis)
                     .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
                     .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
-                    .filter(function(coli) { return coli.telExp.match(  new RegExp( getPhone, 'i') ); })
+                    .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
                     .filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
                     .filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
                     .value() )
@@ -63,7 +63,7 @@ export default createContainer(() => {
     let search = {} ;
     const getState = Session.get('state') || undefined ;
     const getId = Session.get('searchColis') || undefined ;
-    const getPhone = Session.get('searchVille') || undefined ;
+    const getDest = Session.get('searchVille') || undefined ;
     const StartedDate = Session.get('StartedDate') || new Date('1970-01-01') ;
     const EndedDate = Session.get('EndedDate') || new Date();
     if ( !!getState ) search.state = {$regex: new RegExp( getState  ), $options: "i"};
@@ -73,7 +73,7 @@ export default createContainer(() => {
         loading,
         getState,
         getId,
-        getPhone,
+        getDest,
         StartedDate,
         EndedDate,
         colis: Colis.find({visible: true}).fetch()
