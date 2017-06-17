@@ -95,7 +95,7 @@ export class ColisSearchBar extends Component {
                             this.setState( { searchVille : this.props.Session.get('searchVille') });
                             console.log( this.props.Session.get('searchVille') )
                         } }
-                        placeholder='Tel Expediteur ...' />
+                        placeholder='Destination...' />
                 </Form.Group>
             </Form>
         )
