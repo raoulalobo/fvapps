@@ -83,7 +83,7 @@ if (Meteor.isServer) {
             }, (err)=>{ if (!err)  {
                 if ( Meteor.isServer ) {
                     const sender = 'FINEXS VOYAGES' ;
-                    const message = nameDest+', votre colis ('+code+') est en route ,bus '+bus+'. Si apres 05 ou 06h de temps vous avez pas recu de retour appelez le 697509899'
+                    const message = nameDest+', votre colis ('+code+') est en route ,bus '+bus+'. Vous recevrez un sms a arrivee ; Si apres 05 ou 06h pas de sms recu, appelez le 697509899'
                     //console.log( telDest+'   '+message );
                     request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&originator='+sender+'&recipient='+telDest+'&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
                         if (!error && response.statusCode == 200) {
