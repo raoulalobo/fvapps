@@ -50,7 +50,7 @@ export class ResaListItem extends Component {
                         <Grid.Row>
                             <Grid.Column>
                                 {this.adminButton()}
-                                {this.props.res.visible ?  <Button basic size='mini' color='blue'><Icon name='checkmark' /></Button>: <Button
+                                {this.props.res.paid ?  <Button basic size='mini' color='blue'><Icon name='checkmark' /></Button>: <Button
                                     color='red'
                                     basic
                                     size='mini'
