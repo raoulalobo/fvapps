@@ -57,6 +57,6 @@ export default createContainer(() => {
         Session,
         loading,
         getPhone,
-        resas : Resas.find({visible: false}).fetch()
+        resas : Resas.find({visible: true}).fetch()
     };
 }, ResaList);

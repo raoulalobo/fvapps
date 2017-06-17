@@ -71,11 +71,15 @@ if ( Meteor.isServer ) {
 
             });
         },
-        'resas.confirmation' (_id, visible) {
+        'resas.confirmation' ( _id ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');
             }
-            Resas.update( _id, { $set: { paid : visible } } );
+            Resas.update( _id, { $set: {
+                confirmedAt : new Date().getTime(),
+                paid : true,
+                userIdConfirmed : this.userId
+            } } );
         },
         'resa.deleted'(_id ) {
             if (!this.userId) {

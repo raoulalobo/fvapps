@@ -57,7 +57,7 @@ export class ResaListItem extends Component {
                                     onClick={ () => {
                                         const changeState = confirm('Vous confirmez que la reservation du client '+this.props.res.name+' ?');
                                         if (changeState) {
-                                            this.props.call('resas.confirmation', this.props.res._id , true ,(err , res )=> {
+                                            this.props.call('resas.confirmation', this.props.res._id ,(err , res )=> {
                                                 if (!err) {
                                                     Bert.alert( 'Confirmation effectuee.', 'danger', 'growl-top-right', 'fa-check'  )
                                                 }
