@@ -52,13 +52,13 @@ export class ColisLisItem extends Component {
                                     position='left center'
                                     content={
                                         <div>
-                                            {this.props.col.code}
+                                            {this.props.col.code}->{this.props.col.bus}
                                             <Divider fitted />
-                                            {moment(this.props.col.DateTimeExp).format('L')}
+                                            {moment(this.props.col.DateTimeExp).format('LT')}->{this.props.col.dest}
                                             <Divider fitted />
                                             {this.props.col.nameDest}
                                             <Divider fitted />
-                                            {this.props.col.telDest}
+                                            {this.props.col.telDest.slice(-9)}
                                         </div> }
                                     trigger={<Button size='mini' icon='add' />}
                                     on='click' />
