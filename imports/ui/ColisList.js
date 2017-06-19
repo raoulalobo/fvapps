@@ -17,7 +17,7 @@ import ColisListEmptyItem from './ColisListEmptyItem';
 
 export class ColisList extends React.Component{
     componentDidMount() {
-        Session.set('state','A');
+        Session.set('state','A'); // Pq ne pas effectuer cette operation au niveau de ColisFilter ??
     }
     componentWillReceiveProps(nextProps) {
         const { colis } = nextProps;

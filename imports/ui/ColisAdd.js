@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Button, Header, Image, Modal , Form, Input , Message } from 'semantic-ui-react'
+import { Button, Modal , Form, Message } from 'semantic-ui-react'
 
 export default class ColisAdd extends React.Component {
     constructor(props) {
@@ -40,56 +40,10 @@ export default class ColisAdd extends React.Component {
             this.setState({ error: 'All field are required' });
         }
     }
-    onChangeCode(e) {
-        this.setState({
-            code: e.target.value
-        });
+    onChangeField(e, { name,value }) {
+        this.setState( { [name] : value });
     }
-    onChangeDest(e) {
-        this.setState({
-            dest: e.target.value
-        });
-    }
-    onChangeBus(e) {
-        this.setState({
-            bus: e.target.value
-        });
-    }
-    onChangeNameExp(e) {
-        this.setState({
-            nameExp: e.target.value
-        });
-    }
-    onChangeTelExp(e) {
-        this.setState({
-            telExp: e.target.value
-        });
-    }
-    onChangeCniExp(e) {
-        this.setState({
-            cniExp: e.target.value
-        });
-    }
-    onChangeNameDest(e) {
-        this.setState({
-            nameDest: e.target.value
-        });
-    }
-    onChangeTelDest(e) {
-        this.setState({
-            telDest: e.target.value
-        });
-    }
-    onChangeDesc(e) {
-        this.setState({
-            desc: e.target.value
-        });
-    }
-    onChangeAmount(e) {
-        this.setState({
-            amount: e.target.value
-        });
-    }
+
     handleClose() {
         this.setState({
             modalOpen: false,
@@ -132,34 +86,52 @@ export default class ColisAdd extends React.Component {
                             undefined}
                         <Form>
                             <Form.Group widths='equal'>
-                                <Form.Input label='Colis ID' value={this.state.code}
-                                            onChange={this.onChangeCode.bind(this)}/>
-                                <Form.Input label='Bus' value={this.state.bus}
-                                            onChange={this.onChangeBus.bind(this)}/>
+                                <Form.Input label='Colis ID'
+                                            name='code'
+                                            value={this.state.code}
+                                            onChange={this.onChangeField.bind(this)}/>
+                                <Form.Input label='Bus'
+                                            name='bus'
+                                            value={this.state.bus}
+                                            onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
                             <Form.Group widths='equal'>
-                                <Form.Input label='Ville' value={this.state.dest}
-                                            onChange={this.onChangeDest.bind(this)}/>
-                                <Form.Input label='Montant' value={this.state.amount}
-                                            onChange={this.onChangeAmount.bind(this)}/>
+                                <Form.Input label='Ville'
+                                            name='dest'
+                                            value={this.state.dest}
+                                            onChange={this.onChangeField.bind(this)}/>
+                                <Form.Input label='Montant'
+                                            name='amount'
+                                            value={this.state.amount}
+                                            onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
                             <Form.Group widths='equal'>
-                                <Form.Input label='Nom Expediteur' value={this.state.nameExp}
-                                            onChange={this.onChangeNameExp.bind(this)}/>
-                                <Form.Input label='Tel. Expediteur' value={this.state.telExp}
+                                <Form.Input label='Nom Expediteur'
+                                            name='nameExp'
+                                            value={this.state.nameExp}
+                                            onChange={this.onChangeField.bind(this)}/>
+                                <Form.Input label='Tel. Expediteur'
+                                            name='telExp'
+                                            value={this.state.telExp}
                                             placeholder = '237 obligatoire'
-                                            onChange={this.onChangeTelExp.bind(this)}/>
+                                            onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
                             <Form.Group widths='equal'>
-                                <Form.Input label='Nom Destinataire' value={this.state.nameDest}
-                                            onChange={this.onChangeNameDest.bind(this)}/>
-                                <Form.Input label='Tel. Destinataire' value={this.state.telDest}
+                                <Form.Input label='Nom Destinataire'
+                                            name='nameDest'
+                                            value={this.state.nameDest}
+                                            onChange={this.onChangeField.bind(this)}/>
+                                <Form.Input label='Tel. Destinataire'
+                                            name='telDest'
+                                            value={this.state.telDest}
                                             placeholder = '237 obligatoire'
-                                            onChange={this.onChangeTelDest.bind(this)}/>
+                                            onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
 
-                            <Form.TextArea label='Description' value={this.state.desc}
-                                           onChange={this.onChangeDesc.bind(this)}/>
+                            <Form.TextArea label='Description'
+                                           name='desc'
+                                           value={this.state.desc}
+                                           onChange={this.onChangeField.bind(this)}/>
                             <Form.Button fluid basic color='blue'>Enregistrer</Form.Button>
                         </Form>
                     </Modal.Content>

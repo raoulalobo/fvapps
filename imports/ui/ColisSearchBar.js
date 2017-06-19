@@ -25,6 +25,11 @@ export class ColisSearchBar extends Component {
         Session.set('searchColis',''),
         Session.set('searchVille','')
     }
+    handleChange(e, { name,value }) {
+        this.props.Session.set(name, value );
+        this.setState( { [name] : this.props.Session.get(name) });
+        console.log( this.props.Session.get(name) )
+    }
     render() {
 
         return (
@@ -79,14 +84,19 @@ export class ColisSearchBar extends Component {
                 </Form.Group>
                 <Form.Group widths='equal'>
                     <Form.Field
+                        name='searchColis'
                         value={this.state.searchColis}
                         control={Input}
-                        onChange={ (e)=> {
-                            this.props.Session.set('searchColis', e.target.value );
-                            this.setState( { searchColis : this.props.Session.get('searchColis') });
-                            console.log( this.props.Session.get('searchColis') )
-                        } }
+                        onChange={this.handleChange.bind(this)}
                         placeholder='Colis ID...' />
+                    <Form.Field
+                        name='searchVille'
+                        value={this.state.searchVille}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Destination...' />
+                    {/*
+                    Ancienne methode - Marche a 100%
                     <Form.Field
                         value={this.state.searchVille}
                         control={Input}
@@ -96,6 +106,7 @@ export class ColisSearchBar extends Component {
                             console.log( this.props.Session.get('searchVille') )
                         } }
                         placeholder='Destination...' />
+                    */}
                 </Form.Group>
             </Form>
         )
