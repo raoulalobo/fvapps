@@ -30,6 +30,20 @@ Meteor.methods({
             Accounts.createUser({email, password});
         }
 
+    },
+    'delete.user'(_id ) {
+        if (!this.userId) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        new SimpleSchema({
+            _id: {
+                type: String,
+                min: 1
+            }
+        }).validate({ _id });
+
+        Meteor.users.remove({ _id });
     }
 
 });

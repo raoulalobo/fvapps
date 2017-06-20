@@ -25,13 +25,29 @@ export const UsrsListItem = (props) => {
                                 }
                             } }
                         >++</Button>
+                        <Button
+                            basic
+                            color='red'
+                            icon='remove'
+                            size='mini'
+                            onClick={ () => {
+                                const changeState = confirm('Vous confirmez la suppression colis id '+props.usr._id+' ? ');
+                                if (changeState) {
+                                    props.call('delete.user', props.usr._id , (err , res)=>{
+                                        if (!err) {
+                                            Bert.alert( 'Suppression effectuee.', 'danger', 'growl-top-right', 'fa-check'  )
+                                        }
+                                    } );
+                                }
+                            } }
+                        />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
         </List.Content>
         {/*<Image avatar src='/assets/images/avatar/small/lena.png' />*/}
         <List.Content>
-            <List.Header>{props.usr.emails[0].address.split('@')[0]} </List.Header>
+            <List.Header>email: {props.usr.emails[0].address.split('@')[0]}- Id: {props.usr._id} </List.Header>
             {!!props.usr.roles ? 'Droit: '+props.usr.roles : 'Aucun droit'}
         </List.Content>
     </List.Item>
