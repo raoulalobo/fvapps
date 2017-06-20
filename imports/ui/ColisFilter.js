@@ -25,6 +25,9 @@ export class ColisFilter extends React.Component{
         Session.set('state',name);
         //console.log(this.state.activeItem);
     }
+    fitre(v){
+        return _.filter(this.state.colis, { 'state': v }).length
+    }
     render() {
         const { activeItem } = this.state;
         return (
@@ -32,32 +35,29 @@ export class ColisFilter extends React.Component{
                 <div className="mrgnButton">
                     <Button
                         name='A'
+                        content={this.fitre('A')+' Colis envoyes'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'A'}
-                        basic>
-                        Colis envoyes ({_.filter(this.state.colis, { 'state': 'A'}).length})
-                    </Button>
+                        basic/>
                 </div>
                 <div className="mrgnButton">
                     <Button
                         name='B'
+                        content={this.fitre('B')+' Colis a retirer'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'B'}
-                        basic>
-                        Colis a retirer ({_.filter(this.state.colis, { 'state': 'B'}).length})
-                    </Button>
+                        basic/>
                 </div>
                 <div className="mrgnButton">
                     <Button
                         name='C'
+                        content={this.fitre('C')+' Colis retires'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'C'}
-                        basic>
-                        Colis retires ({_.filter(this.state.colis, { 'state': 'C'}).length})
-                    </Button>
+                        basic/>
                 </div>
 
             </div>
