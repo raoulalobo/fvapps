@@ -31,7 +31,7 @@ export const UsrsListItem = (props) => {
                             icon='remove'
                             size='mini'
                             onClick={ () => {
-                                const changeState = confirm('Vous confirmez la suppression colis id '+props.usr._id+' ? ');
+                                const changeState = confirm('Vous confirmez la suppression du user '+props.usr.emails[0].address.split('@')[0]+' ? ');
                                 if (changeState) {
                                     props.call('delete.user', props.usr._id , (err , res)=>{
                                         if (!err) {
@@ -47,7 +47,7 @@ export const UsrsListItem = (props) => {
         </List.Content>
         {/*<Image avatar src='/assets/images/avatar/small/lena.png' />*/}
         <List.Content>
-            <List.Header>email: {props.usr.emails[0].address.split('@')[0]}- Id: {props.usr._id} </List.Header>
+            <List.Header>email: {props.usr.emails[0].address.split('@')[0]}</List.Header>
             {!!props.usr.roles ? 'Droit: '+props.usr.roles : 'Aucun droit'}
         </List.Content>
     </List.Item>
