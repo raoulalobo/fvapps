@@ -47,7 +47,7 @@ export const UsrsListItem = (props) => {
         </List.Content>
         {/*<Image avatar src='/assets/images/avatar/small/lena.png' />*/}
         <List.Content>
-            <List.Header>email: {props.usr.emails[0].address.split('@')[0]}</List.Header>
+            <List.Header>{props.usr.emails[0].address.split('@')[0]}</List.Header>
             {!!props.usr.roles ? 'Droit: '+props.usr.roles : 'Aucun droit'}
         </List.Content>
     </List.Item>
