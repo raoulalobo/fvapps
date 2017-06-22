@@ -54,11 +54,13 @@ export class ColisLisItem extends Component {
                                         <div>
                                             {this.props.col.code}->{this.props.col.bus}
                                             <Divider fitted />
-                                            {moment(this.props.col.DateTimeExp).format('LT')}->{this.props.col.dest}
+                                            {moment(this.props.col.DateTimeExp).format('LT')}->{this.props.col.dest.slice(0,3)}{!!this.props.col.DateTimeArr ? '->'+moment(this.props.col.DateTimeArr).format('lll'):''}
                                             <Divider fitted />
-                                            {this.props.col.nameExp}->{this.props.col.nameDest}
+                                            {this.props.col.nameExp.slice(0,9)}->{this.props.col.nameDest.slice(0,9)}
                                             <Divider fitted />
                                             {this.props.col.telDest.slice(-9)}
+                                            <Divider fitted />
+                                            {!!this.props.col.expUserId ? this.props.col.expUserId.slice(0,4):''}{!!this.props.col.userIdArr ? '->'+this.props.col.userIdArr.slice(0,4):''}
                                         </div> }
                                     trigger={<Button size='mini' icon='add' />}
                                     on='click' />
@@ -72,11 +74,13 @@ export class ColisLisItem extends Component {
                                         <div>
                                             {this.props.col.code}->{this.props.col.bus}
                                             <Divider fitted />
-                                            {moment(this.props.col.DateTimeExp).format('LT')}->{this.props.col.dest}
+                                            {moment(this.props.col.DateTimeExp).format('LT')}->{this.props.col.dest.slice(0,3)}{!!this.props.col.DateTimeArr ? '->'+moment(this.props.col.DateTimeArr).format('lll'):''}
                                             <Divider fitted />
-                                            {this.props.col.nameExp}->{this.props.col.nameDest}
+                                            {this.props.col.nameExp.slice(0,9)}->{this.props.col.nameDest.slice(0,9)}
                                             <Divider fitted />
                                             {this.props.col.telDest.slice(-9)}
+                                            <Divider fitted />
+                                            {!!this.props.col.expUserId ? this.props.col.expUserId.slice(0,4):''}{!!this.props.col.userIdArr ? '->'+this.props.col.userIdArr.slice(0,4):''}
                                         </div> }
                                     trigger={<Button size='mini' icon='add' />}
                                     on='click' />
