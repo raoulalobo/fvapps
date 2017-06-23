@@ -19,10 +19,10 @@ export class UsrsListItem extends React.Component{
                                     basic
                                     size='mini'
                                     onClick={ () => {
-                                        var confirmation = confirm('Role of ('+props.usr.emails[0].address+') will be modified. Confirm ?');
+                                        var confirmation = confirm('Role of ('+this.props.usr.emails[0].address+') will be modified. Confirm ?');
                                         if (confirmation) {
-                                            props.call('add.role', props.usr._id );
-                                            console.log( props.usr._id ) ;
+                                            props.call('add.role', this.props.usr._id );
+                                            //console.log( props.usr._id ) ;
                                         }
                                     } }
                                 >++</Button>
@@ -32,9 +32,9 @@ export class UsrsListItem extends React.Component{
                                     icon='remove'
                                     size='mini'
                                     onClick={ () => {
-                                        const changeState = confirm('Vous confirmez la suppression du user '+props.usr.emails[0].address.split('@')[0]+' ? ');
+                                        const changeState = confirm('Vous confirmez la suppression du user '+this.props.usr.emails[0].address.split('@')[0]+' ? ');
                                         if (changeState) {
-                                            props.call('delete.user', props.usr._id , (err , res)=>{
+                                            this.props.call('delete.user', this.props.usr._id , (err , res)=>{
                                                 if (!err) {
                                                     Bert.alert( 'Suppression effectuee.', 'danger', 'growl-top-right', 'fa-check'  )
                                                 }
@@ -48,8 +48,8 @@ export class UsrsListItem extends React.Component{
                 </List.Content>
                 {/*<Image avatar src='/assets/images/avatar/small/lena.png' />*/}
                 <List.Content>
-                    <List.Header>{props.usr.emails[0].address.split('@')[0]}</List.Header>
-                    {!!props.usr.roles ? 'Droit: '+props.usr.roles : 'Aucun droit'}
+                    <List.Header>{this.props.usr.emails[0].address.split('@')[0]}</List.Header>
+                    {!!this.props.usr.roles ? 'Droit: '+this.props.usr.roles : 'Aucun droit'}
                 </List.Content>
             </List.Item>
         );
