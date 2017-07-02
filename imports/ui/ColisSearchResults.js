@@ -38,8 +38,8 @@ export class ColisSearchResults extends React.Component{
                             .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
                             .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
                             .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
-                            .filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
-                            .filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
+                            //.filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
+                            //.filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
                             .value(), function (err, csv) {
                             if (err) return console.log(err);
                             if (!err) console.log( csv );
@@ -54,8 +54,8 @@ export class ColisSearchResults extends React.Component{
                         .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
                         .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
                         .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
-                        .filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
-                        .filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
+                        //.filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
+                        //.filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
                         .value() ).length} elements .
                     Cliquez pour exporter au format CSV
                 </Button.Content>

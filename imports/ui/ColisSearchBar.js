@@ -43,8 +43,8 @@ export class ColisSearchBar extends Component {
                                 data-enable-time
                                 onChange={ (startDate)  => {
                                     this.setState( { StartedDate : startDate[0] } ) ;
-                                    this.props.Session.set('StartedDate', startDate[0] );
-                                    //console.log( this.props.Session.get('StartedDate') );
+                                    this.props.Session.set('StartedDate', startDate[0].getTime() );
+                                    console.log( this.props.Session.get('StartedDate') );
                                 } }
                                 options={
                                     {
@@ -68,7 +68,7 @@ export class ColisSearchBar extends Component {
                                 data-enable-time
                                 onChange={ (startDate)  => {
                                     this.setState( { EndedDate : startDate[0] } ) ;
-                                    this.props.Session.set('EndedDate', startDate[0] );
+                                    this.props.Session.set('EndedDate', startDate[0].getTime() );
                                     console.log( this.props.Session.get('EndedDate') );
                                 } }
                                 options={

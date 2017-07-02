@@ -9,8 +9,10 @@ import request from 'request';
 export const Colis = new Mongo.Collection('colis');
 
 if (Meteor.isServer) {
-    Meteor.publish('colis', function () {
-        return Colis.find();
+    Meteor.publish('colis', function (dateStart, dateEnd ) {
+        //const searchServer = {} ;
+        //searchServer.DateTimeExp = { $gte: dateStart , $lte: dateEnd }
+        return Colis.find({ DateTimeExp: { $gte: dateStart , $lte: dateEnd } });
     });
 
     Meteor.methods({

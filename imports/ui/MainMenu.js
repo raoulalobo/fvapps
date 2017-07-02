@@ -120,7 +120,7 @@ export class MainMenu extends Component {
         } else {
             const { activeItem } = this.props;
             return (
-                <Grid.Row only='mobile tablet computer'>
+                <Grid.Row only='tablet computer'>
 
                     <Menu.Item>
                         <img src='/images/favicon.png' />

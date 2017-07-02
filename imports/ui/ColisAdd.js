@@ -43,7 +43,6 @@ export default class ColisAdd extends React.Component {
     onChangeField(e, { name,value }) {
         this.setState( { [name] : value });
     }
-
     handleClose() {
         this.setState({
             modalOpen: false,
