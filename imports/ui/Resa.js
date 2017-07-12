@@ -20,7 +20,7 @@ export default () => {
             <Grid container divided>
                 <Grid.Row>
                     <Header as='h2'>
-                        <Icon circular name='ticket' />
+                        <Icon circular name='calendar' />
                         <Header.Content>
                             Gestion Resa
                             <Header.Subheader>

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Link , browserHistory} from 'react-router';
 import React, { Component } from 'react';
-import { Grid , Menu , Message , Modal , Form } from 'semantic-ui-react';
+import { Grid , Menu , Message , Modal , Form , Icon, Dropdown } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -83,66 +83,60 @@ export class MainMenu extends Component {
             const { activeItem } = this.props;
             return (
 
-                <Grid.Row only='tablet computer'>
-                    <Menu.Item>
+                <Grid.Row only='mobile tablet computer'>
+
+                    {/*<Menu.Item>
                         <img src='/images/favicon.png' />
-                    </Menu.Item>
+                    </Menu.Item>*/}
 
                     <Menu.Item
                         as={Link}
                         to='/users'
                         name='users'
-                        active={activeItem === '/users'}
-                        content='Users'
-                        //onClick={this.handleItemClick.bind(this)}
-                    />
+                        active={activeItem === '/users'}>
+                        <Icon name='users' />
+                    </Menu.Item>
 
                     <Menu.Item
                         as={Link}
                         to='/colis'
                         name='colis'
-                        active={activeItem === '/colis'}
-                        content='Colis'
-                        //onClick={this.handleItemClick.bind(this)}
-                    />
+                        active={activeItem === '/colis'}>
+                        <Icon name='shopping bag' />
+                    </Menu.Item>
 
                     <Menu.Item
                         as={Link}
                         to='/resas'
                         name='resas'
-                        active={activeItem === '/resas'}
-                        content='Resas'
-                        //onClick={this.handleItemClick.bind(this)}
-                    />
+                        active={activeItem === '/resas'}>
+                        <Icon name='calendar' />
+                    </Menu.Item>
 
                 </Grid.Row>
             )
         } else {
             const { activeItem } = this.props;
             return (
-                <Grid.Row only='tablet computer'>
+                <Grid.Row only='mobile tablet computer'>
 
-                    <Menu.Item>
-                        <img src='/images/favicon.png' />
-                    </Menu.Item>
 
                     <Menu.Item
                         as={Link}
                         to='/colis'
                         name='colis'
-                        active={activeItem === '/colis'}
-                        content='Colis'
-                        //onClick={this.handleItemClick.bind(this)}
-                    />
+                        active={activeItem === '/colis'}>
+                        <Icon name='shopping bag' />
+                    </Menu.Item>
 
                     <Menu.Item
                         as={Link}
                         to='/resas'
                         name='resas'
-                        active={activeItem === '/resas'}
-                        content='Resas'
-                        //onClick={this.handleItemClick.bind(this)}
-                    />
+                        active={activeItem === '/resas'}>
+                        <Icon name='calendar' />
+                    </Menu.Item>
+
                 </Grid.Row>
 
 
@@ -172,7 +166,7 @@ export class MainMenu extends Component {
                             onClose={this.handleClose.bind(this)}
                             dimmer='blurring'
                             size='small'
-                            trigger={<Menu.Item onClick={this.handleOpen.bind(this)}>Changer de mot de passe</Menu.Item>}>
+                            trigger={<Menu.Item onClick={this.handleOpen.bind(this)}><Icon name='edit' /></Menu.Item>}>
                             <Modal.Header>Changer votre mot de passe </Modal.Header>
                             <Modal.Content >
                                 {this.state.error ?
@@ -194,7 +188,9 @@ export class MainMenu extends Component {
                             </Modal.Content>
                         </Modal>
 
-                        <Menu.Item name='Se Deconnecter' onClick={() => Accounts.logout()} />
+                        <Menu.Item name='Se Deconnecter' onClick={() => Accounts.logout()} >
+                            <Icon name='log out' />
+                        </Menu.Item>
                     </Menu.Menu>
                 </Menu>
                 {this.props.children}

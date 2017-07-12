@@ -19,7 +19,7 @@ export default () => {
             <Grid container divided>
                 <Grid.Row>
                     <Header as='h2'>
-                        <Icon circular rotated='clockwise' name='settings' />
+                        <Icon circular name='shopping bag' />
                         <Header.Content>
                             Gestion Colis
                             <Header.Subheader>
