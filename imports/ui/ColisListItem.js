@@ -82,7 +82,7 @@ export class ColisLisItem extends Component {
                                             <Divider fitted />
                                             {!!this.props.col.expUserId ? this.props.col.expUserId.slice(0,4):''}{!!this.props.col.userIdArr ? '->'+this.props.col.userIdArr.slice(0,4):''}
                                             <Divider fitted />
-                                            {this.props.col.desc}
+                                            {this.props.col.desc}({this.props.col.amount})
                                         </div> }
                                     trigger={<Button size='mini' icon='add' />}
                                     on='click' />
