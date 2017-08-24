@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import { Meteor } from 'meteor/meteor';
-import { Grid, Image , Button, Checkbox, Form, Message } from 'semantic-ui-react'
+import { Grid, Button, Form, Message } from 'semantic-ui-react'
 import { createContainer } from 'meteor/react-meteor-data';
 
 export class Login extends React.Component {

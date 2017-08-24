@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Link , browserHistory} from 'react-router';
 import React, { Component } from 'react';
-import { Grid , Menu , Message , Modal , Form , Icon, Dropdown } from 'semantic-ui-react';
+import { Grid , Menu , Message , Modal , Form , Icon } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { createContainer } from 'meteor/react-meteor-data';
 
@@ -85,10 +85,6 @@ export class MainMenu extends Component {
 
                 <Grid.Row only='mobile tablet computer'>
 
-                    {/*<Menu.Item>
-                        <img src='/images/favicon.png' />
-                    </Menu.Item>*/}
-
                     <Menu.Item
                         as={Link}
                         to='/users'
@@ -113,13 +109,69 @@ export class MainMenu extends Component {
                         <Icon name='calendar' />
                     </Menu.Item>
 
+                    <Menu.Item
+                        as={Link}
+                        to='/departs'
+                        name='departs'
+                        active={activeItem === '/departs'}>
+                        <Icon name='bus' />
+                    </Menu.Item>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/depenses'
+                        name='depenses'
+                        active={activeItem === '/depenses'}>
+                        <Icon name='shop' />
+                    </Menu.Item>
+
                 </Grid.Row>
             )
-        } else {
+        } else if ( Roles.userIsInRole(this.state.currentUser, 'caisse') ) {
+
+            const { activeItem } = this.props;
+            return (
+
+                <Grid.Row only='mobile tablet computer'>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/colis'
+                        name='colis'
+                        active={activeItem === '/colis'}>
+                        <Icon name='shopping bag' />
+                    </Menu.Item>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/resas'
+                        name='resas'
+                        active={activeItem === '/resas'}>
+                        <Icon name='calendar' />
+                    </Menu.Item>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/departs'
+                        name='departs'
+                        active={activeItem === '/departs'}>
+                        <Icon name='bus' />
+                    </Menu.Item>
+
+                    <Menu.Item
+                        as={Link}
+                        to='/depenses'
+                        name='depenses'
+                        active={activeItem === '/depenses'}>
+                        <Icon name='shop' />
+                    </Menu.Item>
+
+                </Grid.Row>
+            )
+        } else if ( Roles.userIsInRole(this.state.currentUser, 'colis') ) {
             const { activeItem } = this.props;
             return (
                 <Grid.Row only='mobile tablet computer'>
-
 
                     <Menu.Item
                         as={Link}

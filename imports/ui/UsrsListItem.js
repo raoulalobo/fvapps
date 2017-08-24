@@ -2,10 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Grid, List , Image , Button , Segment} from 'semantic-ui-react';
+import { Grid, List , Button } from 'semantic-ui-react';
 
 export class UsrsListItem extends React.Component{
-    
+    onClickButton(e, { name}) {
+        console.log(`${name}`);
+        var confirmation = confirm('Role of ('+this.props.usr.emails[0].address+') will be modified. Confirm ?');
+        if (confirmation) {
+            this.props.call('add.role', this.props.usr._id,`${name}`);
+        }
+    }
     render() {
         return (
             <List.Item>
@@ -13,19 +19,24 @@ export class UsrsListItem extends React.Component{
                     <Grid columns='equal'>
                         <Grid.Row>
                             <Grid.Column>
-                                <Button basic size='mini'>-</Button>
-                                <Button basic size='mini'>+</Button>
                                 <Button
                                     basic
+                                    name='colis'
                                     size='mini'
-                                    onClick={ () => {
-                                        var confirmation = confirm('Role of ('+this.props.usr.emails[0].address+') will be modified. Confirm ?');
-                                        if (confirmation) {
-                                            props.call('add.role', this.props.usr._id );
-                                            //console.log( props.usr._id ) ;
-                                        }
-                                    } }
-                                >++</Button>
+                                    onClick={this.onClickButton.bind(this)}>Colis</Button>
+
+                                <Button
+                                    basic
+                                    name='caisse'
+                                    size='mini'
+                                    onClick={this.onClickButton.bind(this)}>Caisse</Button>
+
+                                <Button
+                                    basic
+                                    name='admin'
+                                    size='mini'
+                                    onClick={this.onClickButton.bind(this)}>Admin</Button>
+
                                 <Button
                                     basic
                                     color='red'

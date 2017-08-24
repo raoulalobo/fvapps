@@ -100,7 +100,20 @@ export class ColisLisItem extends Component {
                                                 }
                                             } );
                                         }
-                                    } }>Arr.</Button> : undefined }
+                                    } }>Arr sms.</Button> : undefined }
+
+                                { !this.props.col.DateTimeArr ? <Button
+                                    basic size='mini'
+                                    onClick={ () => {
+                                        const changeState = confirm('Vous confirmez que le colis '+this.props.col.code+' est arrive a '+this.props.col.dest+' sans envoie de SMS?');
+                                        if (changeState) {
+                                            this.props.call('colis.arrived.nosms', this.props.col._id, this.props.col.code, this.props.col.dest, this.props.col.nameDest, this.props.col.telDest , (err , res)=>{
+                                                if (!err) {
+                                                    Bert.alert( 'Mise a jour effectuee.', 'danger', 'growl-top-right', 'fa-check'  )
+                                                }
+                                            } );
+                                        }
+                                    } }>no sms</Button> : undefined }
 
                                 { ( !this.props.col.DateTimeArr || this.props.col.DateTimeEnd ) ? undefined : <Button
                                     basic size='mini'

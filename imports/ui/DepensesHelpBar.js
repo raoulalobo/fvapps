@@ -1,38 +1,32 @@
-const _ = require('lodash');
-const jsonexport = require('jsonexport');
-const fileDownload = require('react-file-download');
+const R = require('ramda');
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Grid , List , Image , Button, Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 
-
-
-
-export class ColisSearchResults extends React.Component{
+export class DepensesHelpBar extends React.Component{
     constructor (props) {
         super(props);
         this.state = {
-            //colis BDD
-            colis : this.props.Session.get('colis') // Hum , ceci est a revoir.
+            depenses : this.props.Session.get('depenses') // Hum , ceci est a revoir.
         }
     }
     componentWillReceiveProps(nextProps) {
-        //Utiliser colis filtres dans ColisList.js
-        this.setState( { colis: nextProps.getColis } );
+        this.setState( { depenses: nextProps.getDepenses } );
         console.log(nextProps)
     }
     render(){
+        const  summ = (sum,n)=> sum + n.total
         return (
             <Button
                 fluid
                 animated
                 color='green'>
                 <Button.Content visible>
-                    {this.state.colis ? this.state.colis.length : '0'} elements .
-                    Cliquez pour exporter au format CSV
+                    {this.state.depenses ? this.state.depenses.length : '0'} elts ->
+                    Total : {R.reduce(summ, 0,this.state.depenses ? this.state.depenses : [])} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
                     <Icon name='file excel outline' />
@@ -42,16 +36,16 @@ export class ColisSearchResults extends React.Component{
     }
 };
 
-ColisSearchResults.propTypes = {
-    getColis: PropTypes.array
+DepensesHelpBar.propTypes = {
+    getDepenses: PropTypes.array
 };
 
 export default createContainer(() => {
 
-    const getColis = Session.get('colisFiltered');
+    const getDepenses = Session.get('depensesFiltered');
 
     return {
         Session,
-        getColis,
+        getDepenses,
     };
-}, ColisSearchResults);
+}, DepensesHelpBar);

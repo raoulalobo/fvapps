@@ -129,6 +129,30 @@ if (Meteor.isServer) {
             }} );
 
         },
+        'colis.arrived.nosms'(_id, code, dest, nameDest, telDest ) {
+            if (!this.userId) {
+                throw new Meteor.Error('not-authorized');
+            }
+
+            new SimpleSchema({
+                _id: {
+                    type: String,
+                    min: 1
+                }
+            }).validate({ _id});
+
+            Colis.update({
+                _id
+            }, {
+                $set: {
+                    state : 'B',
+                    updatedAt : new Date().getTime(),
+                    DateTimeArr : new Date().getTime(),
+                    userIdArr : this.userId
+                }
+            },(err)=>{ if (!err) { console.log('good')}} );
+
+        },
         'colis.end'(_id ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');

@@ -10,12 +10,12 @@ if (Meteor.isServer) {
 
 
 Meteor.methods({
-    'add.role'(usrId) {
+    'add.role'(usrId,rls) {
         if (!this.userId) {
             throw new Meteor.Error('not-authorized');
         }
 
-        Roles.addUsersToRoles(usrId,'admin');
+        Roles.addUsersToRoles(usrId,rls);
     },
     'create.user' (email, password) {
 

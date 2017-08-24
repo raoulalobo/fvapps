@@ -1,12 +1,12 @@
 
-const _ = require('lodash');
+const R = require('ramda');
 
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Grid , List , Image , Button } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
 
 
 import { Colis } from '../api/colis';
@@ -20,32 +20,30 @@ export class ColisList extends React.Component{
         Session.set('state','A'); // Pq ne pas effectuer cette operation au niveau de ColisFilter ??
     }
     componentWillReceiveProps(nextProps) {
-        const { colis } = nextProps;
+        const { colis, getState, getId, getDest } = nextProps;
+
+        //colis venus de la BDD, sa valeur ne change q si interrogation directe de la BDD
         this.props.Session.set('colis', colis);
-        //console.log(nextProps);
+
+        //Filtrer directement les colis
+        let byState = (coli)=> coli.state.match(  new RegExp( getState, 'i') );
+        let byCode = (coli)=> coli.code.match(  new RegExp( getId, 'i') );
+        let byDest = (coli)=> coli.dest.match(  new RegExp( getDest, 'i') );
+        this.props.Session.set('colisFiltered', R.compose(R.filter(byDest),R.filter(byCode),R.filter(byState))(colis));
+
+        // Les logs
+        console.log(nextProps);
         //console.log(this.props.Session.get('colis'));
     }
     componentWillUnmount() {
         Session.set('state',undefined)
     }
     render(){
-        const getState = this.props.getState ;
-        const getId = this.props.getId ;
-        const getDest = this.props.getDest ;
-        //const StartedDate = this.props.StartedDate ;
-        //const EndedDate = this.props.EndedDate ;
         return (
             <List celled animated divided verticalAlign='middle'>
                 { this.props.colis.length === 0 ? <ColisListEmptyItem text="No Items, if is an unexpected result please contact the admin"/> : undefined }
                 { this.props.loading && !!this.props.colis.length ? <ColisListEmptyItem text="Loading Data , please wait ..."/>  : undefined }
-                {!!this.props.colis.length && !this.props.loading ? (_.chain(this.props.colis)
-                    .filter(function(coli) { return coli.state.match(  new RegExp( getState, 'i') ); })
-                    .filter(function(coli) { return coli.code.match(  new RegExp( getId, 'i') ); })
-                    .filter(function(coli) { return coli.dest.match(  new RegExp( getDest, 'i') ); })
-                    //.filter(function(coli) { return coli.DateTimeExp >= StartedDate.getTime(); })
-                    //.filter(function(coli) { return coli.DateTimeExp <= EndedDate.getTime(); })
-                    .value() )
-                    .map( (col) => { return <ColisLisItem key={col._id} col={col}/>; } ) : undefined }
+                {!!this.props.colis.length && !this.props.loading ? ( this.props.Session.get('colisFiltered') ).map( (col) => { return <ColisLisItem key={col._id} col={col}/>; } ) : undefined }
             </List>
         );
     }
@@ -57,15 +55,11 @@ ColisList.propTypes = {
 
 export default createContainer(() => {
 
-
-
-    let search = {} ;
     const getState = Session.get('state') || undefined ;
     const getId = Session.get('searchColis') || undefined ;
     const getDest = Session.get('searchVille') || undefined ;
     const StartedDate = Session.get('StartedDate') || new Date().setHours(0, 0, 0, 0) ;
     const EndedDate = Session.get('EndedDate') || new Date().setHours(23, 59, 0, 0) ;
-    if ( !!getState ) search.state = {$regex: new RegExp( getState  ), $options: "i"};
 
     const colisHandle = Meteor.subscribe('colis',StartedDate,EndedDate);
     const loading = !colisHandle.ready();
@@ -76,8 +70,6 @@ export default createContainer(() => {
         getState,
         getId,
         getDest,
-        //StartedDate,
-        //EndedDate,
         colis: Colis.find({visible: true}).fetch()
     };
 }, ColisList);

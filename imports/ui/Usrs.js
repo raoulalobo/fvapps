@@ -1,7 +1,6 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Router, Route, browserHistory } from 'react-router';
-import { Grid , List , Image , Button , Header, Icon } from 'semantic-ui-react'
+import { Grid , Header, Icon } from 'semantic-ui-react'
 
 import MainMenu from "./MainMenu";
 import UsrsList from "./UsrsList";

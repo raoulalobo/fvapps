@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Session } from 'meteor/session';
-import { Grid , List , Image , Button } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
 
 import {} from '../api/users';
 import UsrsListItem from './UsrsListItem';
