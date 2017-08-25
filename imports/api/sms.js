@@ -7,11 +7,17 @@ if ( Meteor.isServer ){
         nkSMS: function ( message) {
 
             var request = require('request');
+
+            request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237697509899&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    //console.log(body) // Show the HTML for the Google homepage.
+                }
+            })
             //
-            request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237697509899&messagetype=SMS:TEXT&messagedata='+message, { json: true }, (err, res, body) => {
+            /*request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237697509899&messagetype=SMS:TEXT&messagedata='+message, { json: true }, (err, res, body) => {
                 if (err) { return console.log(err); }
                 //console.log(res.body);
-            });
+            })*/;
             // http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237696849789,237697509899&messagetype=SMS:TEXT&messagedata=raddVIP
         }
     });
