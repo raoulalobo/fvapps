@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" afterPath="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" afterPath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,72 +20,28 @@
       <file leaf-file-name="colis.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2646">
+            <state relative-caret-position="0">
               <caret line="152" column="52" lean-forward="false" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColisListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/ColisListItem.js">
+      <file leaf-file-name="DepartsListItem.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
-              <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="114" selection-end-column="41" />
+            <state relative-caret-position="478">
+              <caret line="72" column="65" lean-forward="true" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartsHelpBar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/api/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-              <folding>
-                <element signature="e#29#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Departs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/Departs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sms.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,7 +112,6 @@
         <option value="$PROJECT_DIR$/imports/ui/Usrs.js" />
         <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsEmptyListItem.js" />
-        <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsChiffres.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepensesAdd.js" />
@@ -186,6 +141,7 @@
         <option value="$PROJECT_DIR$/imports/api/colis.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" />
+        <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
       </list>
     </option>
   </component>
@@ -229,6 +185,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,8 +237,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,21 +456,23 @@
       <workItem from="1503484575225" duration="8891000" />
       <workItem from="1503564280888" duration="2147000" />
       <workItem from="1503637609463" duration="3840000" />
+      <workItem from="1503660314309" duration="311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="528287000" />
+    <option name="totallyTimeSpent" value="528598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="336" width="1377" height="912" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20784023" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1612426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19871795" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -645,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsEmptyListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepensesAdd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -730,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-828">
@@ -758,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -783,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,22 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2646">
-          <caret line="152" column="52" lean-forward="false" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/ColisListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="114" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -888,7 +808,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="360">
           <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding>
             <element signature="e#29#55#0" expanded="true" />
@@ -896,10 +816,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Departs.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsEmptyListItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="56" />
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -914,10 +842,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
+    <entry file="file://$PROJECT_DIR$/imports/ui/Departs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/ColisListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="108" column="40" lean-forward="false" selection-start-line="108" selection-start-column="40" selection-end-line="114" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/colis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="152" column="52" lean-forward="false" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="72" column="65" lean-forward="true" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
           <folding />
         </state>
       </provider>

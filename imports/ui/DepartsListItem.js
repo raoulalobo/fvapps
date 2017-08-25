@@ -70,7 +70,7 @@ export class DepartsListItem extends Component {
         } );
     }
     modifyButton () {
-        if ( Roles.userIsInRole(this.state.currentUser, 'admin') ) {
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
             return (
                 <Modal
                     onSubmit={this.onSubmit.bind(this)}
