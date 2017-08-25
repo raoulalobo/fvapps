@@ -31,7 +31,7 @@ export class DepartsHelpBar extends React.Component{
         }
     }
     render(){
-        const  sms = this.state.departs ? `Ttal: ${filtrage(this.state.departs).length} vges : ${sommes(filtrage(this.state.departs))}Fcfa
+        const  sms = this.state.departs ? `Ttal: ${filtrage(this.state.departs).length} vges : 1 Fcfa
 TtalVIP: ${filtrage(this.state.departs,undefined,'VIP').length} vges : ${sommes(filtrage(this.state.departs,undefined,'VIP'))}Fcfa
 TtalCla: ${filtrage(this.state.departs,undefined,'classique').length} vges -> ${sommes(filtrage(this.state.departs,undefined,'classique'))}Fcfa
 Yde: ${filtrage(this.state.departs,'Douala').length} vges -> ${sommes(filtrage(this.state.departs,'Douala'))}Fcfa
