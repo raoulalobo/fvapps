@@ -30,15 +30,15 @@ export class DepartsHelpBar extends React.Component{
         }
     }
     render(){
-        const  sms = this.state.departs ? `Ttal: ${filtrage(this.state.departs).length} vges -> ${sommes(filtrage(this.state.departs))}Fcfa
-TtalVIP: ${filtrage(this.state.departs,undefined,'VIP').length} vges -> ${sommes(filtrage(this.state.departs,undefined,'VIP'))}Fcfa
-TtalCla: ${filtrage(this.state.departs,undefined,'classique').length} vges -> ${sommes(filtrage(this.state.departs,undefined,'classique'))}Fcfa
-Yde: ${filtrage(this.state.departs,'Douala').length} vges -> ${sommes(filtrage(this.state.departs,'Douala'))}Fcfa
-YdeVIP: ${filtrage(this.state.departs,'Douala','VIP').length} vges -> ${sommes(filtrage(this.state.departs,'Douala','VIP'))}Fcfa
-YdeCla: ${filtrage(this.state.departs,'Douala','classique').length} vges -> ${sommes(filtrage(this.state.departs,'Douala','classique'))}Fcfa
-Dla: ${filtrage(this.state.departs,'Yaounde').length} vges -> ${sommes(filtrage(this.state.departs,'Yaounde'))}Fcfa
-DlaVIP: ${filtrage(this.state.departs,'Yaounde','VIP').length} vges -> ${sommes(filtrage(this.state.departs,'Yaounde','VIP'))}Fcfa
-YdeCla: ${filtrage(this.state.departs,'Yaounde','classique').length} vges -> ${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : undefined
+        const  sms = this.state.departs ? `Ttal: ${filtrage(this.state.departs).length} vges , ${sommes(filtrage(this.state.departs))}Fcfa
+TtalVIP: ${filtrage(this.state.departs,undefined,'VIP').length} vges , ${sommes(filtrage(this.state.departs,undefined,'VIP'))}Fcfa
+TtalCla: ${filtrage(this.state.departs,undefined,'classique').length} vges , ${sommes(filtrage(this.state.departs,undefined,'classique'))}Fcfa
+Yde: ${filtrage(this.state.departs,'Douala').length} vges , ${sommes(filtrage(this.state.departs,'Douala'))}Fcfa
+YdeVIP: ${filtrage(this.state.departs,'Douala','VIP').length} vges , ${sommes(filtrage(this.state.departs,'Douala','VIP'))}Fcfa
+YdeCla: ${filtrage(this.state.departs,'Douala','classique').length} vges , ${sommes(filtrage(this.state.departs,'Douala','classique'))}Fcfa
+Dla: ${filtrage(this.state.departs,'Yaounde').length} vges , ${sommes(filtrage(this.state.departs,'Yaounde'))}Fcfa
+DlaVIP: ${filtrage(this.state.departs,'Yaounde','VIP').length} vges , ${sommes(filtrage(this.state.departs,'Yaounde','VIP'))}Fcfa
+YdeCla: ${filtrage(this.state.departs,'Yaounde','classique').length} vges , ${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : undefined
         return (
             <Button
                 fluid
@@ -46,7 +46,7 @@ YdeCla: ${filtrage(this.state.departs,'Yaounde','classique').length} vges -> ${s
                 color='green'
                 onClick={ ()=>{sms ? this.sendSMS(sms) : console.log('Error') } }>
                 <Button.Content visible>
-                    {this.state.departs ? this.state.departs.length : '0'} elts ->
+                    {this.state.departs ? this.state.departs.length : '0'} elts ,
                     Total : {this.state.departs ? sommes(this.state.departs): '0'} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
