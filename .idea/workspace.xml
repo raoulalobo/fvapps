@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/departs.js" afterPath="$PROJECT_DIR$/imports/api/departs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/fonctions.js" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/sms.js" afterPath="$PROJECT_DIR$/imports/api/sms.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,11 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="departs.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="departs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="12" column="77" lean-forward="false" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sms.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -170,7 +179,6 @@
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/imports/api/depenses.js" />
         <option value="$PROJECT_DIR$/imports/ui/NotFound.js" />
-        <option value="$PROJECT_DIR$/imports/api/sms.js" />
         <option value="$PROJECT_DIR$/imports/routes/routes.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsList.js" />
         <option value="$PROJECT_DIR$/imports/api/colis.js" />
@@ -182,6 +190,7 @@
         <option value="$PROJECT_DIR$/imports/ui/DepartSearch.js" />
         <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
+        <option value="$PROJECT_DIR$/imports/api/sms.js" />
       </list>
     </option>
   </component>
@@ -496,12 +505,12 @@
       <workItem from="1503484575225" duration="8891000" />
       <workItem from="1503564280888" duration="2147000" />
       <workItem from="1503637609463" duration="3840000" />
-      <workItem from="1503660314309" duration="5898000" />
+      <workItem from="1503660314309" duration="6679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="534185000" />
+    <option name="totallyTimeSpent" value="534966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
@@ -793,14 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -923,6 +924,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="12" column="77" lean-forward="false" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding />
         </state>
       </provider>
