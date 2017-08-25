@@ -39,10 +39,13 @@
       <file leaf-file-name="DepartsHelpBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="34" column="71" lean-forward="true" selection-start-line="34" selection-start-column="71" selection-end-line="34" selection-end-column="71" />
+            <state relative-caret-position="520">
+              <caret line="41" column="159" lean-forward="false" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
               <folding>
                 <element signature="e#29#55#0" expanded="true" />
+                <marker date="1503687779701" expanded="true" signature="2386:2920" ph="..." />
+                <marker date="1503687779701" expanded="true" signature="2593:2798" ph="..." />
+                <marker date="1503687779701" expanded="true" signature="2838:2898" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,6 +137,7 @@
       <find>app</find>
       <find>a</find>
       <find>onEnterDepensesPage</find>
+      <find>Fcfa</find>
     </findStrings>
     <replaceStrings>
       <replace>ColisAdd</replace>
@@ -144,6 +148,7 @@
       <replace>depenseEndedDate</replace>
       <replace>Departs</replace>
       <replace>onEnterRolePage</replace>
+      <replace>Fcfa \n&quot;+</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -517,12 +522,12 @@
       <workItem from="1503484575225" duration="8891000" />
       <workItem from="1503564280888" duration="2147000" />
       <workItem from="1503637609463" duration="3840000" />
-      <workItem from="1503660314309" duration="9772000" />
+      <workItem from="1503660314309" duration="10773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="538059000" />
+    <option name="totallyTimeSpent" value="539060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
@@ -940,10 +945,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="34" column="71" lean-forward="true" selection-start-line="34" selection-start-column="71" selection-end-line="34" selection-end-column="71" />
+        <state relative-caret-position="520">
+          <caret line="41" column="159" lean-forward="false" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
           <folding>
             <element signature="e#29#55#0" expanded="true" />
+            <marker date="1503687779701" expanded="true" signature="2386:2920" ph="..." />
+            <marker date="1503687779701" expanded="true" signature="2593:2798" ph="..." />
+            <marker date="1503687779701" expanded="true" signature="2838:2898" ph="..." />
           </folding>
         </state>
       </provider>
