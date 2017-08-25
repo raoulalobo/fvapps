@@ -29,7 +29,7 @@ if ( Meteor.isServer ) {
                         type: String,
                         label: 'Immatriculation',
                         min : 3,
-                        max : 4
+                        max : 5
                     },
                     dest: {
                         type: String,
