@@ -86,13 +86,13 @@ export class DepartSearch extends Component {
                         value={this.state.searchClasse}
                         control={Input}
                         onChange={this.handleChange.bind(this)}
-                        placeholder='Classe...' />
+                        placeholder='Ville arrivee...' />
                     <Form.Field
                         name='searchVille'
                         value={this.state.searchVille}
                         control={Input}
                         onChange={this.handleChange.bind(this)}
-                        placeholder='Ville arrivee...' />
+                        placeholder='Classe...' />
                     <Form.Field
                         name='searchBus'
                         value={this.state.searchBus}
