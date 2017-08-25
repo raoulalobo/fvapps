@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/fonctions.js" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepensesList.js" afterPath="$PROJECT_DIR$/imports/ui/DepensesList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepenseSearch.js" afterPath="$PROJECT_DIR$/imports/ui/DepenseSearch.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepensesList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DepensesList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepensesList.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-160">
@@ -55,6 +54,16 @@
               <folding>
                 <element signature="e#59#85#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepenseSearch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/DepenseSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,7 +157,6 @@
         <option value="$PROJECT_DIR$/imports/ui/DepartsChiffres.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepensesAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepensesListItem.js" />
-        <option value="$PROJECT_DIR$/imports/ui/DepenseSearch.js" />
         <option value="$PROJECT_DIR$/imports/ui/betterColisSearchResults.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisSearchResults.js" />
         <option value="$PROJECT_DIR$/imports/ui/Depenses.js" />
@@ -174,6 +182,7 @@
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
         <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepensesList.js" />
+        <option value="$PROJECT_DIR$/imports/ui/DepenseSearch.js" />
       </list>
     </option>
   </component>
@@ -488,12 +497,12 @@
       <workItem from="1503484575225" duration="8891000" />
       <workItem from="1503564280888" duration="2147000" />
       <workItem from="1503637609463" duration="3840000" />
-      <workItem from="1503660314309" duration="2702000" />
+      <workItem from="1503660314309" duration="3311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="530989000" />
+    <option name="totallyTimeSpent" value="531598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="336" width="1377" height="912" extended-state="6" />
@@ -778,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepenseSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/depenses.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -914,6 +916,14 @@
           <folding>
             <element signature="e#59#85#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepenseSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

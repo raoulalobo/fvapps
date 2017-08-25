@@ -83,17 +83,17 @@ export class DepenseSearch extends Component {
                 </Form.Group>
                 <Form.Group widths='equal'>
                     <Form.Field
-                        name='searchGenre'
-                        value={this.state.searchGenre}
-                        control={Input}
-                        onChange={this.handleChange.bind(this)}
-                        placeholder='Type...' />
-                    <Form.Field
                         name='searchCode'
                         value={this.state.searchCode}
                         control={Input}
                         onChange={this.handleChange.bind(this)}
                         placeholder='Code / Bus...' />
+                    <Form.Field
+                        name='searchGenre'
+                        value={this.state.searchGenre}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Type...' />
                     <Form.Field
                         name='searchDesi'
                         value={this.state.searchDesi}
