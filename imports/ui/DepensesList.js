@@ -9,7 +9,7 @@ import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Table } from 'semantic-ui-react'
 
-
+import { filtreDepenses } from '../api/fonctions';
 import { Depenses } from '../api/depenses';
 
 import DepartsEmptyListItem from './DepartsEmptyListItem';

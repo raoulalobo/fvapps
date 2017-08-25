@@ -2,10 +2,10 @@ const R = require('ramda');
 
 export function filtrage(tableauElements = undefined, parVille = undefined, parClasse = undefined, parBus = undefined) {
 
-    let byVille = (depart)=> depart.dest.match(  new RegExp( parVille, 'i') );
     let byClasse = (depart)=> depart.classe.match(  new RegExp( parClasse, 'i') );
+    let byVille = (depart)=> depart.dest.match(  new RegExp( parVille, 'i') );
     let byBus = (depart)=> depart.imm.match(  new RegExp( parBus, 'i') );
-    let filtreMultipleDeparts = R.compose(R.filter(byVille),R.filter(byClasse),R.filter(byBus));
+    let filtreMultipleDeparts = R.compose(R.filter(byClasse),R.filter(byVille),R.filter(byBus));
     return filtreMultipleDeparts(tableauElements)
 }
 
