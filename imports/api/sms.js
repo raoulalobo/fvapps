@@ -8,7 +8,7 @@ if ( Meteor.isServer ){
 
             var request = require('request');
             //
-            request(`http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237697509899&messagetype=SMS:TEXT&messagedata=${message}`, { json: true }, (err, res, body) => {
+            request(`http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&recipient=237697509899,237677551786&messagetype=SMS:TEXT&messagedata=${message}`, { json: true }, (err, res, body) => {
                 if (err) { return console.log(err); }
                 console.log(res.body);
             });
