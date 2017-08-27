@@ -88,6 +88,9 @@ if ( Meteor.isServer ) {
                 visible: true,
             } , (err)=>{ if (!err)  { console.log(`Driver : ${driver} et Vehicule ${imm}`)} });
         },
+        'departs.delete'(id) {
+            Departs.remove(id);
+        },
         'departs.modify'(_id, dateTime , imm , dest , driver , fdr , amount , seats , leasing ,km , obs ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');

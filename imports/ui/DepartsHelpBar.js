@@ -26,7 +26,15 @@ export class DepartsHelpBar extends React.Component{
         const changeState = confirm("Rapport a envoyer : \n"+ message);
         if (changeState) {
             Meteor.call('nkSMS',message,function (err) {
-                if (!err) { console.log(message)} else { console.log(err)} } )
+                if (!err) {
+                    console.log(message) ;
+                    Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-check'  ) }
+                    else
+                        {
+                            console.log(err);
+                            Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+                        }
+            } )
         }
     }
     render(){

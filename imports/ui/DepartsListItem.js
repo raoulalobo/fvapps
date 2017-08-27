@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import Flatpickr from 'react-flatpickr';
 import {fr} from 'flatpickr/dist/l10n/fr.js';
-import { Table, Button, Modal , Form, Message } from 'semantic-ui-react';
+import { Table, Button, Modal , Form, Message, Icon } from 'semantic-ui-react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 export class DepartsListItem extends Component {
@@ -46,6 +46,26 @@ export class DepartsListItem extends Component {
             this.setState({ error: 'All field are required' });
         }
     }
+    onDelete(e){
+
+        e.preventDefault();
+        if ( this.props.depart._id ) {
+
+            const suppression = confirm(`Voulez vous supprimer le depart du bus: ${this.props.depart.imm}, destination: ${this.props.depart.dest}, date: ${moment(this.props.depart.dateTime).format('lll')} ?`);
+            if (suppression) {
+                Meteor.call('departs.delete', this.props.depart._id , (err, res) => {
+                    if (!err) {
+                        Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                    } else {
+                        this.setState({ error: err.reason });
+                    }
+                })
+            }
+
+        } else {
+            Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+        }
+    }
     handleClose(){
         this.setState({
             modalOpen: false,
@@ -77,7 +97,7 @@ export class DepartsListItem extends Component {
                     open={this.state.modalOpen}
                     onClose={this.handleClose.bind(this)}
                     size='small'
-                    trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini'>Edit/Details</Button>}>
+                    trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini' icon><Icon name='write' /></Button>}>
                     <Modal.Header>Ajouter un depart</Modal.Header>
                     <Modal.Content >
                         {this.state.error ?
@@ -159,10 +179,19 @@ export class DepartsListItem extends Component {
             )
         }
     }
+    deleteButton () {
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+            return (
+                <Button onClick={this.onDelete.bind(this)} color='red' size='mini' icon>
+                    <Icon name='trash'/>
+                </Button>
+            )
+        }
+    }
     render () {
         return (
             <Table.Row>
-                <Table.Cell>{this.modifyButton()}</Table.Cell>
+                <Table.Cell>{this.modifyButton()} {this.deleteButton()}</Table.Cell>
                 <Table.Cell>{moment(this.props.depart.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.depart.imm}</Table.Cell>
                 <Table.Cell>{this.props.depart.driver}</Table.Cell>

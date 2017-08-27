@@ -20,7 +20,7 @@ export default class NotFound extends React.Component{
                             <div className="boxed-view__box">
                                 <h2>Page inexistante ou MAJ serveurs</h2>
                                 <p>Bien vouloir contacter le service IT.</p>
-                                <Link to="/" className="button button--link">RETOUR ACCUEIL</Link>
+                                <Link to="/" className="button button--link">CLIQUER POUR REVENIR A L'ACCUEIL</Link>
                             </div>
                         </Grid.Column>
                         <Grid.Column>
