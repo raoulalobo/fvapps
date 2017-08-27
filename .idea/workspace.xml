@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/api/departs.js" afterPath="$PROJECT_DIR$/imports/api/departs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" afterPath="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" afterPath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/ui/NotFound.js" afterPath="$PROJECT_DIR$/imports/ui/NotFound.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartsListItem.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DepartsListItem.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -55,17 +52,17 @@
       <file leaf-file-name="DepartsHelpBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="34" column="109" lean-forward="false" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
+            <state relative-caret-position="349">
+              <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
               <folding>
                 <element signature="e#29#55#0" expanded="true" />
-                <marker date="1503836273600" expanded="true" signature="2825:2946" ph="..." />
+                <marker date="1503850338341" expanded="true" signature="2825:2946" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sms.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sms.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -172,8 +169,8 @@
         <option value="$PROJECT_DIR$/imports/api/sms.js" />
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
         <option value="$PROJECT_DIR$/imports/ui/NotFound.js" />
-        <option value="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
+        <option value="$PROJECT_DIR$/imports/ui/DepartsHelpBar.js" />
       </list>
     </option>
   </component>
@@ -489,12 +486,12 @@
       <workItem from="1503564280888" duration="2147000" />
       <workItem from="1503637609463" duration="3840000" />
       <workItem from="1503660314309" duration="16337000" />
-      <workItem from="1503827322152" duration="5494000" />
+      <workItem from="1503827322152" duration="6594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="550118000" />
+    <option name="totallyTimeSpent" value="551218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
@@ -896,32 +893,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="109" lean-forward="false" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
-          <folding>
-            <element signature="e#29#55#0" expanded="true" />
-            <marker date="1503836273600" expanded="true" signature="2825:2946" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/sms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+          <folding>
+            <element signature="e#29#55#0" expanded="true" />
+            <marker date="1503850338341" expanded="true" signature="2825:2946" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

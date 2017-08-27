@@ -28,7 +28,7 @@ export class DepartsHelpBar extends React.Component{
             Meteor.call('nkSMS',message,function (err) {
                 if (!err) {
                     console.log(message) ;
-                    Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-check'  ) }
+                    Bert.alert( 'Message envoye avec succes.', 'danger', 'growl-top-right', 'fa-check'  ) }
                     else
                         {
                             console.log(err);
