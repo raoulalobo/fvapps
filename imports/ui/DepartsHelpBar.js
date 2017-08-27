@@ -1,5 +1,3 @@
-const R = require('ramda');
-
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
@@ -19,7 +17,7 @@ export class DepartsHelpBar extends React.Component{
     }
     componentWillReceiveProps(nextProps) {
         this.setState( { departs: nextProps.getDeparts } );
-        console.log(nextProps)
+        //console.log(nextProps)
 
     }
     sendSMS(message){
@@ -27,7 +25,7 @@ export class DepartsHelpBar extends React.Component{
         if (changeState) {
             Meteor.call('nkSMS',message,function (err) {
                 if (!err) {
-                    console.log(message) ;
+                    //console.log(message) ;
                     Bert.alert( 'Message envoye avec succes.', 'danger', 'growl-top-right', 'fa-check'  ) }
                     else
                         {
