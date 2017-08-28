@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 if ( Meteor.isServer ){
 
     Meteor.methods({
-
         nkSMS: function ( message) {
 
             var request = require('request');

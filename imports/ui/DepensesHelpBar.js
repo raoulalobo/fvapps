@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Button, Icon } from 'semantic-ui-react';
-import { filtrage, sommes } from '../api/fonctions';
+import { filtreDepenses, sommes, sommesLitre } from '../api/fonctions';
 
 
 export class DepensesHelpBar extends React.Component{
@@ -35,12 +35,16 @@ export class DepensesHelpBar extends React.Component{
         }
     }
     render(){
+        const  sms = this.state.depenses ? `Ttal:${filtreDepenses(this.state.depenses,'DC').length}cons(${sommesLitre(filtreDepenses(this.state.depenses,'DC'))}L),${sommes(filtreDepenses(this.state.depenses,'DC'))}Fcfa 
+Bus: ${filtreDepenses(this.state.depenses,'DCB').length}cons(${sommesLitre(filtreDepenses(this.state.depenses,'DCB'))}L),${sommes(filtreDepenses(this.state.depenses,'DCB'))}Fcfa
+Nav:${filtreDepenses(this.state.depenses,'DCN').length}cons(${sommesLitre(filtreDepenses(this.state.depenses,'DCN'))}L),${sommes(filtreDepenses(this.state.depenses,'DCN'))}Fcfa
+Grp:${filtreDepenses(this.state.depenses,'DCG').length}cons(${sommesLitre(filtreDepenses(this.state.depenses,'DCG'))}L),${sommes(filtreDepenses(this.state.depenses,'DCG'))}Fcfa` : `Erreur, conactez le service IT`
         return (
             <Button
                 fluid
                 animated
                 color='green'
-                onClick={ ()=>{sms ? this.sendSMS(sms) : console.log('Error') } }>
+                onClick={ ()=> this.sendSMS(sms) }>
                 <Button.Content visible>
                     {this.state.depenses ? this.state.depenses.length : '0'} elts ->
                     Total : {sommes(this.state.depenses)} Fcfa

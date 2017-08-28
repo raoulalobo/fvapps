@@ -50,7 +50,7 @@ YdeCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes
                 fluid
                 animated='fade'
                 color='green'
-                onClick={ ()=>{this.sendSMS(sms)} }>
+                onClick={ ()=> this.sendSMS(sms) }>
                 <Button.Content visible>
                     {this.state.departs ? this.state.departs.length : '0'} elts ,
                     Total : {sommes(this.state.departs)} Fcfa

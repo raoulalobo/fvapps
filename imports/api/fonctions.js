@@ -21,6 +21,10 @@ export function filtreDepenses(tableauElements = undefined, parType = undefined,
 
 export function sommes(elts) {
     let  summ = (sum,n)=> sum + n.total;
-    return elts ? R.reduce(summ, 0,elts) : 0
+    return summ ? R.reduce(summ, 0,elts) : 0
+}
 
+export function sommesLitre(elts) {
+    let  summ = (sum,n)=> sum + n.qtte;
+    return summ ? R.reduce(summ, 0,elts) : 0
 }
