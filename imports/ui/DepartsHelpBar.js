@@ -44,16 +44,16 @@ YdeVIP:${filtrage(this.state.departs,'Douala','VIP').length}vges,${sommes(filtra
 YdeCla:${filtrage(this.state.departs,'Douala','classique').length}vges,${sommes(filtrage(this.state.departs,'Douala','classique'))}Fcfa
 Dla:${filtrage(this.state.departs,'Yaounde').length}vges,${sommes(filtrage(this.state.departs,'Yaounde'))}Fcfa
 DlaVIP:${filtrage(this.state.departs,'Yaounde','VIP').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','VIP'))}Fcfa
-YdeCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : undefined
+YdeCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : `Erreur, conactez le service IT`
         return (
             <Button
                 fluid
                 animated='fade'
                 color='green'
-                onClick={ ()=>{sms ? this.sendSMS(sms) : console.log('Error') } }>
+                onClick={ ()=>{this.sendSMS(sms)} }>
                 <Button.Content visible>
                     {this.state.departs ? this.state.departs.length : '0'} elts ,
-                    Total : {this.state.departs ? sommes(this.state.departs): '0'} Fcfa
+                    Total : {sommes(this.state.departs)} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
                     -----

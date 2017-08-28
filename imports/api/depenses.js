@@ -36,7 +36,6 @@ if ( Meteor.isServer ) {
                         type: String,
                         label: 'Designation',
                         min : 2,
-                        max : 70,
                     },
                     pu: {
                         type: SimpleSchema.Integer,
@@ -50,7 +49,6 @@ if ( Meteor.isServer ) {
                         type: String,
                         label: 'Notes',
                         min : 0,
-                        max : 70,
                     }
                 }).validate({dateTime , genre , code, desi , pu , qtte , notes});
             } catch (e) {
@@ -100,7 +98,6 @@ if ( Meteor.isServer ) {
                     type: String,
                     label: 'Designation',
                     min : 2,
-                    max : 70,
                 },
                 pu: {
                     type: SimpleSchema.Integer,
@@ -114,7 +111,6 @@ if ( Meteor.isServer ) {
                     type: String,
                     label: 'Notes',
                     min : 0,
-                    max : 70,
                 }
             }).validate({ _id , dateTime , genre , code, desi , pu , qtte , notes});
 

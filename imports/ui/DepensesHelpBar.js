@@ -4,7 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Button, Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react';
+import { filtrage, sommes } from '../api/fonctions';
+
 
 export class DepensesHelpBar extends React.Component{
     constructor (props) {
@@ -17,16 +19,31 @@ export class DepensesHelpBar extends React.Component{
         this.setState( { depenses: nextProps.getDepenses } );
         console.log(nextProps)
     }
+    sendSMS(message){
+        const changeState = confirm("Rapport a envoyer : \n"+ message);
+        if (changeState) {
+            Meteor.call('nkSMS',message,function (err) {
+                if (!err) {
+                    //console.log(message) ;
+                    Bert.alert( 'Message envoye avec succes.', 'danger', 'growl-top-right', 'fa-check'  ) }
+                else
+                {
+                    console.log(err);
+                    Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+                }
+            } )
+        }
+    }
     render(){
-        const  summ = (sum,n)=> sum + n.total
         return (
             <Button
                 fluid
                 animated
-                color='green'>
+                color='green'
+                onClick={ ()=>{sms ? this.sendSMS(sms) : console.log('Error') } }>
                 <Button.Content visible>
                     {this.state.depenses ? this.state.depenses.length : '0'} elts ->
-                    Total : {R.reduce(summ, 0,this.state.depenses ? this.state.depenses : [])} Fcfa
+                    Total : {sommes(this.state.depenses)} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
                     <Icon name='file excel outline' />
