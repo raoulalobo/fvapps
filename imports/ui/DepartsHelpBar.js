@@ -53,7 +53,7 @@ YdeCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes
                 onClick={ ()=> this.sendSMS(sms) }>
                 <Button.Content visible>
                     {this.state.departs ? this.state.departs.length : '0'} elts ,
-                    Total : {sommes(this.state.departs)} Fcfa
+                    Total : {this.state.departs ? sommes(this.state.departs): 0} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
                     -----
