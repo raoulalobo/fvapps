@@ -70,6 +70,9 @@ if ( Meteor.isServer ) {
                 visible: true,
             } , (err)=>{ if (!err)  { console.log(`Depense -> Genre: ${genre} , Designation: ${desi}`)} });
         },
+        'depenses.delete'(id) {
+            Depenses.remove(id);
+        },
         'depenses.modify'(_id, dateTime , genre , code, desi , pu , qtte , notes ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');

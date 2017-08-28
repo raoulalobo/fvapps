@@ -57,7 +57,7 @@ export class DepartsListItem extends Component {
                     if (!err) {
                         Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
                     } else {
-                        this.setState({ error: err.reason });
+                        Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  )
                     }
                 })
             }

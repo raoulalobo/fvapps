@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import Flatpickr from 'react-flatpickr';
 import {fr} from 'flatpickr/dist/l10n/fr.js';
-import { Table, Button, Modal , Form, Message } from 'semantic-ui-react';
+import { Table, Button, Modal , Form, Message, Icon } from 'semantic-ui-react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 export class DepensesListItem extends Component {
@@ -144,10 +144,39 @@ export class DepensesListItem extends Component {
             )
         }
     }
+    deleteButton () {
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+            return (
+                <Button onClick={this.onDelete.bind(this)} color='red' size='mini' icon>
+                    <Icon name='trash'/>
+                </Button>
+            )
+        }
+    }
+    onDelete(e){
+
+        e.preventDefault();
+        if ( this.props.depense._id ) {
+
+            const suppression = confirm(`Voulez vous supprimer la depense code: ${this.props.depense.code}, designation: ${this.props.depense.desi}, date : ${moment(this.props.depense.dateTime).format('lll')} ?`);
+            if (suppression) {
+                Meteor.call('depenses.delete', this.props.depense._id , (err, res) => {
+                    if (!err) {
+                        Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                    } else {
+                        Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  )
+                    }
+                })
+            }
+
+        } else {
+            Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+        }
+    }
     render () {
         return (
             <Table.Row>
-                <Table.Cell>{this.modifyButton()}</Table.Cell>
+                <Table.Cell>{this.modifyButton()} {this.deleteButton()}</Table.Cell>
                 <Table.Cell>{moment(this.props.depense.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.depense.genre}</Table.Cell>
                 <Table.Cell>{this.props.depense.code}</Table.Cell>
