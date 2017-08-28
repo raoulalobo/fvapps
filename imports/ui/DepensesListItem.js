@@ -74,7 +74,7 @@ export class DepensesListItem extends Component {
                     open={this.state.modalOpen}
                     onClose={this.handleClose.bind(this)}
                     size='small'
-                    trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini'>Edit/Details</Button>}>
+                    trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini'icon><Icon name='write' /></Button>}>
                     <Modal.Header>Modifier</Modal.Header>
                     <Modal.Content >
                         {this.state.error ?
