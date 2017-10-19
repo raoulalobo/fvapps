@@ -82,12 +82,12 @@ DepartsChiffres.propTypes = {
 export default createContainer(() => {
 
 
-    const getDeparts = Session.get('departs');
     //const nomBG = Session.get('nomBG') || undefined ;
     //const PDV = Session.get('PDV') || undefined ;
     //const StartedDate = Session.get('StartedDate') || new Date().setHours(0, 0, 0, 0) ;
     //const EndedDate = Session.get('EndedDate') || new Date().setHours(23, 59, 0, 0) ;
 
+    const getDeparts = Session.get('departs');
     const user = Meteor.user() || null;
 
     return {

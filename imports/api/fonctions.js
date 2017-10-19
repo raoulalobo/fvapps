@@ -1,12 +1,13 @@
 const R = require('ramda');
 
-export function filtrage(tableauElements = undefined, parVille = undefined, parClasse = undefined, parBus = undefined) {
+export function filtrage(tableauElements = undefined, parVille = undefined, parClasse = undefined, parBus = undefined , parHotesse) {
 
     let byDate = R.ascend(R.prop('dateTime'));
     let byClasse = (depart)=> depart.classe.match(  new RegExp( parClasse, 'i') );
     let byVille = (depart)=> depart.dest.match(  new RegExp( parVille, 'i') );
     let byBus = (depart)=> depart.imm.match(  new RegExp( parBus, 'i') );
-    let filtreMultipleDeparts = R.compose(R.filter(byClasse),R.filter(byVille),R.filter(byBus));
+    let byHotesse = (depart)=> depart.obs.match(  new RegExp( parHotesse, 'i') );
+    let filtreMultipleDeparts = R.compose(R.filter(byHotesse),R.filter(byClasse),R.filter(byVille),R.filter(byBus));
     return R.sort( byDate, filtreMultipleDeparts(tableauElements) );
 }
 

@@ -60,7 +60,6 @@ export const routes = (
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/colis" component={Colis} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/resas" component={Resa} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
-
             <Route path="/" component={Login} privacy="unauth" nomane="joedoe5"/>
             <Route path="*" component={NotFound}/>
         </Route>

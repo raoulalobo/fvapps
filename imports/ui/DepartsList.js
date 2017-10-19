@@ -18,11 +18,11 @@ export class DepartsList extends React.Component{
 
     }
     componentWillReceiveProps(nextProps) {
-        const { departs, searchClasse, searchVille, searchBus } = nextProps;
+        const { departs, searchClasse, searchVille, searchBus, searchHotesse } = nextProps;
 
         this.props.Session.set('departs', departs);
 
-        const filtreMultipleDeparts = filtrage(departs,searchClasse,searchVille,searchBus);
+        const filtreMultipleDeparts = filtrage(departs,searchClasse,searchVille,searchBus,searchHotesse);
 
         this.props.Session.set('departsFiltered', filtreMultipleDeparts);
 
@@ -68,6 +68,7 @@ DepartsList.propTypes = {
 export default createContainer(() => {
 
 
+    const searchHotesse = Session.get('searchHotesse') || undefined ;
     const searchClasse = Session.get('searchClasse') || undefined ;
     const searchVille = Session.get('searchVille') || undefined ;
     const searchBus = Session.get('searchBus') || undefined ;
@@ -80,6 +81,7 @@ export default createContainer(() => {
     return {
         Session,
         loading,
+        searchHotesse,
         searchClasse,
         searchVille,
         searchBus,

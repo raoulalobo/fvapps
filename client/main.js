@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Tracker } from 'meteor/tracker';
 import { Session } from 'meteor/session';
-import { Accounts } from 'meteor/accounts-base';
 
 import '../imports/startup/simple-schema-configuration.js';
 import { routes, onAuthChange } from '../imports/routes/routes';

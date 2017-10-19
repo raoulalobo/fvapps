@@ -13,6 +13,7 @@ export class DepartSearch extends Component {
             searchClasse: '',
             searchVille:'',
             searchBus : '',
+            searchHotesse : '',
             departStartedDate: '',
             departEndedDate: ''
         };
@@ -24,12 +25,13 @@ export class DepartSearch extends Component {
         Session.set('departEndedDate',''),
         Session.set('searchClasse',''),
         Session.set('searchVille',''),
-        Session.set('searchBus','')
+        Session.set('searchBus',''),
+        Session.set('searchHotesse','')
     }
     handleChange(e, { name,value }) {
         this.props.Session.set(name, value );
         this.setState( { [name] : this.props.Session.get(name) });
-        console.log( this.props.Session.get(name) )
+        console.log( `${[name]} -> ${this.props.Session.get(name)}` )
     }
     render() {
 
@@ -99,6 +101,12 @@ export class DepartSearch extends Component {
                         control={Input}
                         onChange={this.handleChange.bind(this)}
                         placeholder='Bus...' />
+                    <Form.Field
+                        name='searchHotesse'
+                        value={this.state.hotesse}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Hotesse...' />
                 </Form.Group>
             </Form>
         )
