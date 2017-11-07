@@ -10,6 +10,7 @@ export class ColisSearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            searchBus: '',
             searchColis: '',
             searchVille : '',
             StartedDate: '',
@@ -22,6 +23,7 @@ export class ColisSearchBar extends Component {
 
         Session.set('StartedDate',''),
         Session.set('EndedDate',''),
+        Session.set('searchBus',''),
         Session.set('searchColis',''),
         Session.set('searchVille','')
     }
@@ -83,6 +85,12 @@ export class ColisSearchBar extends Component {
                     </div>
                 </Form.Group>
                 <Form.Group widths='equal'>
+                    <Form.Field
+                        name='searchBus'
+                        value={this.state.searchBus}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Bus...' />
                     <Form.Field
                         name='searchColis'
                         value={this.state.searchColis}

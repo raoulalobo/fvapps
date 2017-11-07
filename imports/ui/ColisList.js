@@ -20,16 +20,17 @@ export class ColisList extends React.Component{
         Session.set('state','A'); // Pq ne pas effectuer cette operation au niveau de ColisFilter ??
     }
     componentWillReceiveProps(nextProps) {
-        const { colis, getState, getId, getDest } = nextProps;
+        const { colis, getState, getBus ,getId, getDest } = nextProps;
 
         //colis venus de la BDD, sa valeur ne change q si interrogation directe de la BDD
         this.props.Session.set('colis', colis);
 
         //Filtrer directement les colis
         let byState = (coli)=> coli.state.match(  new RegExp( getState, 'i') );
+        let byBus = (coli)=> coli.bus.match(  new RegExp( getBus, 'i') );
         let byCode = (coli)=> coli.code.match(  new RegExp( getId, 'i') );
         let byDest = (coli)=> coli.dest.match(  new RegExp( getDest, 'i') );
-        this.props.Session.set('colisFiltered', R.compose(R.filter(byDest),R.filter(byCode),R.filter(byState))(colis));
+        this.props.Session.set('colisFiltered', R.compose(R.filter(byDest),R.filter(byCode),R.filter(byBus),R.filter(byState))(colis));
 
         // Les logs
         console.log(nextProps);
@@ -56,6 +57,7 @@ ColisList.propTypes = {
 export default createContainer(() => {
 
     const getState = Session.get('state') || undefined ;
+    const getBus = Session.get('searchBus') || undefined ;
     const getId = Session.get('searchColis') || undefined ;
     const getDest = Session.get('searchVille') || undefined ;
     const StartedDate = Session.get('StartedDate') || new Date().setHours(0, 0, 0, 0) ;
@@ -68,6 +70,7 @@ export default createContainer(() => {
         Session,
         loading,
         getState,
+        getBus,
         getId,
         getDest,
         colis: Colis.find({visible: true}).fetch()
