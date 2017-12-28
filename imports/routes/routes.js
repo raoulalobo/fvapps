@@ -7,9 +7,11 @@ import Usrs from '../ui/Usrs';
 import Resa from '../ui/Resa';
 import Login from '../ui/Login';
 import Colis from '../ui/Colis' ;
+import Mmoneys from '../ui/Mmoneys' ;
 import Departs from '../ui/Departs' ;
 import Depenses from '../ui/Depenses' ;
 import NotFound from '../ui/NotFound';
+import Parametres from '../ui/Parametres';
 
 export const onAuthChange = (isAuthenticated, currentPagePrivacy) => {
     const isUnauthenticatedPage = currentPagePrivacy === 'unauth';
@@ -38,6 +40,7 @@ export const globalOnEnter = (nextState) => {
 
 const rls_0 = ['admin'];
 const rls_1 = ['admin','caisse'];
+const rls_11 = ['colis','caisse'];
 const rls_2 = ['admin','caisse','colis'];
 
 const onEnterRolePage = (nextState) => {
@@ -56,6 +59,8 @@ export const routes = (
         <Route onEnter={globalOnEnter} onChange={globalOnChange}>
 
             <Route path="/users" component={Usrs} privacy="auth" nomane={rls_0} onEnter={onEnterRolePage}/>
+            <Route path="/mobilemoney" component={Mmoneys} privacy="auth" nomane={rls_0} onEnter={onEnterRolePage}/>
+            <Route path="/parametres" component={Parametres} privacy="auth" nomane={rls_11} onEnter={onEnterRolePage}/>
             <Route path="/departs" component={Departs} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/colis" component={Colis} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
