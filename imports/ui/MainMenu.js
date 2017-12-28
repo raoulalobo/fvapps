@@ -152,7 +152,7 @@ export class MainMenu extends Component {
                     name='mobilemoney'
                     active={activeItem === '/mobilemoney'}>
                     <Icon name='mobile' />
-                    MobileMoney
+                    MoMo
                 </Menu.Item>
 
             )
