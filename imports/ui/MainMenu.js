@@ -142,7 +142,7 @@ export class MainMenu extends Component {
         }
     }
     mobilemMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser, ['caisse','admin'] ) ) {
+        if ( Roles.userIsInRole(this.state.currentUser, ['colis','admin'] ) ) {
             const { activeItem } = this.props;
             return (
 
@@ -176,7 +176,7 @@ export class MainMenu extends Component {
         }
     }
     userMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser, ['caisse','admin'] ) ) {
+        if ( Roles.userIsInRole(this.state.currentUser, 'admin' ) ) {
             const { activeItem } = this.props;
             return (
 
