@@ -21,7 +21,8 @@ export const onAuthChange = (isAuthenticated, currentPagePrivacy) => {
         if ( Roles.userIsInRole(Meteor.userId(), 'admin' ) ) {
             browserHistory.replace('/users');
         } else {
-            browserHistory.replace('/colis');
+            if ( Roles.userIsInRole(Meteor.userId(), 'colis' ) ) { browserHistory.replace('/mobilemoney');}
+            if ( Roles.userIsInRole(Meteor.userId(), 'caisse' ) ) { browserHistory.replace('/departs');}
         }
     } else if (isAuthenticatedPage && !isAuthenticated) {
         browserHistory.replace('/');
@@ -59,7 +60,7 @@ export const routes = (
         <Route onEnter={globalOnEnter} onChange={globalOnChange}>
 
             <Route path="/users" component={Usrs} privacy="auth" nomane={rls_0} onEnter={onEnterRolePage}/>
-            <Route path="/mobilemoney" component={Mmoneys} privacy="auth" nomane={rls_0} onEnter={onEnterRolePage}/>
+            <Route path="/mobilemoney" component={Mmoneys} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/parametres" component={Parametres} privacy="auth" nomane={rls_11} onEnter={onEnterRolePage}/>
             <Route path="/departs" component={Departs} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
