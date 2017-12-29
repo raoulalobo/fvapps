@@ -8,6 +8,7 @@ import '../imports/api/departs';
 import '../imports/api/depenses';
 import '../imports/api/hotesses';
 import '../imports/api/colis';
+import '../imports/api/vidanges';
 import '../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {

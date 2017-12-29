@@ -5,30 +5,31 @@ import {fr} from 'flatpickr/dist/l10n/fr.js';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Button, Modal , Form, Message } from 'semantic-ui-react'
 
-export default class MmoneysAdd extends React.Component {
-    
+export default class VidangesAdd extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             modalOpen: false,
-            ticket: '' ,
+            ordre: '' ,
+            immatriculation: '' ,
             dateTime: '' ,
-            dateTimeV: '' ,
-            nom: '' ,
-            cni:'',
-            phone:'',
+            type: '' ,
+            last:'',
+            nbrVoyageSimple:'',
+            nbrVoyageComplete:'',
             observations: '',
             error: ''
         };
     }
     onSubmit(e) {
-        const { ticket , dateTime , dateTimeV , nom , cni, phone , observations } = this.state;
+        const { ordre , immatriculation, dateTime , type , last , nbrVoyageSimple, nbrVoyageComplete , observations } = this.state;
 
         e.preventDefault();
 
-        if ( ticket && dateTime && dateTimeV && nom && cni  && phone &&   observations ) {
+        if ( ordre && immatriculation && dateTime && type && last && nbrVoyageSimple  && nbrVoyageComplete &&   observations ) {
 
-            Meteor.call('mmoneys.insert', ticket , dateTime , dateTimeV , nom.trim().toLowerCase() , cni, phone.trim().toLowerCase() , observations.trim().toLowerCase()  , (err, res) => {
+            Meteor.call('vidanges.insert', ordre , immatriculation, dateTime , type , last , nbrVoyageSimple, nbrVoyageComplete , observations.trim().toLowerCase()  , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( `enregistrement ${res} ajoute avec succes.`, 'danger', 'growl-top-right', 'fa-check'  )
@@ -44,14 +45,15 @@ export default class MmoneysAdd extends React.Component {
     handleClose() {
         this.setState({
             modalOpen: false,
-            ticket: '' ,
+            ordre: '' ,
+            immatriculation: '' ,
             dateTime: '' ,
-            dateTimeV: '' ,
-            nom: '' ,
-            cni:'',
-            phone:'',
+            type: '' ,
+            last:'',
+            nbrVoyageSimple:'',
+            nbrVoyageComplete:'',
             observations: '',
-            error:''
+            error: ''
         });
     }
     handleOpen() {
@@ -73,8 +75,8 @@ export default class MmoneysAdd extends React.Component {
                 open={this.state.modalOpen}
                 onClose={this.handleClose.bind(this)}
                 size='small'
-                trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini'>+ Ajouter 01 Mobile Money</Button>}>
-                <Modal.Header>Ajouter 01 Mobile Money</Modal.Header>
+                trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini'>+ Ajouter 01 vidange</Button>}>
+                <Modal.Header>Ajouter 01 vidange</Modal.Header>
                 <Modal.Content >
                     {this.state.error ?
                         <Message negative>
@@ -89,7 +91,7 @@ export default class MmoneysAdd extends React.Component {
                         <Form.Group widths='equal'>
 
                             <div className='field'>
-                                <label>Date du paiement</label>
+                                <label>Date vidange</label>
                                 <div className='ui input'>
                                     <Flatpickr
                                         as={Form.Field}
@@ -109,40 +111,28 @@ export default class MmoneysAdd extends React.Component {
                                 </div>
                             </div>
 
-                            <div className='field'>
-                                <label>Date du voyage</label>
-                                <div className='ui input'>
-                                    <Flatpickr
-                                        as={Form.Field}
-                                        data-enable-time
-                                        onChange={ (startDate)  => {
-                                            this.setState( { dateTimeV : startDate[0] } ) ;
-                                            console.log(this.state.dateTimeV) ;
-                                        } }
-                                        options={
-                                            {
-                                                altInput: true,
-                                                time_24hr: true,
-                                                locale : fr
-                                            }
-                                        }
-                                    />
-                                </div>
-                            </div>
+                            <Form.Input label='Ordre'
+                                        name='ordre'
+                                        value={this.state.ordre}
+                                        onChange={this.onChangeField.bind(this)}/>
 
+                            <Form.Input label='Immatriculation'
+                                        name='immatriculation'
+                                        value={this.state.immatriculation}
+                                        onChange={this.onChangeField.bind(this)}/>
 
                         </Form.Group>
 
                         <Form.Group widths='equal'>
 
-                            <Form.Input label='# de ticket'
-                                        name='ticket'
-                                        value={this.state.ticket}
+                            <Form.Input label='Type de vidange'
+                                        name='type'
+                                        value={this.state.type}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Nom et Prenom'
-                                        name='nom'
-                                        value={this.state.nom}
+                            <Form.Input label='Derniere vidange'
+                                        name='last'
+                                        value={this.state.last}
                                         onChange={this.onChangeField.bind(this)}/>
 
                         </Form.Group>
@@ -150,14 +140,14 @@ export default class MmoneysAdd extends React.Component {
 
                         <Form.Group widths='equal'>
 
-                            <Form.Input label='Destination'
+                            <Form.Input label='Nbr voyages simples'
                                         name='cni'
-                                        value={this.state.cni}
+                                        value={this.state.nbrVoyageSimple}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Telephone'
+                            <Form.Input label='Nbr voyages completes'
                                         name='phone'
-                                        value={this.state.phone}
+                                        value={this.state.nbrVoyageComplete}
                                         onChange={this.onChangeField.bind(this)}/>
 
 
@@ -167,7 +157,7 @@ export default class MmoneysAdd extends React.Component {
                                        name='observations'
                                        value={this.state.observations}
                                        onChange={this.onChangeField.bind(this)}/>
-                        <Form.Button fluid basic color='blue'>Ajouter 01 Mobile Money</Form.Button>
+                        <Form.Button fluid basic color='blue'>Ajouter 01 vidange</Form.Button>
 
                     </Form>
 

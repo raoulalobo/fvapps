@@ -51,7 +51,7 @@ export class MmoneysList extends React.Component{
                             <Table.HeaderCell>Date_paiement</Table.HeaderCell>
                             <Table.HeaderCell>Date_voyage</Table.HeaderCell>
                             <Table.HeaderCell>Noms</Table.HeaderCell>
-                            <Table.HeaderCell>CNI</Table.HeaderCell>
+                            <Table.HeaderCell>Destination</Table.HeaderCell>
                             <Table.HeaderCell>Telephone</Table.HeaderCell>
                             <Table.HeaderCell>Observations</Table.HeaderCell>
                         </Table.Row>

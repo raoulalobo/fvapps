@@ -124,6 +124,23 @@ export class MainMenu extends Component {
             )
         }
     }
+    vidangesMenu(){
+        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse'] ) ) {
+            const { activeItem } = this.props;
+            return (
+
+                <Menu.Item
+                    as={Link}
+                    to='/vidanges'
+                    name='vidanges'
+                    active={activeItem === '/vidanges'}>
+                    <Icon name='lab' />
+                    Vidanges
+                </Menu.Item>
+
+            )
+        }
+    }
     resasMenu(){
         if ( Roles.userIsInRole(this.state.currentUser, ['caisse','admin'] ) ) {
             const { activeItem } = this.props;
@@ -227,6 +244,7 @@ export class MainMenu extends Component {
 
                 <Menu.Item name='Se Deconnecter' onClick={() => Accounts.logout()} >
                     <Icon name='log out' />
+                    LogOut
                 </Menu.Item>
             </Menu.Menu>
 
@@ -242,6 +260,7 @@ export class MainMenu extends Component {
                         <Grid.Row only='mobile tablet computer'>
                             {this.userMenu()}
                             {this.mobilemMenu()}
+                            {this.vidangesMenu()}
                             {this.colisMenu()}
                             {this.departsMenu()}
                             {this.caisseMenu()}

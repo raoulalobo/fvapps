@@ -5,6 +5,7 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import Usrs from '../ui/Usrs';
 import Resa from '../ui/Resa';
+import Vidanges from '../ui/Vidanges';
 import Login from '../ui/Login';
 import Colis from '../ui/Colis' ;
 import Mmoneys from '../ui/Mmoneys' ;
@@ -63,6 +64,7 @@ export const routes = (
             <Route path="/mobilemoney" component={Mmoneys} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/parametres" component={Parametres} privacy="auth" nomane={rls_11} onEnter={onEnterRolePage}/>
             <Route path="/departs" component={Departs} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
+            <Route path="/vidanges" component={Vidanges} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/colis" component={Colis} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/resas" component={Resa} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>

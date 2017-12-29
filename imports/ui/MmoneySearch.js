@@ -34,6 +34,22 @@ export class MmoneySearch extends Component {
 
         return (
             <Form>
+
+                <Form.Group widths='equal'>
+                    <Form.Field
+                        name='searchTicket'
+                        value={this.state.searchTicket}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='# Ticket...' />
+                    <Form.Field
+                        name='searchNom'
+                        value={this.state.searchNom}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Noms et prenoms...' />
+                </Form.Group>
+
                 <Form.Group widths='equal'>
                     <div className='field'>
                         <div className='ui input'>
@@ -79,20 +95,7 @@ export class MmoneySearch extends Component {
                         </div>
                     </div>
                 </Form.Group>
-                <Form.Group widths='equal'>
-                    <Form.Field
-                        name='searchTicket'
-                        value={this.state.searchTicket}
-                        control={Input}
-                        onChange={this.handleChange.bind(this)}
-                        placeholder='# Ticket...' />
-                    <Form.Field
-                        name='searchNom'
-                        value={this.state.searchNom}
-                        control={Input}
-                        onChange={this.handleChange.bind(this)}
-                        placeholder='Noms et prenoms...' />
-                </Form.Group>
+
             </Form>
         )
     }
