@@ -50,7 +50,8 @@ export const Mmoneys = new Mongo.Collection('mmoneys');
 if ( Meteor.isServer ) {
 
     Meteor.publish('mmoneys', function(dateStart, dateEnd ) {
-        return Mmoneys.find({ dateTimeV: { $gte: dateStart , $lte: dateEnd } });
+        //return Mmoneys.find({ dateTimeV: { $gte: dateStart , $lte: dateEnd } });
+        return Mmoneys.find({ $or: [ { dateTime: { $gte: dateStart , $lte: dateEnd } } , { dateTimeV: { $gte: dateStart , $lte: dateEnd } }] });
     });
 
 /*    Meteor.publish('mmoneys', function() {
