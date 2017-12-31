@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imports/api/departs.js" afterPath="$PROJECT_DIR$/imports/api/departs.js" />
-      <change beforePath="$PROJECT_DIR$/imports/api/fonctions.js" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" />
       <change beforePath="$PROJECT_DIR$/imports/api/vidanges.js" afterPath="$PROJECT_DIR$/imports/api/vidanges.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/MainMenu.js" afterPath="$PROJECT_DIR$/imports/ui/MainMenu.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/Vidanges.js" afterPath="$PROJECT_DIR$/imports/ui/Vidanges.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/VidangesAdd.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesAdd.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/VidangesList.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesList.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/VidangesListItem.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
@@ -34,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/MainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -44,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VidangesListItem.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VidangesListItem.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/VidangesListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="165" column="36" lean-forward="true" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
+            <state relative-caret-position="272">
+              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -59,16 +54,16 @@
       <file leaf-file-name="VidangesList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+            <state relative-caret-position="488">
+              <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
               <folding>
                 <element signature="e#58#84#0" expanded="true" />
-                <marker date="1514729163649" expanded="true" signature="1089:2560" ph="..." />
-                <marker date="1514729163649" expanded="true" signature="1135:2541" ph="..." />
-                <marker date="1514729163649" expanded="true" signature="1170:1914" ph="..." />
-                <marker date="1514729163649" expanded="true" signature="1206:1878" ph="..." />
-                <marker date="1514729163649" expanded="true" signature="1948:2516" ph="..." />
-                <marker date="1514729163649" expanded="true" signature="2462:2503" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="1089:2490" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="1135:2471" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="1170:1844" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="1206:1808" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="1878:2446" ph="..." />
+                <marker date="1514731413104" expanded="true" signature="2392:2433" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,9 +82,11 @@
       <file leaf-file-name="vidanges.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="504">
+              <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,8 +106,8 @@
       <file leaf-file-name="VidangesAdd.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/VidangesAdd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-970">
-              <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="-576">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -249,12 +246,12 @@
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
         <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
-        <option value="$PROJECT_DIR$/imports/ui/VidangesAdd.js" />
-        <option value="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
-        <option value="$PROJECT_DIR$/imports/api/vidanges.js" />
-        <option value="$PROJECT_DIR$/imports/ui/VidangesList.js" />
         <option value="$PROJECT_DIR$/imports/ui/Vidanges.js" />
         <option value="$PROJECT_DIR$/imports/ui/MainMenu.js" />
+        <option value="$PROJECT_DIR$/imports/ui/VidangesAdd.js" />
+        <option value="$PROJECT_DIR$/imports/api/vidanges.js" />
+        <option value="$PROJECT_DIR$/imports/ui/VidangesList.js" />
+        <option value="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
       </list>
     </option>
   </component>
@@ -647,12 +644,12 @@
       <workItem from="1514536467228" duration="13479000" />
       <workItem from="1514620240865" duration="1278000" />
       <workItem from="1514627600310" duration="6520000" />
-      <workItem from="1514720604977" duration="3153000" />
+      <workItem from="1514720604977" duration="4089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="745998000" />
+    <option name="totallyTimeSpent" value="746934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="78" y="63" width="1377" height="912" extended-state="6" />
@@ -1023,55 +1020,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="165" column="36" lean-forward="true" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-          <folding>
-            <element signature="e#58#84#0" expanded="true" />
-            <marker date="1514729163649" expanded="true" signature="1089:2560" ph="..." />
-            <marker date="1514729163649" expanded="true" signature="1135:2541" ph="..." />
-            <marker date="1514729163649" expanded="true" signature="1170:1914" ph="..." />
-            <marker date="1514729163649" expanded="true" signature="1206:1878" ph="..." />
-            <marker date="1514729163649" expanded="true" signature="1948:2516" ph="..." />
-            <marker date="1514729163649" expanded="true" signature="2462:2503" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1088,6 +1041,52 @@
         <state relative-caret-position="189">
           <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-576">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="48" column="69" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+          <folding>
+            <element signature="e#58#84#0" expanded="true" />
+            <marker date="1514731413104" expanded="true" signature="1089:2490" ph="..." />
+            <marker date="1514731413104" expanded="true" signature="1135:2471" ph="..." />
+            <marker date="1514731413104" expanded="true" signature="1170:1844" ph="..." />
+            <marker date="1514731413104" expanded="true" signature="1206:1808" ph="..." />
+            <marker date="1514731413104" expanded="true" signature="1878:2446" ph="..." />
+            <marker date="1514731413104" expanded="true" signature="2392:2433" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

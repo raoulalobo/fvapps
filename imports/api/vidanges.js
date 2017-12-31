@@ -20,17 +20,13 @@ const insertion = new SimpleSchema({
         type: String,
         label: 'Type de vidange',
     },
-    last: {
-        type: String,
-        label: 'Derniere vidange',
-    },
     nbrVoyageSimple: {
         type: SimpleSchema.Integer,
         label: 'Nbr voyages vidange simple',
     },
-    nbrVoyageComplete: {
+    kilometrage: {
         type: SimpleSchema.Integer,
-        label: 'Nbr voyages vidange complete',
+        label: 'Kilometrage',
     },
     observations: {
         type: String,
@@ -62,13 +58,13 @@ if ( Meteor.isServer ) {
     });
 
     Meteor.methods({
-        'vidanges.insert'(  ordre, immatriculation, dateTime , type , last , nbrVoyageSimple ,nbrVoyageComplete , observations ){
+        'vidanges.insert'(  ordre, immatriculation, dateTime , type , nbrVoyageSimple ,kilometrage , observations ){
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
             }
 
             try {
-                insertion.validate({  ordre, immatriculation, dateTime , type , last , nbrVoyageSimple ,nbrVoyageComplete , observations });
+                insertion.validate({  ordre, immatriculation, dateTime , type  , nbrVoyageSimple ,kilometrage , observations });
             } catch (e) {
                 throw new Meteor.Error(400, e.message);
             }
@@ -79,9 +75,8 @@ if ( Meteor.isServer ) {
                 immatriculation,
                 dateTime : dateTime.getTime() ,
                 type ,
-                last ,
                 nbrVoyageSimple ,
-                nbrVoyageComplete ,
+                kilometrage ,
                 observations,
                 creeLe: this.userId,
                 creePar : new Date().getTime(),

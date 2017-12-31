@@ -180,9 +180,8 @@ export class VidangesListItem extends Component {
                 <Table.Cell>{this.props.vidange.immatriculation}</Table.Cell>
                 <Table.Cell>{moment(this.props.vidange.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.vidange.type}</Table.Cell>
-                <Table.Cell>{this.props.vidange.last}</Table.Cell>
                 <Table.Cell>{this.props.vidange.dep} / {this.props.vidange.nbrVoyageSimple}</Table.Cell>
-                <Table.Cell>{this.props.vidange.nbrVoyageComplete}</Table.Cell>
+                <Table.Cell>{this.props.vidange.kilometrage}</Table.Cell>
                 <Table.Cell>{this.props.vidange.observations}</Table.Cell>
             </Table.Row>
         );

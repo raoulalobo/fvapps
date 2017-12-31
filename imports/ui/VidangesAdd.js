@@ -15,21 +15,20 @@ export default class VidangesAdd extends React.Component {
             immatriculation: '' ,
             dateTime: '' ,
             type: '' ,
-            last:'',
             nbrVoyageSimple:'',
-            nbrVoyageComplete:'',
+            kilometrage:'',
             observations: '',
             error: ''
         };
     }
     onSubmit(e) {
-        const { ordre , immatriculation, dateTime , type , last , nbrVoyageSimple, nbrVoyageComplete , observations } = this.state;
+        const { ordre , immatriculation, dateTime , type , nbrVoyageSimple, kilometrage , observations } = this.state;
 
         e.preventDefault();
 
-        if ( ordre && immatriculation && dateTime && type && last && nbrVoyageSimple  && nbrVoyageComplete &&   observations ) {
+        if ( ordre && immatriculation && dateTime && type  && nbrVoyageSimple  && kilometrage &&   observations ) {
 
-            Meteor.call('vidanges.insert', ordre , immatriculation, dateTime , type , last , parseInt(nbrVoyageSimple), parseInt(nbrVoyageComplete) , observations.trim().toLowerCase()  , (err, res) => {
+            Meteor.call('vidanges.insert', ordre , immatriculation, dateTime , type , parseInt(nbrVoyageSimple), parseInt(kilometrage) , observations.trim().toLowerCase()  , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( `enregistrement ${res} ajoute avec succes.`, 'danger', 'growl-top-right', 'fa-check'  )
@@ -49,9 +48,8 @@ export default class VidangesAdd extends React.Component {
             immatriculation: '' ,
             dateTime: '' ,
             type: '' ,
-            last:'',
             nbrVoyageSimple:'',
-            nbrVoyageComplete:'',
+            kilometrage:'',
             observations: '',
             error: ''
         });
@@ -141,8 +139,8 @@ export default class VidangesAdd extends React.Component {
                                         onChange={this.onChangeField.bind(this)}/>
 
                             <Form.Input label='Kilometrage'
-                                        name='nbrVoyageComplete'
-                                        value={this.state.nbrVoyageComplete}
+                                        name='kilometrage'
+                                        value={this.state.kilometrage}
                                         onChange={this.onChangeField.bind(this)}/>
 
 
