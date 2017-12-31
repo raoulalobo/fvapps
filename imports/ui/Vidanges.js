@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Grid , Header, Icon  } from 'semantic-ui-react'
+import { Grid , Header, Icon , Button } from 'semantic-ui-react'
 
 import MainMenu from './MainMenu';
 import VidangesList from './VidangesList';
@@ -22,7 +22,7 @@ export default class Vidanges extends React.Component{
                         <Header as='h2'>
                             <Icon circular name='mobile' />
                             <Header.Content>
-                                Gestion des vidanges
+                                Gestion des historiques vidanges
                                 <Header.Subheader>
                                     gerer les operation relatives aux vidanges
                                 </Header.Subheader>
@@ -35,6 +35,9 @@ export default class Vidanges extends React.Component{
                         <Grid.Column width={16}>
                             <Grid.Row>
                                 <VidangesAdd/>
+                                <Button size='mini'>
+                                    Mini
+                                </Button>
                             </Grid.Row>
 
                             <h2></h2>

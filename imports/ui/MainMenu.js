@@ -125,7 +125,7 @@ export class MainMenu extends Component {
         }
     }
     vidangesMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse'] ) ) {
+        if ( Roles.userIsInRole(this.state.currentUser,  'admin' ) ) {
             const { activeItem } = this.props;
             return (
 
@@ -260,6 +260,7 @@ export class MainMenu extends Component {
                         <Grid.Row only='mobile tablet computer'>
                             {this.userMenu()}
                             {this.mobilemMenu()}
+                            {this.vidangesMenu()}
                             {this.colisMenu()}
                             {this.departsMenu()}
                             {this.caisseMenu()}

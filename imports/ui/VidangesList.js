@@ -6,10 +6,12 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react';
+import { nbrDeparts } from '../api/fonctions';
 
 
 import { Vidanges } from '../api/vidanges';
+import { Departs } from '../api/departs';
 
 import EmptyTableItem from './EmptyTableItem';
 import VidangesListItem from './VidangesListItem';
@@ -21,13 +23,18 @@ export class VidangesList extends React.Component{
     }
     componentWillReceiveProps(nextProps) {
 
-        const { vidanges } = nextProps;
+        const { vidanges, departs } = nextProps;
 
         this.props.Session.set('vidanges', vidanges);
+        console.log(nextProps);
+        console.log( `Vidanges -> ${vidanges}`) ;
+        console.log( `Departs -> ${departs.length}`) ;
+
 
     }
     componentWillUnmount() {
-        Meteor.subscribe('vidanges').stop()
+        Meteor.subscribe('vidanges').stop();
+        Meteor.subscribe('departs').stop()
     }
     render(){
         return (
@@ -41,8 +48,8 @@ export class VidangesList extends React.Component{
                             <Table.HeaderCell>DateTime</Table.HeaderCell>
                             <Table.HeaderCell>Type</Table.HeaderCell>
                             <Table.HeaderCell>Last</Table.HeaderCell>
-                            <Table.HeaderCell>Class</Table.HeaderCell>
-                            <Table.HeaderCell>Complete</Table.HeaderCell>
+                            <Table.HeaderCell>Etat</Table.HeaderCell>
+                            <Table.HeaderCell>Kmtrage</Table.HeaderCell>
                             <Table.HeaderCell>Observations</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
@@ -68,15 +75,18 @@ export default createContainer(() => {
     const vidangeStartedDate = Session.get('vidangeStartedDate') || new Date().setHours(0, 0, 0, 0) ;
     const vidangeEndedDate = Session.get('vidangeEndedDate') || new Date().setHours(23, 59, 0, 0) ;
 
-    const vidangesHandle = Meteor.subscribe('vidanges',vidangeStartedDate,vidangeEndedDate);
-    const loading = !vidangesHandle.ready();
+    const vidangesHandle = Meteor.subscribe('vidanges');
+    const vidangesDepartsHandle = Meteor.subscribe('departsVidanges');
+    const loading = !vidangesHandle.ready() && !vidangesDepartsHandle.ready();
 
     return {
         Session,
         loading,
+        departs: Departs.find().fetch(),
         vidanges : Vidanges.find().fetch().map((vidange)=>{
             return {
-                ...vidange
+                ...vidange,
+                dep : Departs.find( { imm : new RegExp( vidange.immatriculation, 'i')  , dateTime: { $gte: vidange.dateTime } } ).fetch().length
             }
         })
     };

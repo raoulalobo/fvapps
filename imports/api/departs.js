@@ -9,9 +9,13 @@ import request from 'request';
 export const Departs = new Mongo.Collection('departs');
 
 if ( Meteor.isServer ) {
+
     Meteor.publish('departs', function(dateStart, dateEnd ) {
         return Departs.find({ dateTime: { $gte: dateStart , $lte: dateEnd } });
-        //return Departs.find({ dateTime: { $gte: dateStart , $lte: dateEnd } }, {sort: {dateTime: 1}});
+    });
+
+    Meteor.publish('departsVidanges', function( ) {
+        return Departs.find({});
     });
 
     Meteor.methods({

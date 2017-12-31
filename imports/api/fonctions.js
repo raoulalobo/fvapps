@@ -29,3 +29,9 @@ export function sommesLitre(elts) {
     let  summ = (sum,n)=> sum + n.qtte;
     return elts ? R.reduce(summ, 0,elts) : 0
 }
+
+export function nbrDeparts( tableauElements = undefined , parBus = undefined ) {
+    let byBus = (depart)=> depart.imm.match(  new RegExp( parBus, 'i') );
+    let res = R.compose(R.length ,R.filter(byBus))
+    return res(tableauElements)
+}

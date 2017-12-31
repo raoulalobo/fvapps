@@ -29,7 +29,7 @@ export default class VidangesAdd extends React.Component {
 
         if ( ordre && immatriculation && dateTime && type && last && nbrVoyageSimple  && nbrVoyageComplete &&   observations ) {
 
-            Meteor.call('vidanges.insert', ordre , immatriculation, dateTime , type , last , nbrVoyageSimple, nbrVoyageComplete , observations.trim().toLowerCase()  , (err, res) => {
+            Meteor.call('vidanges.insert', ordre , immatriculation, dateTime , type , last , parseInt(nbrVoyageSimple), parseInt(nbrVoyageComplete) , observations.trim().toLowerCase()  , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( `enregistrement ${res} ajoute avec succes.`, 'danger', 'growl-top-right', 'fa-check'  )
@@ -63,7 +63,6 @@ export default class VidangesAdd extends React.Component {
         this.setState( { [name] : value });
         console.log(`${name} -> ${value}`)
     }
-
     render() {
 
         return (
@@ -116,24 +115,20 @@ export default class VidangesAdd extends React.Component {
                                         value={this.state.ordre}
                                         onChange={this.onChangeField.bind(this)}/>
 
+                        </Form.Group>
+
+                        <Form.Group widths='equal'>
+
                             <Form.Input label='Immatriculation'
                                         name='immatriculation'
                                         value={this.state.immatriculation}
                                         onChange={this.onChangeField.bind(this)}/>
-
-                        </Form.Group>
-
-                        <Form.Group widths='equal'>
 
                             <Form.Input label='Type de vidange'
                                         name='type'
                                         value={this.state.type}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Derniere vidange'
-                                        name='last'
-                                        value={this.state.last}
-                                        onChange={this.onChangeField.bind(this)}/>
 
                         </Form.Group>
 
@@ -141,19 +136,19 @@ export default class VidangesAdd extends React.Component {
                         <Form.Group widths='equal'>
 
                             <Form.Input label='Nbr voyages simples'
-                                        name='cni'
+                                        name='nbrVoyageSimple'
                                         value={this.state.nbrVoyageSimple}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Nbr voyages completes'
-                                        name='phone'
+                            <Form.Input label='Kilometrage'
+                                        name='nbrVoyageComplete'
                                         value={this.state.nbrVoyageComplete}
                                         onChange={this.onChangeField.bind(this)}/>
 
 
                         </Form.Group>
 
-                        <Form.TextArea label='Observations'
+                        <Form.TextArea label='Historique ( # , Date heure, Type , Ordre , Kmtrage, Observations )'
                                        name='observations'
                                        value={this.state.observations}
                                        onChange={this.onChangeField.bind(this)}/>

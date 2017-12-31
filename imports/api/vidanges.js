@@ -53,13 +53,13 @@ export const Vidanges = new Mongo.Collection('vidanges');
 
 if ( Meteor.isServer ) {
 
-    Meteor.publish('vidanges', function(dateStart, dateEnd ) {
+    Meteor.publish('vidangesParDate', function(dateStart, dateEnd ) {
         return Vidanges.find({ dateTime: { $gte: dateStart , $lte: dateEnd } });
     });
 
-    /*    Meteor.publish('vidanges', function() {
-            return Vidanges.find({});
-        });*/
+    Meteor.publish('vidanges', function() {
+        return Vidanges.find({});
+    });
 
     Meteor.methods({
         'vidanges.insert'(  ordre, immatriculation, dateTime , type , last , nbrVoyageSimple ,nbrVoyageComplete , observations ){
@@ -77,7 +77,7 @@ if ( Meteor.isServer ) {
 
                 ordre,
                 immatriculation,
-                dateTime ,
+                dateTime : dateTime.getTime() ,
                 type ,
                 last ,
                 nbrVoyageSimple ,
