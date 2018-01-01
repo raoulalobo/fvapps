@@ -20,7 +20,7 @@ export default class Vidanges extends React.Component{
                 <Grid container divided>
                     <Grid.Row>
                         <Header as='h2'>
-                            <Icon circular name='mobile' />
+                            <Icon circular name='lab' />
                             <Header.Content>
                                 Gestion des historiques vidanges
                                 <Header.Subheader>

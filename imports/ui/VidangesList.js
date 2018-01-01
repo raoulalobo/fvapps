@@ -34,7 +34,7 @@ export class VidangesList extends React.Component{
     }
     componentWillUnmount() {
         Meteor.subscribe('vidanges').stop();
-        Meteor.subscribe('departs').stop()
+        Meteor.subscribe('departsVidanges').stop()
     }
     render(){
         return (
@@ -54,9 +54,9 @@ export class VidangesList extends React.Component{
                     </Table.Header>
 
                     <Table.Body>
-                        { this.props.vidanges.length === 0 ? <EmptyTableItem text="No Items, if is an unexpected result please contact the admin"/> : undefined }
-                        { this.props.loading && !!this.props.vidanges.length ? <EmptyTableItem text="Loading Data , please wait ..."/>  : undefined }
-                        {!!this.props.vidanges.length && !this.props.loading ? ( this.props.Session.get('vidanges')  ).map( (vidange) => { return <VidangesListItem key={vidange._id} vidange={vidange}/>; } ) : undefined }
+                        { this.props.departs.length === 0 ? <EmptyTableItem text="No Items, if is an unexpected result please contact the admin"/> : undefined }
+                        { this.props.loading && !!this.props.departs.length ? <EmptyTableItem text="Loading Data , please wait ..."/>  : undefined }
+                        {!!this.props.departs.length && !this.props.loading ? ( this.props.Session.get('vidanges')  ).map( (vidange) => { return <VidangesListItem key={vidange._id} vidange={vidange}/>; } ) : undefined }
 
                     </Table.Body>
                 </Table>
@@ -76,7 +76,7 @@ export default createContainer(() => {
 
     const vidangesHandle = Meteor.subscribe('vidanges');
     const vidangesDepartsHandle = Meteor.subscribe('departsVidanges');
-    const loading = !vidangesHandle.ready() && !vidangesDepartsHandle.ready();
+    const loading = !vidangesDepartsHandle.ready();
 
     return {
         Session,

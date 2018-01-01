@@ -66,9 +66,8 @@ export class VidangesListItem extends Component {
             immatriculation: this.props.vidange.immatriculation,
             dateTime: this.props.vidange.dateTime,
             type: this.props.vidange.type ,
-            last: this.props.vidange.last ,
             nbrVoyageSimple: this.props.vidange.nbrVoyageSimple ,
-            nbrVoyageComplete: this.props.vidange.nbrVoyageComplete ,
+            kilometrage: this.props.vidange.kilometrage ,
             observations: this.props.vidange.observations ,
             error: ''
         } );
@@ -148,9 +147,9 @@ export class VidangesListItem extends Component {
                                             value={this.state.nbrVoyageComplete}
                                             onChange={this.onChangeField.bind(this)}/>
 
-                                <Form.Input label='Nbr voyages simples'
-                                            name='nbrVoyageSimple'
-                                            value={this.state.nbrVoyageSimple}
+                                <Form.Input label='Kilometrage'
+                                            name='kilometrage'
+                                            value={this.state.kilometrage}
                                             onChange={this.onChangeField.bind(this)}/>
 
                             </Form.Group>
@@ -174,13 +173,13 @@ export class VidangesListItem extends Component {
     }
     render () {
         return (
-            <Table.Row>
+            <Table.Row error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(15)  ? true : false }>
                 <Table.Cell>{this.modifyButton()} {this.deleteButton()}</Table.Cell>
                 <Table.Cell>{this.props.vidange.ordre}</Table.Cell>
                 <Table.Cell>{this.props.vidange.immatriculation}</Table.Cell>
                 <Table.Cell>{moment(this.props.vidange.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.vidange.type}</Table.Cell>
-                <Table.Cell>{this.props.vidange.dep} / {this.props.vidange.nbrVoyageSimple}</Table.Cell>
+                <Table.Cell>{this.props.vidange.dep} / {this.props.vidange.nbrVoyageSimple} / {parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)}</Table.Cell>
                 <Table.Cell>{this.props.vidange.kilometrage}</Table.Cell>
                 <Table.Cell>{this.props.vidange.observations}</Table.Cell>
             </Table.Row>
