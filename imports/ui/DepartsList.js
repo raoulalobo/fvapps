@@ -22,13 +22,13 @@ export class DepartsList extends React.Component{
 
         this.props.Session.set('departs', departs);
 
+        // Filtre
         const filtreMultipleDeparts = filtrage(departs,searchClasse,searchVille,searchBus,searchHotesse);
-
         this.props.Session.set('departsFiltered', filtreMultipleDeparts);
 
     }
     componentWillUnmount() {
-
+        Meteor.subscribe('departs').stop();
     }
     render(){
         return (

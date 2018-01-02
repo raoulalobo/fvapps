@@ -4,6 +4,7 @@ import { Grid , Header, Icon , Button } from 'semantic-ui-react'
 import MainMenu from './MainMenu';
 import VidangesList from './VidangesList';
 import VidangesAdd from './VidangesAdd';
+import VidangeSearch from './VidangeSearch';
 
 
 export default class Vidanges extends React.Component{
@@ -41,7 +42,7 @@ export default class Vidanges extends React.Component{
                             </Grid.Row>
 
                             <h2></h2>
-
+                            <VidangeSearch/>
 
                             <Grid.Row>
                                 <h2></h2>

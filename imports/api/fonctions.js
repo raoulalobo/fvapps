@@ -11,6 +11,16 @@ export function filtrage(tableauElements = undefined, parVille = undefined, parC
     return R.sort( byDate, filtreMultipleDeparts(tableauElements) );
 }
 
+
+export function filtreVidange( tableauElements = undefined, Immatriculation = undefined, Ordre = undefined ) {
+
+    let byDate = R.ascend(R.prop('dateTime'));
+    let byImmatriculation = (vidange)=> vidange.immatriculation.match(  new RegExp( Immatriculation, 'i') );
+    let byOrdre = (vidange)=> vidange.ordre.match(  new RegExp( Ordre , 'i') );
+    let filtreMultiple = R.compose(R.filter(byOrdre),R.filter(byImmatriculation));
+    return R.sort( byDate, filtreMultiple(tableauElements) );
+}
+
 export function filtreDepenses(tableauElements = undefined, parType = undefined, parcode = undefined, parDesi = undefined) {
 
     let byType = (depense)=> depense.genre.match(  new RegExp( parType, 'i') );

@@ -7,7 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Table } from 'semantic-ui-react';
-import { nbrDeparts } from '../api/fonctions';
+import {filtreVidange } from '../api/fonctions';
 
 
 import { Vidanges } from '../api/vidanges';
@@ -23,18 +23,22 @@ export class VidangesList extends React.Component{
     }
     componentWillReceiveProps(nextProps) {
 
-        const { vidanges, departs } = nextProps;
+        const { vidanges, departs, vidangeImmatriculation , vidangeOrdre } = nextProps;
 
         this.props.Session.set('vidanges', vidanges);
-        console.log(nextProps);
-        console.log( `Vidanges -> ${vidanges}`) ;
-        console.log( `Departs -> ${departs.length}`) ;
+        //console.log(nextProps);
+        //console.log( `Vidanges -> ${vidanges}`) ;
+        //console.log( `Departs -> ${departs.length}`) ;
+
+        // Filtre
+        const filtreMultipleVidanges = filtreVidange( vidanges , vidangeImmatriculation, vidangeOrdre);
+        this.props.Session.set('vidangesFiltered', filtreMultipleVidanges);
 
 
     }
     componentWillUnmount() {
         Meteor.subscribe('vidanges').stop();
-        Meteor.subscribe('departsVidanges').stop()
+        Meteor.subscribe('departsVidanges').stop();
     }
     render(){
         return (
@@ -56,7 +60,7 @@ export class VidangesList extends React.Component{
                     <Table.Body>
                         { this.props.departs.length === 0 ? <EmptyTableItem text="No Items, if is an unexpected result please contact the admin"/> : undefined }
                         { this.props.loading && !!this.props.departs.length ? <EmptyTableItem text="Loading Data , please wait ..."/>  : undefined }
-                        {!!this.props.departs.length && !this.props.loading ? ( this.props.Session.get('vidanges')  ).map( (vidange) => { return <VidangesListItem key={vidange._id} vidange={vidange}/>; } ) : undefined }
+                        {!!this.props.departs.length && !this.props.loading ? ( this.props.Session.get('vidangesFiltered')  ).map( (vidange) => { return <VidangesListItem key={vidange._id} vidange={vidange}/>; } ) : undefined }
 
                     </Table.Body>
                 </Table>
@@ -74,12 +78,17 @@ export default createContainer(() => {
     const vidangeStartedDate = Session.get('vidangeStartedDate') || new Date().setHours(0, 0, 0, 0) ;
     const vidangeEndedDate = Session.get('vidangeEndedDate') || new Date().setHours(23, 59, 0, 0) ;
 
+    const vidangeImmatriculation = Session.get('searchImmatriculation') ;
+    const vidangeOrdre = Session.get('searchOdre') ;
+
     const vidangesHandle = Meteor.subscribe('vidanges');
     const vidangesDepartsHandle = Meteor.subscribe('departsVidanges');
     const loading = !vidangesDepartsHandle.ready();
 
     return {
         Session,
+        vidangeImmatriculation,
+        vidangeOrdre,
         loading,
         departs: Departs.find().fetch(),
         vidanges : Vidanges.find().fetch().map((vidange)=>{

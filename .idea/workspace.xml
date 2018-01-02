@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/imports/api/fonctions.js" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsList.js" afterPath="$PROJECT_DIR$/imports/ui/DepartsList.js" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/VidangeSearch.js" afterPath="$PROJECT_DIR$/imports/ui/VidangeSearch.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/Vidanges.js" afterPath="$PROJECT_DIR$/imports/ui/Vidanges.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/VidangesList.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesList.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/VidangesListItem.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,21 +24,11 @@
       <file leaf-file-name="Vidanges.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/Vidanges.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state relative-caret-position="414">
+              <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenu.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/MainMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="136" column="35" lean-forward="false" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="35" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -44,8 +36,8 @@
       <file leaf-file-name="VidangesListItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/VidangesListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="170" column="43" lean-forward="true" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
+            <state relative-caret-position="2916">
+              <caret line="170" column="43" lean-forward="false" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -53,59 +45,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepensesListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/DepensesListItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3096">
-              <caret line="179" column="29" lean-forward="false" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepensesAdd.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/DepensesAdd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="28" column="131" lean-forward="false" selection-start-line="28" selection-start-column="123" selection-end-line="28" selection-end-column="131" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VidangesList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VidangesList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="58" column="45" lean-forward="false" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+            <state relative-caret-position="-18">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#58#84#0" expanded="true" />
-                <marker date="1514825756837" expanded="true" signature="1097:2495" ph="..." />
-                <marker date="1514825756837" expanded="true" signature="1143:2476" ph="..." />
-                <marker date="1514825756837" expanded="true" signature="1178:1852" ph="..." />
-                <marker date="1514825756837" expanded="true" signature="1214:1816" ph="..." />
-                <marker date="1514825756837" expanded="true" signature="1886:2451" ph="..." />
-                <marker date="1514825756837" expanded="true" signature="2397:2438" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="1344:2750" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="1390:2731" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="1425:2099" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="1461:2063" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="2133:2706" ph="..." />
+                <marker date="1514900423105" expanded="true" signature="2652:2693" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vidanges.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
+      <file leaf-file-name="fonctions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="departs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
+      <file leaf-file-name="DepartsList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VidangeSearch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/VidangeSearch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Depenses.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/Depenses.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -149,8 +145,8 @@
       <find>searchCode</find>
       <find>Genre</find>
       <find>depart</find>
-      <find>Mmoney</find>
       <find>mmoney</find>
+      <find>Mmoney</find>
       <find>Depart</find>
     </findStrings>
     <replaceStrings>
@@ -177,8 +173,8 @@
       <replace>searchNom</replace>
       <replace>Nom</replace>
       <replace>mmoney</replace>
-      <replace>Vidange</replace>
       <replace>vidange</replace>
+      <replace>Vidange</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -203,7 +199,6 @@
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartSearch.js" />
-        <option value="$PROJECT_DIR$/imports/ui/DepartsList.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsChiffres.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisList.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisSearchBar.js" />
@@ -221,23 +216,24 @@
         <option value="$PROJECT_DIR$/imports/api/hotesses.js" />
         <option value="$PROJECT_DIR$/imports/ui/Parametres.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysListItem.js" />
-        <option value="$PROJECT_DIR$/imports/ui/VidangeSearch.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesHelpBar.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" />
-        <option value="$PROJECT_DIR$/imports/ui/MmoneySearch.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysList.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/imports/routes/routes.js" />
         <option value="$PROJECT_DIR$/imports/api/mmoneys.js" />
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
-        <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/MainMenu.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesAdd.js" />
         <option value="$PROJECT_DIR$/imports/api/vidanges.js" />
-        <option value="$PROJECT_DIR$/imports/ui/Vidanges.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
+        <option value="$PROJECT_DIR$/imports/ui/MmoneySearch.js" />
+        <option value="$PROJECT_DIR$/imports/ui/Vidanges.js" />
+        <option value="$PROJECT_DIR$/imports/ui/DepartsList.js" />
+        <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesList.js" />
+        <option value="$PROJECT_DIR$/imports/ui/VidangeSearch.js" />
       </list>
     </option>
   </component>
@@ -336,8 +332,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -633,15 +629,16 @@
       <workItem from="1514720604977" duration="5636000" />
       <workItem from="1514745255619" duration="1545000" />
       <workItem from="1514803515404" duration="3306000" />
-      <workItem from="1514825016324" duration="740000" />
+      <workItem from="1514825016324" duration="2505000" />
+      <workItem from="1514894817701" duration="4813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="754072000" />
+    <option name="totallyTimeSpent" value="760650000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
+    <frame x="78" y="63" width="1377" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -794,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Depenses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/Colis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -885,24 +875,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/VidangeSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/VidangesHelpBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneySearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -955,24 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsHelpBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -994,19 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="201" column="29" lean-forward="false" selection-start-line="201" selection-start-column="29" selection-end-line="201" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/Vidanges.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,16 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="2358">
           <caret line="136" column="35" lean-forward="false" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="76" column="22" lean-forward="false" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1052,26 +993,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/VidangesListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="170" column="43" lean-forward="true" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
+        <state relative-caret-position="2916">
+          <caret line="170" column="43" lean-forward="false" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneySearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/Depenses.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/Vidanges.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/vidanges.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="58" column="45" lean-forward="false" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        <state relative-caret-position="-18">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#58#84#0" expanded="true" />
-            <marker date="1514825756837" expanded="true" signature="1097:2495" ph="..." />
-            <marker date="1514825756837" expanded="true" signature="1143:2476" ph="..." />
-            <marker date="1514825756837" expanded="true" signature="1178:1852" ph="..." />
-            <marker date="1514825756837" expanded="true" signature="1214:1816" ph="..." />
-            <marker date="1514825756837" expanded="true" signature="1886:2451" ph="..." />
-            <marker date="1514825756837" expanded="true" signature="2397:2438" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="1344:2750" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="1390:2731" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="1425:2099" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="1461:2063" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="2133:2706" ph="..." />
+            <marker date="1514900423105" expanded="true" signature="2652:2693" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/VidangeSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
