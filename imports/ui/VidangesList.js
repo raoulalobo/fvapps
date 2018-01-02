@@ -47,8 +47,8 @@ export class VidangesList extends React.Component{
                     <Table.Header>
                         <Table.Row>
                             <Table.HeaderCell/>
-                            <Table.HeaderCell>Ordre</Table.HeaderCell>
                             <Table.HeaderCell>Immatriculation</Table.HeaderCell>
+                            <Table.HeaderCell>Ordre</Table.HeaderCell>
                             <Table.HeaderCell>DateTime</Table.HeaderCell>
                             <Table.HeaderCell>Type</Table.HeaderCell>
                             <Table.HeaderCell>Etat</Table.HeaderCell>
