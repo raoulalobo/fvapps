@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
-import {Form, Table , Button, Icon , Modal } from 'semantic-ui-react';
+import {Form, Table , Button, Icon , Modal , Message } from 'semantic-ui-react';
 import { createContainer } from 'meteor/react-meteor-data';
 import {Meteor} from "meteor/meteor";
 import Flatpickr from 'react-flatpickr';
@@ -62,6 +62,7 @@ export class VidangesListItem extends Component {
     handleOpen(){
         this.setState( {
             modalOpen: true,
+            vidangeId : this.props.vidange._id,
             ordre : this.props.vidange.ordre,
             immatriculation: this.props.vidange.immatriculation,
             dateTime: this.props.vidange.dateTime,
@@ -76,12 +77,12 @@ export class VidangesListItem extends Component {
         if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
             return (
                 <Modal
-                    //onSubmit={this.onSubmit.bind(this)}
+                    onSubmit={this.onSubmit.bind(this)}
                     open={this.state.modalOpen}
                     onClose={this.handleClose.bind(this)}
                     size='small'
                     trigger={<Button onClick={this.handleOpen.bind(this)} primary size='mini' icon><Icon name='write' /></Button>}>
-                    <Modal.Header>Ajouter un vidange</Modal.Header>
+                    <Modal.Header>Modifier historique </Modal.Header>
                     <Modal.Content >
                         {this.state.error ?
                             <Message negative>
@@ -142,9 +143,9 @@ export class VidangesListItem extends Component {
 
                             <Form.Group widths='equal'>
 
-                                <Form.Input label='Kilometrage'
-                                            name='nbrVoyageComplete'
-                                            value={this.state.nbrVoyageComplete}
+                                <Form.Input label='Nbr de voyages'
+                                            name='nbrVoyageSimple'
+                                            value={this.state.nbrVoyageSimple}
                                             onChange={this.onChangeField.bind(this)}/>
 
                                 <Form.Input label='Kilometrage'
@@ -158,7 +159,7 @@ export class VidangesListItem extends Component {
                                            name='observations'
                                            value={this.state.observations}
                                            onChange={this.onChangeField.bind(this)}/>
-                            <Form.Button fluid basic color='blue'>Ajouter 01 vidange</Form.Button>
+                            <Form.Button fluid basic color='blue'>Modifier historique</Form.Button>
 
                         </Form>
                         
@@ -170,6 +171,26 @@ export class VidangesListItem extends Component {
     onChangeField(e, { name,value }) {
         this.setState( { [name] : value });
         console.log(`${name} -> ${value}`)
+    }
+    onSubmit(e){
+        const {  vidangeId , ordre , immatriculation, dateTime , type , nbrVoyageSimple, kilometrage , observations  } = this.state;
+
+        e.preventDefault();
+
+        if ( ordre && immatriculation && dateTime && type  && nbrVoyageSimple  && kilometrage &&   observations ) {
+
+            Meteor.call('vidanges.modify', vidangeId , ordre , immatriculation, dateTime instanceof Date ? dateTime : new Date(dateTime) , type , parseInt(nbrVoyageSimple), parseInt(kilometrage) , observations.trim().toLowerCase()  , (err, res) => {
+                if (!err) {
+                    this.handleClose();
+                    Bert.alert( 'enregistrement modifie avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                } else {
+                    this.setState({ error: err.reason });
+                }
+            });
+
+        } else {
+            this.setState({ error: 'All field are required' });
+        }
     }
     render () {
         return (

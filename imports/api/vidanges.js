@@ -86,12 +86,12 @@ if ( Meteor.isServer ) {
 
             });
         },
-        'vidanges.modify'( id , ordre, immatriculation, dateTime , type , last , nbrVoyageSimple ,nbrVoyageComplete , observations ) {
+        'vidanges.modify'( id , ordre, immatriculation, dateTime , type , nbrVoyageSimple ,kilometrage , observations ) {
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
             }
 
-            modification.validate({ id ,immatriculation, dateTime , type , last , nbrVoyageSimple ,nbrVoyageComplete , observations });
+            modification.validate({ id ,ordre , immatriculation, dateTime , type , nbrVoyageSimple ,kilometrage , observations });
 
             Vidanges.update({
                 _id : id
@@ -99,11 +99,10 @@ if ( Meteor.isServer ) {
                 $set: {
                     ordre,
                     immatriculation,
-                    dateTime ,
+                    dateTime : dateTime.getTime() ,
                     type ,
-                    last ,
                     nbrVoyageSimple ,
-                    nbrVoyageComplete ,
+                    kilometrage ,
                     observations,
                     modifieLe : new Date().getTime(),
                     modifiePar : this.userId
