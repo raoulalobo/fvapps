@@ -17,7 +17,8 @@ export function filtreVidange( tableauElements = undefined, Immatriculation = un
     let byDate = R.ascend(R.prop('dateTime'));
     let byImmatriculation = (vidange)=> vidange.immatriculation.match(  new RegExp( Immatriculation, 'i') );
     let byOrdre = (vidange)=> vidange.ordre.match(  new RegExp( Ordre , 'i') );
-    let filtreMultiple = R.compose(R.filter(byOrdre),R.filter(byImmatriculation));
+    let byObs = (vidange)=> vidange.observations.match(  new RegExp( Ordre , 'i') );
+    let filtreMultiple = R.compose(R.filter(byObs),R.filter(byOrdre),R.filter(byImmatriculation));
     return R.sort( byDate, filtreMultiple(tableauElements) );
 }
 
