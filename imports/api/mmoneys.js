@@ -72,7 +72,7 @@ if ( Meteor.isServer ) {
             }
 
             if ( Mmoneys.find({ticket}).fetch().length > 0 ) {
-                throw new Meteor.Error('bad',`Le ${ticket} existe deja`);
+                throw new Meteor.Error('bad',`Le ticket ${ticket} existe deja`);
             }
 
             return Mmoneys.insert({
