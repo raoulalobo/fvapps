@@ -93,27 +93,6 @@ if ( Meteor.isServer ) {
 
             });
         },
-        'mmoneys.modify'( ticket, dateTime , nom , cni , phone , observations ) {
-            if ( !this.userId ) {
-                throw new Meteor.Error('not-authorized');
-            }
-
-            modification.validate({ ticket , dateTime , nom , cni , phone , observations });
-
-            Mmoneys.update({
-                _id : ticket
-            }, {
-                $set: {
-                    dateTime : dateTime.getTime(),
-                    nom,
-                    cni,
-                    phone ,
-                    observations,
-                    modifieLe : new Date().getTime(),
-                    modifiePar : this.userId
-                }
-            },(err)=>{ if (!err) { console.log(`Le ticket : # ${ticket} passager : ${nom}`) } });
-        },
         'mmoneys.delete'(id) {
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
