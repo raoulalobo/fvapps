@@ -54,12 +54,13 @@ if ( Meteor.isServer ) {
         return Mmoneys.find({ $or: [ { dateTime: { $gte: dateStart , $lte: dateEnd } } , { dateTimeV: { $gte: dateStart , $lte: dateEnd } }] });
     });
 
-/*    Meteor.publish('mmoneys', function() {
+    Meteor.publish('cashMmoneys', function() {
         return Mmoneys.find({});
-    });*/
+    });
 
     Meteor.methods({
         'mmoneys.insert'(  ticket, dateTime , dateTimeV , nom , cni ,phone , observations ){
+
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
             }
@@ -68,6 +69,10 @@ if ( Meteor.isServer ) {
                 insertion.validate({  ticket, dateTime , dateTimeV , nom , cni , phone , observations });
             } catch (e) {
                 throw new Meteor.Error(400, e.message);
+            }
+
+            if ( Mmoneys.find({ticket}).fetch().length > 0 ) {
+                throw new Meteor.Error('bad',`Le ${ticket} existe deja`);
             }
 
             return Mmoneys.insert({

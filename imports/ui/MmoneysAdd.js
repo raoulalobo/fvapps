@@ -28,7 +28,7 @@ export default class MmoneysAdd extends React.Component {
 
         if ( ticket && dateTime && dateTimeV && nom && cni  && phone &&   observations ) {
 
-            Meteor.call('mmoneys.insert', ticket , dateTime , dateTimeV , nom.trim().toLowerCase() , cni, phone.trim().toLowerCase() , observations.trim().toLowerCase()  , (err, res) => {
+            Meteor.call('mmoneys.insert', ticket.trim().toLowerCase() , dateTime , dateTimeV , nom.trim().toLowerCase() , cni, phone.trim().toLowerCase() , observations.trim().toLowerCase()  , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( `enregistrement ${res} ajoute avec succes.`, 'danger', 'growl-top-right', 'fa-check'  )
