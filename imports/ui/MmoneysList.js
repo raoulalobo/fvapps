@@ -30,7 +30,7 @@ export class MmoneysList extends React.Component{
         //console.log( searchNom );
         let byTicket = (mmoney)=> mmoney.ticket.match(  new RegExp( searchTicket, 'i') );
         const filtreMultiple = R.compose(R.filter(byNom),R.filter(byTicket)) ;
-        return R.sort( byDate, filtreMultiple(tableauElements) );
+        //return R.sort( byDate, filtreMultiple(tableauElements) );
         this.props.Session.set('mmoneysFiltered', R.sort( byDate, filtreMultiple(tableauElements) ) );
 
 /*        const { mmoneys } = nextProps;
