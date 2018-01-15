@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/imports/api/mmoneys.js" afterPath="$PROJECT_DIR$/imports/api/mmoneys.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/imports/api/departs.js" afterPath="$PROJECT_DIR$/imports/api/departs.js" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/MmoneysList.js" afterPath="$PROJECT_DIR$/imports/ui/MmoneysList.js" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/VidangesList.js" afterPath="$PROJECT_DIR$/imports/ui/VidangesList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,9 +34,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2826">
               <caret line="165" column="36" lean-forward="false" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,55 +51,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fonctions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
+      <file leaf-file-name="departs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mmoneys.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/imports/api/mmoneys.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="74" column="56" lean-forward="false" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
+            <state relative-caret-position="-594">
+              <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MmoneysAdd.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VidangesAdd.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/VidangesAdd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="171" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepartsListItem.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/DepartsListItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="109" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,10 +66,56 @@
       <file leaf-file-name="DepartsList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="-700">
               <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fonctions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MmoneysList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mmoneys.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/api/mmoneys.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VidangesList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1260">
+              <caret line="83" column="6" lean-forward="false" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#58#84#0" expanded="true" />
+                <marker date="1515585217907" expanded="true" signature="1344:2750" ph="..." />
+                <marker date="1515585217907" expanded="true" signature="1390:2731" ph="..." />
+                <marker date="1515585217907" expanded="true" signature="1425:2099" ph="..." />
+                <marker date="1515585217907" expanded="true" signature="1461:2063" ph="..." />
+                <marker date="1515585217907" expanded="true" signature="2133:2706" ph="..." />
+                <marker date="1515585217907" expanded="true" signature="2652:2693" ph="..." />
               </folding>
             </state>
           </provider>
@@ -227,10 +232,8 @@
         <option value="$PROJECT_DIR$/imports/ui/Parametres.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesHelpBar.js" />
-        <option value="$PROJECT_DIR$/imports/ui/MmoneysList.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/imports/routes/routes.js" />
-        <option value="$PROJECT_DIR$/imports/api/departs.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/MainMenu.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesAdd.js" />
@@ -238,12 +241,14 @@
         <option value="$PROJECT_DIR$/imports/ui/Vidanges.js" />
         <option value="$PROJECT_DIR$/imports/ui/DepartsList.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangeSearch.js" />
-        <option value="$PROJECT_DIR$/imports/ui/VidangesList.js" />
         <option value="$PROJECT_DIR$/imports/api/vidanges.js" />
         <option value="$PROJECT_DIR$/imports/ui/VidangesListItem.js" />
         <option value="$PROJECT_DIR$/imports/api/fonctions.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" />
         <option value="$PROJECT_DIR$/imports/api/mmoneys.js" />
+        <option value="$PROJECT_DIR$/imports/ui/VidangesList.js" />
+        <option value="$PROJECT_DIR$/imports/api/departs.js" />
+        <option value="$PROJECT_DIR$/imports/ui/MmoneysList.js" />
       </list>
     </option>
   </component>
@@ -265,11 +270,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="75" />
+    <option name="y" value="6" />
     <option name="width" value="1375" />
-    <option name="height" value="876" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -287,8 +292,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,6 +347,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -644,15 +649,18 @@
       <workItem from="1514981712152" duration="2989000" />
       <workItem from="1515256054512" duration="1616000" />
       <workItem from="1515493387418" duration="595000" />
-      <workItem from="1515576090088" duration="2743000" />
+      <workItem from="1515576090088" duration="4553000" />
+      <workItem from="1515746045046" duration="1197000" />
+      <workItem from="1515770455288" duration="1305000" />
+      <workItem from="1516013935764" duration="1013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="769806000" />
+    <option name="totallyTimeSpent" value="775131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1375" height="876" extended-state="0" />
+    <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -896,13 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysListItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -966,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/MmoneySearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -985,13 +979,6 @@
         <state relative-caret-position="684">
           <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="49" column="80" lean-forward="false" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -1013,17 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="171" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,9 +1007,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="35" column="53" lean-forward="false" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="109" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1041,8 +1021,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2826">
           <caret line="165" column="36" lean-forward="false" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/VidangesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="83" column="6" lean-forward="false" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#58#84#0" expanded="true" />
+            <marker date="1515585217907" expanded="true" signature="1344:2750" ph="..." />
+            <marker date="1515585217907" expanded="true" signature="1390:2731" ph="..." />
+            <marker date="1515585217907" expanded="true" signature="1425:2099" ph="..." />
+            <marker date="1515585217907" expanded="true" signature="1461:2063" ph="..." />
+            <marker date="1515585217907" expanded="true" signature="2133:2706" ph="..." />
+            <marker date="1515585217907" expanded="true" signature="2652:2693" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1057,29 +1051,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
+    <entry file="file://$PROJECT_DIR$/imports/api/departs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="-594">
+          <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-700">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
+    <entry file="file://$PROJECT_DIR$/imports/api/fonctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        <state relative-caret-position="142">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/mmoneys.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysList.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="74" column="56" lean-forward="false" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

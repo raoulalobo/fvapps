@@ -75,13 +75,13 @@ VidangesList.propTypes = {
 
 export default createContainer(() => {
 
-    const vidangeStartedDate = Session.get('vidangeStartedDate') || new Date().setHours(0, 0, 0, 0) ;
-    const vidangeEndedDate = Session.get('vidangeEndedDate') || new Date().setHours(23, 59, 0, 0) ;
+    //const vidangeStartedDate = Session.get('vidangeStartedDate') || new Date().setHours(0, 0, 0, 0) ;
+    //const vidangeEndedDate = Session.get('vidangeEndedDate') || new Date().setHours(23, 59, 0, 0) ;
 
     const vidangeImmatriculation = Session.get('searchImmatriculation') ;
     const vidangeOrdre = Session.get('searchOdre') ;
 
-    const vidangesHandle = Meteor.subscribe('vidanges');
+    //const vidangesHandle = Meteor.subscribe('vidanges');
     const vidangesDepartsHandle = Meteor.subscribe('departsVidanges');
     const loading = !vidangesDepartsHandle.ready();
 

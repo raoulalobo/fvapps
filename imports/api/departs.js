@@ -3,9 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 
-import request from 'request';
-
-
 export const Departs = new Mongo.Collection('departs');
 
 if ( Meteor.isServer ) {
