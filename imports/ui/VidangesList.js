@@ -26,11 +26,10 @@ export class VidangesList extends React.Component{
         const { vidanges, departs, vidangeImmatriculation , vidangeOrdre } = nextProps;
 
         this.props.Session.set('vidanges', vidanges);
-        //console.log(nextProps);
-        //console.log( `Vidanges -> ${vidanges}`) ;
-        //console.log( `Departs -> ${departs.length}`) ;
+        console.log(nextProps);
+        console.log( `Vidanges -> ${vidanges.length}`) ;
+        console.log( `Departs -> ${departs.length}`) ;
 
-        // Filtre
         const filtreMultipleVidanges = filtreVidange( vidanges , vidangeImmatriculation, vidangeOrdre);
         this.props.Session.set('vidangesFiltered', filtreMultipleVidanges);
 
@@ -81,9 +80,9 @@ export default createContainer(() => {
     const vidangeImmatriculation = Session.get('searchImmatriculation') ;
     const vidangeOrdre = Session.get('searchOdre') ;
 
-    //const vidangesHandle = Meteor.subscribe('vidanges');
     const vidangesDepartsHandle = Meteor.subscribe('departsVidanges');
-    const loading = !vidangesDepartsHandle.ready();
+    const vidanges = Meteor.subscribe('vidanges');
+    const loading = !vidangesDepartsHandle.ready() && !vidanges.ready() ;
 
     return {
         Session,
