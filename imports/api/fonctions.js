@@ -14,7 +14,7 @@ export function filtrage(tableauElements = undefined, parVille = undefined, parC
 
 export function filtreVidange( tableauElements = undefined, Immatriculation = undefined, Ordre = undefined ) {
 
-    let byDate = R.ascend(R.prop('dateTime'));
+    let byDate = R.descend(R.prop('dateTime'));
     let byImmatriculation = (vidange)=> vidange.immatriculation.match(  new RegExp( Immatriculation, 'i') );
     let byOrdre = (vidange)=> vidange.ordre.match(  new RegExp( Ordre , 'i') );
     let byObs = (vidange)=> vidange.observations.match(  new RegExp( Ordre , 'i') );
@@ -29,6 +29,17 @@ export function filtreDepenses(tableauElements = undefined, parType = undefined,
     let byDesignation = (depense)=> depense.desi.match(  new RegExp( parDesi, 'i') );
     let filtreMultipleDepenses = R.compose(R.filter(byType),R.filter(byCode),R.filter(byDesignation));
     return filtreMultipleDepenses(tableauElements)
+}
+
+export function filtreMomo(tableauElements = undefined, searchNom = undefined, searchTicket = undefined ) {
+
+    let byDate = R.descend(R.prop('dateTimeV'));
+    let byNom = (mmoney)=> mmoney.nom.match(  new RegExp( searchNom, 'i') );
+    let byTicket = (mmoney)=> mmoney.ticket.match(  new RegExp( searchTicket, 'i') );
+
+    const filtreMultiple = R.compose(R.filter(byNom),R.filter(byTicket)) ;
+    return R.sort( byDate, filtreMultiple(tableauElements) );
+
 }
 
 export function sommes(elts) {
