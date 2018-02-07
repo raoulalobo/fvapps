@@ -75,6 +75,10 @@ export class VidangesListItem extends Component {
     }
     modifyButton () {
         if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+            const options = [
+                { key: 's', text: 'Simple', value: 'simple' },
+                { key: 'c', text: 'Complete', value: 'complete' },
+            ]
             return (
                 <Modal
                     onSubmit={this.onSubmit.bind(this)}
@@ -132,10 +136,17 @@ export class VidangesListItem extends Component {
                                             value={this.state.immatriculation}
                                             onChange={this.onChangeField.bind(this)}/>
 
-                                <Form.Input label='Type de vidange'
-                                            name='type'
-                                            value={this.state.type}
-                                            onChange={this.onChangeField.bind(this)}/>
+
+                                <Form.Dropdown
+                                    label='Type de vidange'
+                                    minCharacters={0}
+                                    name='type'
+                                    placeholder='Selectionnez 01 type de vidange'
+                                    search
+                                    selection
+                                    options={options}
+                                    defaultValue={this.state.type}
+                                    onChange={this.onChangeField.bind(this)}/>
 
 
                             </Form.Group>

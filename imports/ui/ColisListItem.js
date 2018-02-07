@@ -41,6 +41,28 @@ export class ColisLisItem extends Component {
                 )
         }
     }
+    smsButton () {
+        if ( true ) {
+            return (
+                <Button
+                    basic
+                    color='blue'
+                    icon='mail'
+                    size='mini'
+                    onClick={ () => {
+                        const changeState = confirm('Vous envoyer un sms pour le colis '+this.props.col.code+' ?');
+                        if (changeState) {
+                            this.props.call('colis.loading', this.props.col._id, this.props.col.code, this.props.col.dest, this.props.col.nameDest, this.props.col.telDest , (err , res)=>{
+                                if (!err) {
+                                    Bert.alert( 'Mise a jour effectuee.', 'danger', 'growl-top-right', 'fa-check'  )
+                                }
+                            } );
+                        }
+                    } }
+                />
+            )
+        }
+    }
     render () {
         return (
             <List.Item>
@@ -88,6 +110,7 @@ export class ColisLisItem extends Component {
                                     on='click' />
 
                                 {this.adminButton()}
+                                {this.smsButton()}
 
                                 { !this.props.col.DateTimeArr ? <Button
                                     basic size='mini'

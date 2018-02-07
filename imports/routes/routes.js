@@ -41,7 +41,7 @@ export const globalOnEnter = (nextState) => {
 };
 
 const rls_0 = ['admin'];
-const rls_1 = ['admin','caisse'];
+const rls_1 = ['admin','caisse','colis'];
 const rls_11 = ['colis','caisse'];
 const rls_2 = ['admin','caisse','colis'];
 

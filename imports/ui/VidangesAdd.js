@@ -62,7 +62,10 @@ export default class VidangesAdd extends React.Component {
         console.log(`${name} -> ${value}`)
     }
     render() {
-
+        const options = [
+            { key: 's', text: 'Simple', value: 'simple' },
+            { key: 'c', text: 'Complete', value: 'complete' },
+        ]
         return (
 
             <Modal
@@ -122,11 +125,15 @@ export default class VidangesAdd extends React.Component {
                                         value={this.state.immatriculation}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Type de vidange'
-                                        name='type'
-                                        value={this.state.type}
-                                        onChange={this.onChangeField.bind(this)}/>
-
+                            <Form.Dropdown
+                                label='Type de vidange'
+                                minCharacters={0}
+                                name='type'
+                                placeholder='Selectionnez 01 type de vidange'
+                                search
+                                selection
+                                options={options}
+                                onChange={this.onChangeField.bind(this)}/>
 
                         </Form.Group>
 

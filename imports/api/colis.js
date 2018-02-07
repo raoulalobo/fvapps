@@ -129,6 +129,35 @@ if (Meteor.isServer) {
             }} );
 
         },
+        'colis.loading'(_id, code, dest, nameDest, telDest ) {
+            if (!this.userId) {
+                throw new Meteor.Error('not-authorized');
+            }
+
+            new SimpleSchema({
+                _id: {
+                    type: String,
+                    min: 1
+                }
+            }).validate({ _id});
+
+            Colis.update({
+                _id
+            }, {
+                $set: {
+                    userIdArr : this.userId
+                }
+            },(err)=>{ if (!err) {
+                const sender = 'FINEXS VOYAGES' ;
+                const message = nameDest+', votre colis ('+code+') est encore en route pour '+dest+'. Finexs Voyages vous remercie de votre confiance.'
+                console.log( telDest+'   '+message );
+                request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&originator='+sender+'&recipient='+telDest+'&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
+                    if (!error && response.statusCode == 200) { console.log( error ) }
+                })
+
+            }} );
+
+        },
         'colis.arrived.nosms'(_id, code, dest, nameDest, telDest ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');

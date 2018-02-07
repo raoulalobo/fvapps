@@ -57,3 +57,38 @@ export function nbrDeparts( tableauElements = undefined , parBus = undefined ) {
     let res = R.compose(R.length ,R.filter(byBus))
     return res(tableauElements)
 }
+
+export function tableauRecap( nomDuTableur, summDlaVIP, todayDepartsCountDlaVIP, sumDlaVIPFDR, todayDepartsDlaVIP ) {
+
+    var chn = "" ;
+
+    chn += "<h3>Entrée Bus "+ nomDuTableur +" : "+ accounting.formatMoney( summDlaVIP, "", 0, ".", ",") +"Fcfa ("+ todayDepartsCountDlaVIP +" départs) </h3>" ;
+    chn += "<h3>Frais de route "+ nomDuTableur +" : "+ accounting.formatMoney( sumDlaVIPFDR, "", 0, ".", ",") +" Fcfa</h3>" ;
+    chn += "<table style=\"border: 1px solid black; border-collapse: collapse;\"><thead><tr>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Date Heure</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Immatriculation</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Classe</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Frais de route</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Places gratuites</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Places payée</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Prix place</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">Observations</th>" +
+        "<th style=\"border: 1px solid black; padding: 15px; text-align: center;\">total</th></tr></thead><tbody>" ;
+    $.each(todayDepartsDlaVIP , function(index,value){
+        chn += "<tr>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+ moment(value.datetime).locale('fr').format('ll LT')+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.immatriculation+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.classe+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.fraisDeRoute+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.pg+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.nbrePlaces+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.montantPlaces+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.observations+"</td>" +
+            "<td style=\"border: 1px solid black; padding: 15px; text-align: center;\">"+value.sommeGeneree+"</td></tr>" ;
+    });
+    chn +="</tbody></table>" ;
+    chn +="</br>" ;
+    return chn ;
+
+
+}

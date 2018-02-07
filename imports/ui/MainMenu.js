@@ -108,7 +108,7 @@ export class MainMenu extends Component {
         }
     }
     departsMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse'] ) ) {
+        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse','colis'] ) ) {
             const { activeItem } = this.props;
             return (
 
