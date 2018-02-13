@@ -29,6 +29,17 @@ export class ColisSearchResults extends React.Component{
             <Button
                 fluid
                 animated
+                onClick={()=>{
+                    var data = this.state.colis ;
+                    if (!!data){
+                        var csv = Papa.unparse(data);
+                        var blob = new Blob([csv],  {type: "text/csv;charset=utf-8"});
+                        fileDownload(blob, 'filename.csv');
+                    } else {
+                        Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+                    }
+
+                } }
                 color='green'>
                 <Button.Content visible>
                     {this.state.colis ? this.state.colis.length : '0'} elements .
