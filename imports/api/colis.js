@@ -16,9 +16,17 @@ if (Meteor.isServer) {
     });
 
     Meteor.methods({
-        'colis.insert'(code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc  ) {
+        'colis.insert'( agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc  ) {
 
             new SimpleSchema({
+                agent_recu: {
+                    type: String,
+                    label: 'Agent recu',
+                },
+                agent_saisie: {
+                    type: String,
+                    label: 'Agent saisie',
+                },
                 code: {
                     type: String,
                     label: 'Code',
@@ -65,9 +73,11 @@ if (Meteor.isServer) {
                     max : 70,
                 }
 
-            }).validate({ code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc   });
+            }).validate({ agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc   });
 
             Colis.insert({
+                agent_recu,
+                agent_saisie,
                 code,
                 bus,
                 dest,
@@ -85,7 +95,7 @@ if (Meteor.isServer) {
             }, (err)=>{ if (!err)  {
                 if ( Meteor.isServer ) {
                     const sender = 'FINEXS VOYAGES' ;
-                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}.Vous recevrez un sms a l'arrivee ; Renseignements 697509899 ; Ouvert 08h-19h.`
+                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}. Yde: 699297082-Dla: 690680847-Plaintes: 697509899; Ouvert du lun. au sam : 08h-19h`
                     //console.log( telDest+'   '+message );
                     request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&originator='+sender+'&recipient='+telDest+'&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
                         if (!error && response.statusCode == 200) {

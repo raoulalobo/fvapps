@@ -1,11 +1,13 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Button, Modal , Form, Message } from 'semantic-ui-react'
+import { Button, Modal , Form, Message } from 'semantic-ui-react';
 
 export default class ColisAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            agent_recu: '',
+            agent_saisie: '',
             code: '',
             dest: '',
             bus: '',
@@ -21,13 +23,13 @@ export default class ColisAdd extends React.Component {
         };
     }
     onSubmit(e) {
-        const { code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc } = this.state;
+        const { agent_recu, agent_saisie,code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc } = this.state;
 
         e.preventDefault();
 
-        if ( code && bus && dest && amount && nameExp && telExp && nameDest && telDest && desc ) {
+        if ( agent_recu && agent_saisie && code && bus && dest && amount && nameExp && telExp && nameDest && telDest && desc ) {
 
-            Meteor.call('colis.insert', code.trim().toUpperCase(), bus.trim().toUpperCase() ,dest.trim().toUpperCase() , parseInt(amount.trim()) ,  nameExp.trim().toUpperCase(), telExp.trim(), nameDest.trim().toUpperCase(), telDest.trim(), desc.trim() , (err, res) => {
+            Meteor.call('colis.insert', agent_recu.trim(), agent_saisie.trim(), code.trim().toUpperCase(), bus.trim().toUpperCase() ,dest.trim().toUpperCase() , parseInt(amount.trim()) ,  nameExp.trim().toUpperCase(), telExp.trim(), nameDest.trim().toUpperCase(), telDest.trim(), desc.trim() , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( 'Colis '+code+' ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
@@ -46,6 +48,8 @@ export default class ColisAdd extends React.Component {
     handleClose() {
         this.setState({
             modalOpen: false,
+            agent_recu: '',
+            agent_saisie: '',
             code: '',
             dest: '',
             bus: '',
@@ -84,6 +88,16 @@ export default class ColisAdd extends React.Component {
                             :
                             undefined}
                         <Form>
+                            <Form.Group widths='equal'>
+                                <Form.Input label='Agent recu'
+                                            name='agent_recu'
+                                            value={this.state.agent_recu}
+                                            onChange={this.onChangeField.bind(this)}/>
+                                <Form.Input label='Agent de saisie'
+                                            name='agent_saisie'
+                                            value={this.state.agent_saisie}
+                                            onChange={this.onChangeField.bind(this)}/>
+                            </Form.Group>
                             <Form.Group widths='equal'>
                                 <Form.Input label='Colis ID'
                                             name='code'
