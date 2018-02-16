@@ -6,6 +6,7 @@ import Flatpickr from 'react-flatpickr';
 import {fr} from 'flatpickr/dist/l10n/fr.js';
 import { Table, Button, Modal , Form, Message, Icon } from 'semantic-ui-react';
 import { createContainer } from 'meteor/react-meteor-data';
+import {Meteor} from "meteor/meteor";
 
 export class DepartsListItem extends Component {
 
@@ -27,16 +28,42 @@ export class DepartsListItem extends Component {
         console.log(`${name} -> ${value}`)
     }
     onSubmit(e){
-        const { departId, dateTime, imm, dest , driver , fdr, amount, seat,leasing, km, obs } = this.state;
+        const { depenseId , departId, dateTime, imm, dest , driver , fuel, fdr, amount, seat,leasing, km, obs } = this.state;
 
         e.preventDefault();
 
-        if ( dateTime && imm && dest && driver && fdr && amount && seat && obs ) {
+        if ( dateTime && imm && dest && driver && fuel && fdr && amount && seat && obs ) {
 
-            Meteor.call('departs.modify', departId , dateTime instanceof Date ? dateTime : new Date(dateTime),   imm.trim().toUpperCase() , dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fdr) ,  parseInt(amount) , parseInt(seat) , parseInt(leasing) , parseInt(km) , obs.trim() , (err, res) => {
+            Meteor.call('departs.modify', departId , dateTime instanceof Date ? dateTime : new Date(dateTime),   imm.trim().toUpperCase() , dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fuel) , parseInt(fdr) ,  parseInt(amount) , parseInt(seat) , parseInt(leasing) , parseInt(km) , obs.trim() , (err, res) => {
                 if (!err) {
                     this.handleClose();
-                    Bert.alert( 'enregistrement modifie avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+
+                    Bert.alert( 'enregistrement ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+
+                    if( parseInt(fuel) > 0 ){
+
+                        Meteor.call('depenses.modify', depenseId, dateTime instanceof Date ? dateTime : new Date(dateTime) , 'DCB' , imm.trim().toUpperCase() , 'Carburant bus' , 635 ,  parseInt(fuel) , 'RAS' , true, (err, res) => {
+                            if (!err) {
+                                this.handleClose();
+                                Bert.alert( 'depense ajoutee avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                            } else {
+                                this.setState({ error: err.reason });
+                            }
+                        });
+
+                    } else {
+
+                        Meteor.call('depenses.modify', depenseId, dateTime instanceof Date ? dateTime : new Date(dateTime) , 'DCB' , imm.trim().toUpperCase() , 'Carburant bus' , 635 ,  parseInt(fuel) , 'RAS' , false, (err, res) => {
+                            if (!err) {
+                                this.handleClose();
+                                Bert.alert( 'depense ajoutee avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                            } else {
+                                this.setState({ error: err.reason });
+                            }
+                        });
+
+                    }
+
                 } else {
                     this.setState({ error: err.reason });
                 }
@@ -52,12 +79,21 @@ export class DepartsListItem extends Component {
         if ( this.props.depart._id ) {
 
             const suppression = confirm(`Voulez vous supprimer le depart du bus: ${this.props.depart.imm}, destination: ${this.props.depart.dest}, date: ${moment(this.props.depart.dateTime).format('lll')} ?`);
+
             if (suppression) {
                 Meteor.call('departs.delete', this.props.depart._id , (err, res) => {
                     if (!err) {
-                        Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+
+                        Meteor.call('depenses.delete', this.props.depart.depenseId , (err, res) => {
+                            if (!err) {
+                                Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                            } else {
+                                Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  )
+                            }
+                        });
+
                     } else {
-                        Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  )
+                        Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  );
                     }
                 })
             }
@@ -75,11 +111,13 @@ export class DepartsListItem extends Component {
     handleOpen(){
         this.setState( {
             modalOpen: true,
+            depenseId: !!this.props.depart.depenseId ? this.props.depart.depenseId : 'N.A' ,
             departId : this.props.depart._id,
             dateTime: this.props.depart.dateTime,
             imm: this.props.depart.imm,
             dest: this.props.depart.dest ? this.props.depart.dest : 'N.A',
             driver: this.props.depart.driver,
+            fuel: !!this.props.depart.fuel ? this.props.depart.fuel : 0 ,
             fdr: this.props.depart.fdr,
             amount: this.props.depart.amount,
             seat: this.props.depart.seats,
@@ -91,6 +129,10 @@ export class DepartsListItem extends Component {
     }
     modifyButton () {
         if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+            const options = [
+                { key: 'y', text: 'yaounde', value: 'yaounde' },
+                { key: 'd', text: 'douala', value: 'douala' },
+            ]
             return (
                 <Modal
                     onSubmit={this.onSubmit.bind(this)}
@@ -134,30 +176,59 @@ export class DepartsListItem extends Component {
                                             name='imm'
                                             value={this.state.imm}
                                             onChange={this.onChangeField.bind(this)}/>
-                                <Form.Input label='Destination'
-                                            name='dest'
-                                            value={this.state.dest}
-                                            onChange={this.onChangeField.bind(this)}/>
+
                             </Form.Group>
+
                             <Form.Group widths='equal'>
+
+                                <Form.Dropdown
+                                    label='Destination'
+                                    minCharacters={0}
+                                    name='dest'
+                                    placeholder='Selectionnez 01 Destination'
+                                    search
+                                    selection
+                                    options={options}
+                                    defaultValue={this.state.dest}
+                                    onChange={this.onChangeField.bind(this)}/>
+
+
                                 <Form.Input label='Chauffeur'
                                             name='driver'
                                             value={this.state.driver}
                                             onChange={this.onChangeField.bind(this)}/>
+                            </Form.Group>
+
+
+                            <Form.Group widths='equal'>
+
+                                <Form.Input label='Carburant'
+                                            name='fuel'
+                                            value={this.state.fuel}
+                                            onChange={this.onChangeField.bind(this)}/>
+
                                 <Form.Input label='FDR'
                                             name='fdr'
                                             value={this.state.fdr}
                                             onChange={this.onChangeField.bind(this)}/>
+
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
                                 <Form.Input label='Prix place'
                                             name='amount'
                                             value={this.state.amount}
                                             onChange={this.onChangeField.bind(this)}/>
-                            </Form.Group>
-                            <Form.Group widths='equal'>
                                 <Form.Input label='Nbr de places'
                                             name='seat'
                                             value={this.state.seat}
                                             onChange={this.onChangeField.bind(this)}/>
+
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
                                 <Form.Input label='Location'
                                             name='leasing'
                                             value={this.state.leasing}
@@ -167,6 +238,7 @@ export class DepartsListItem extends Component {
                                             value={this.state.km}
                                             onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
+
 
                             <Form.TextArea label='Observations'
                                            name='obs'
@@ -195,6 +267,7 @@ export class DepartsListItem extends Component {
                 <Table.Cell>{moment(this.props.depart.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.depart.imm}</Table.Cell>
                 <Table.Cell>{this.props.depart.driver}</Table.Cell>
+                <Table.Cell>{!!this.props.depart.fuel ? this.props.depart.fuel : 0 }</Table.Cell>
                 <Table.Cell>{this.props.depart.fdr}</Table.Cell>
                 <Table.Cell>{this.props.depart.amount}</Table.Cell>
                 <Table.Cell>{this.props.depart.seats}</Table.Cell>

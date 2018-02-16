@@ -6,11 +6,11 @@ export const Depenses = new Mongo.Collection('depenses');
 
 if ( Meteor.isServer ) {
     Meteor.publish('depenses', function(dateStart, dateEnd ) {
-        return Depenses.find({ dateTime: { $gte: dateStart , $lte: dateEnd } });
+        return Depenses.find({ dateTime: { $gte: dateStart , $lte: dateEnd }, visible:true });
     });
 
     Meteor.methods({
-        'depenses.insert'(dateTime , genre , code, desi , pu , qtte , notes ){
+        'depenses.insert'(dateTime , genre , code, desi , pu , qtte , notes , visible = true){
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');
             }
@@ -49,13 +49,17 @@ if ( Meteor.isServer ) {
                         type: String,
                         label: 'Notes',
                         min : 0,
+                    },
+                    visible: {
+                        type: Boolean,
+                        label: 'Visible',
                     }
-                }).validate({dateTime , genre , code, desi , pu , qtte , notes});
+                }).validate({dateTime , genre , code, desi , pu , qtte , notes, visible });
             } catch (e) {
                 throw new Meteor.Error(400, e.message);
             }
 
-            Depenses.insert({
+            return Depenses.insert({
                 dateTime : dateTime.getTime(),
                 genre ,
                 code ,
@@ -63,15 +67,15 @@ if ( Meteor.isServer ) {
                 pu ,
                 qtte ,
                 notes ,
+                visible,
                 userId: this.userId,
                 insertedAt : new Date().getTime(),
-                visible: true,
             } , (err)=>{ if (!err)  { console.log(`Depense -> Genre: ${genre} , Designation: ${desi}`)} });
         },
         'depenses.delete'(id) {
             Depenses.remove(id);
         },
-        'depenses.modify'(_id, dateTime , genre , code, desi , pu , qtte , notes ) {
+        'depenses.modify'(_id, dateTime , genre , code, desi , pu , qtte , notes, visible = true ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');
             }
@@ -111,8 +115,12 @@ if ( Meteor.isServer ) {
                     type: String,
                     label: 'Notes',
                     min : 0,
+                },
+                visible: {
+                    type: Boolean,
+                    label: 'Visible',
                 }
-            }).validate({ _id , dateTime , genre , code, desi , pu , qtte , notes});
+            }).validate({ _id , dateTime , genre , code, desi , pu , qtte , notes, visible });
 
             Depenses.update({
                 _id
@@ -125,6 +133,7 @@ if ( Meteor.isServer ) {
                     pu ,
                     qtte ,
                     notes ,
+                    visible,
                     updatedAt : new Date().getTime(),
                     updatedUserId : this.userId
                 }

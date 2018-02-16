@@ -6,6 +6,7 @@ import DepartsList from './DepartsList';
 import DepartsAdd from './DepartsAdd';
 import DepartSearch from './DepartSearch';
 import DepartsHelpBar from './DepartsHelpBar';
+import DepartsExportData from './DepartsExportData';
 
 
 export default class Departs extends React.Component{
@@ -37,6 +38,7 @@ export default class Departs extends React.Component{
                         <Grid.Column width={16}>
                             <Grid.Row>
                                 <DepartsAdd/>
+                                <DepartsExportData/>
                             </Grid.Row>
 
                             <h2></h2>

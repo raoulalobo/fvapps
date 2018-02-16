@@ -33,14 +33,24 @@ export class DepensesListItem extends Component {
 
         if ( dateTime && genre && code && desi && pu && qtte && notes ) {
 
-            Meteor.call('depenses.modify', depenseId , dateTime instanceof Date ? dateTime : new Date(dateTime),   genre.trim().toUpperCase() , code.trim().toUpperCase() ,desi.trim() , parseInt(pu) ,  parseInt(qtte) , notes.trim() , (err, res) => {
-                if (!err) {
-                    this.handleClose();
-                    Bert.alert( 'enregistrement modifie avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
-                } else {
-                    this.setState({ error: err.reason });
-                }
-            });
+            let DCB = new RegExp('dcb','i');
+            let resultat = DCB.test( genre );
+
+            if ( !resultat) {
+                Meteor.call('depenses.modify', depenseId , dateTime instanceof Date ? dateTime : new Date(dateTime),   genre.trim().toUpperCase() , code.trim().toUpperCase() ,desi.trim() , parseInt(pu) ,  parseInt(qtte) , notes.trim() , (err, res) => {
+                    if (!err) {
+                        this.handleClose();
+                        Bert.alert( 'enregistrement modifie avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                    } else {
+                        this.setState({ error: err.reason });
+                    }
+                });
+
+            } else {
+                this.setState({ error: 'Impossible de modifier les DCB dans cette section' });
+            }
+
+
 
         } else {
             this.setState({ error: 'All field are required' });
@@ -68,6 +78,7 @@ export class DepensesListItem extends Component {
     }
     modifyButton () {
         if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+
             return (
                 <Modal
                     onSubmit={this.onSubmit.bind(this)}
@@ -156,7 +167,11 @@ export class DepensesListItem extends Component {
     onDelete(e){
 
         e.preventDefault();
-        if ( this.props.depense._id ) {
+
+        let DCB = new RegExp('dcb','i');
+        let resultat = DCB.test( this.props.depense.genre );
+
+        if ( this.props.depense._id && !resultat  ) {
 
             const suppression = confirm(`Voulez vous supprimer la depense code: ${this.props.depense.code}, designation: ${this.props.depense.desi}, date : ${moment(this.props.depense.dateTime).format('lll')} ?`);
             if (suppression) {

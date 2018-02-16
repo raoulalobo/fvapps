@@ -26,14 +26,24 @@ export default class DepensesAdd extends React.Component {
 
         if ( dateTime && genre && code && desi && pu && qtte && notes ) {
 
-            Meteor.call('depenses.insert', dateTime , genre.trim().toUpperCase() ,code.trim().toUpperCase() ,desi.trim() , parseInt(pu) ,  parseInt(qtte) , notes.trim() , (err, res) => {
-                if (!err) {
-                    this.handleClose();
-                    Bert.alert( 'depense ajoutee avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
-                } else {
-                    this.setState({ error: err.reason });
-                }
-            });
+            let DCB = new RegExp('dcb','i');
+            let resultat = DCB.test( genre );
+
+            if ( resultat ){
+
+                this.setState({ error: 'Vous ne pouvez pas ajouter des DCB dans cette section' });
+
+            } else {
+
+                Meteor.call('depenses.insert', dateTime , genre.trim().toUpperCase() ,code.trim().toUpperCase() ,desi.trim() , parseInt(pu) ,  parseInt(qtte) , notes.trim() , (err, res) => {
+                    if (!err) {
+                        this.handleClose();
+                        Bert.alert( 'depense ajoutee avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                    } else {
+                        this.setState({ error: err.reason });
+                    }
+                });
+            }
 
         } else {
             this.setState({ error: 'All field are required' });

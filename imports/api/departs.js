@@ -16,13 +16,17 @@ if ( Meteor.isServer ) {
     });
 
     Meteor.methods({
-        'departs.insert'(dateTime , imm , dest , driver , fdr , amount , seats , leasing ,km , obs ){
+        'departs.insert'(depenseId, dateTime , imm , dest , driver , fuel, fdr , amount , seats , leasing ,km , obs ){
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');
             }
 
             try {
                 new SimpleSchema({
+                    depenseId: {
+                        type: String,
+                        label: 'Depense ID',
+                    },
                     dateTime: {
                         type: Date,
                         label: 'Date',
@@ -41,6 +45,10 @@ if ( Meteor.isServer ) {
                     driver: {
                         type: String,
                         label: 'Chauffeur'
+                    },
+                    fuel: {
+                        type: SimpleSchema.Integer,
+                        label: 'Fuel',
                     },
                     fdr: {
                         type: SimpleSchema.Integer,
@@ -68,16 +76,18 @@ if ( Meteor.isServer ) {
                         min : 3,
                         max : 70,
                     }
-                }).validate({dateTime , imm , dest , driver , fdr , amount , seats , leasing ,km , obs});
+                }).validate({depenseId, dateTime , imm , dest , driver , fuel, fdr , amount , seats , leasing ,km , obs});
             } catch (e) {
                 throw new Meteor.Error(400, e.message);
             }
 
             Departs.insert({
+                depenseId,
                 dateTime : dateTime.getTime(),
                 imm ,
                 dest ,
                 driver ,
+                fuel,
                 fdr ,
                 amount ,
                 seats ,
@@ -92,7 +102,7 @@ if ( Meteor.isServer ) {
         'departs.delete'(id) {
             Departs.remove(id);
         },
-        'departs.modify'(_id, dateTime , imm , dest , driver , fdr , amount , seats , leasing ,km , obs ) {
+        'departs.modify'(_id, dateTime , imm , dest , driver ,fuel, fdr , amount , seats , leasing ,km , obs ) {
             if (!this.userId) {
                 throw new Meteor.Error('not-authorized');
             }
@@ -121,6 +131,10 @@ if ( Meteor.isServer ) {
                     type: String,
                     label: 'Chauffeur'
                 },
+                fuel: {
+                    type: SimpleSchema.Integer,
+                    label: 'Fuel',
+                },
                 fdr: {
                     type: SimpleSchema.Integer,
                     label: 'FDR',
@@ -147,7 +161,7 @@ if ( Meteor.isServer ) {
                     min : 3,
                     max : 70,
                 }
-            }).validate({ _id , dateTime , imm , dest , driver , fdr , amount , seats , leasing ,km , obs});
+            }).validate({ _id , dateTime , imm , dest , driver , fuel, fdr , amount , seats , leasing ,km , obs});
 
             Departs.update({
                 _id
@@ -157,6 +171,7 @@ if ( Meteor.isServer ) {
                     imm ,
                     dest,
                     driver ,
+                    fuel,
                     fdr ,
                     amount ,
                     seats ,

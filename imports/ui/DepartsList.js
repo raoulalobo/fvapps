@@ -11,6 +11,7 @@ import { Departs } from '../api/departs';
 
 import DepartsEmptyListItem from './DepartsEmptyListItem';
 import DepartsListItem from './DepartsListItem';
+import moment from "moment/moment";
 
 
 export class DepartsList extends React.Component{
@@ -40,6 +41,7 @@ export class DepartsList extends React.Component{
                             <Table.HeaderCell>Date_Heure</Table.HeaderCell>
                             <Table.HeaderCell>Imm</Table.HeaderCell>
                             <Table.HeaderCell>Chauffeur</Table.HeaderCell>
+                            <Table.HeaderCell>Carburant</Table.HeaderCell>
                             <Table.HeaderCell>FDR</Table.HeaderCell>
                             <Table.HeaderCell>Prix place</Table.HeaderCell>
                             <Table.HeaderCell>nbr de places</Table.HeaderCell>
@@ -87,6 +89,7 @@ export default createContainer(() => {
         searchBus,
         departs : Departs.find({visible: true}).fetch().map((depart)=>{
             return {
+                departDate : moment(depart.dateTime).format('lll'),
                 ...depart,
                 classe: depart.amount > 4000 ? 'VIP' : 'Classique',
                 total :  depart.leasing === 0 ? depart.amount * depart.seats : depart.leasing

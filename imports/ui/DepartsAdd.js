@@ -13,6 +13,7 @@ export default class DepartsAdd extends React.Component {
             imm: '',
             dest: '',
             driver: '',
+            fuel: '',
             fdr: '',
             amount: '',
             seat: '',
@@ -23,20 +24,57 @@ export default class DepartsAdd extends React.Component {
         };
     }
     onSubmit(e) {
-        const { dateTime, imm, dest , driver , fdr, amount, seat,leasing, km, obs } = this.state;
+        const { dateTime, imm, dest , driver ,fuel, fdr, amount, seat,leasing, km, obs } = this.state;
 
         e.preventDefault();
 
-        if ( dateTime && imm && dest && driver && fdr && amount && seat && leasing && km && obs ) {
+        if ( dateTime && imm && dest && driver && fuel && fdr && amount && seat && leasing && km && obs ) {
 
-            Meteor.call('departs.insert', dateTime , imm.trim().toUpperCase() ,dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fdr.trim()) ,  parseInt(amount.trim()) , parseInt(seat.trim()) , parseInt(leasing.trim()) , parseInt(km.trim()) , obs.trim() , (err, res) => {
-                if (!err) {
-                    this.handleClose();
-                    Bert.alert( 'enregistrement ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
-                } else {
-                    this.setState({ error: err.reason });
-                }
-            });
+            if( parseInt(fuel.trim()) > 0 ){
+
+                Meteor.call('depenses.insert', dateTime , 'DCB' , imm.trim().toUpperCase() , 'Carburant bus' , 635 ,  parseInt(fuel.trim()) , 'RAS' , true, (err, res) => {
+                    if (!err) {
+                        this.handleClose();
+                        Bert.alert( `depense ${res} ajoutee avec succes.`, 'danger', 'growl-top-right', 'fa-check'  );
+
+                        Meteor.call('departs.insert', res, dateTime , imm.trim().toUpperCase() ,dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fuel.trim()), parseInt(fdr.trim()) ,  parseInt(amount.trim()) , parseInt(seat.trim()) , parseInt(leasing.trim()) , parseInt(km.trim()) , obs.trim() , (err, res) => {
+                            if (!err) {
+                                this.handleClose();
+
+                                Bert.alert( 'enregistrement ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+
+                            } else {
+                                this.setState({ error: err.reason });
+                            }
+                        });
+                    } else {
+                        this.setState({ error: err.reason });
+                    }
+                });
+            } else {
+
+                Meteor.call('depenses.insert', dateTime , 'DCB' , imm.trim().toUpperCase() , 'Carburant bus' , 635 ,  parseInt(fuel.trim()) , 'RAS' , false, (err, res) => {
+                    if (!err) {
+                        this.handleClose();
+                        Bert.alert( `depense ${res} ajoutee avec succes.`, 'danger', 'growl-top-right', 'fa-check'  );
+
+                        Meteor.call('departs.insert', res, dateTime , imm.trim().toUpperCase() ,dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fuel.trim()), parseInt(fdr.trim()) ,  parseInt(amount.trim()) , parseInt(seat.trim()) , parseInt(leasing.trim()) , parseInt(km.trim()) , obs.trim() , (err, res) => {
+                            if (!err) {
+                                this.handleClose();
+
+                                Bert.alert( 'enregistrement ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+
+                            } else {
+                                this.setState({ error: err.reason });
+                            }
+                        });
+                    } else {
+                        this.setState({ error: err.reason });
+                    }
+                });
+
+            }
+
 
         } else {
             this.setState({ error: 'All field are required' });
@@ -49,6 +87,7 @@ export default class DepartsAdd extends React.Component {
             imm: '',
             dest: '',
             driver: '',
+            fuel: '',
             fdr: '',
             amount: '',
             seat: '',
@@ -66,7 +105,10 @@ export default class DepartsAdd extends React.Component {
         console.log(`${name} -> ${value}`)
     }
     render() {
-
+        const options = [
+            { key: 'y', text: 'yaounde', value: 'yaounde' },
+            { key: 'd', text: 'douala', value: 'douala' },
+        ]
         return (
 
                 <Modal
@@ -110,31 +152,53 @@ export default class DepartsAdd extends React.Component {
                                             name='imm'
                                             value={this.state.imm}
                                             onChange={this.onChangeField.bind(this)}/>
-                                <Form.Input label='Destination'
-                                            name='dest'
-                                            value={this.state.dest}
-                                            onChange={this.onChangeField.bind(this)}/>
+
                             </Form.Group>
+
                             <Form.Group widths='equal'>
+
+                                <Form.Dropdown
+                                    label='Destination'
+                                    minCharacters={0}
+                                    name='dest'
+                                    placeholder='Selectionnez la destination'
+                                    search
+                                    selection
+                                    options={options}
+                                    onChange={this.onChangeField.bind(this)}/>
+
                                 <Form.Input label='Chauffeur'
                                             name='driver'
                                             value={this.state.driver}
+                                            onChange={this.onChangeField.bind(this)}/>
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
+                                <Form.Input label='Carburant'
+                                            name='fuel'
+                                            value={this.state.fuel}
                                             onChange={this.onChangeField.bind(this)}/>
                                 <Form.Input label='FDR'
                                             name='fdr'
                                             value={this.state.fdr}
                                             onChange={this.onChangeField.bind(this)}/>
+
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
                                 <Form.Input label='Prix place'
                                             name='amount'
                                             value={this.state.amount}
                                             onChange={this.onChangeField.bind(this)}/>
-                            </Form.Group>
-                            <Form.Group widths='equal'>
-
                                 <Form.Input label='Nbr de places'
                                             name='seat'
                                             value={this.state.seat}
                                             onChange={this.onChangeField.bind(this)}/>
+
+                            </Form.Group>
+
+                            <Form.Group widths='equal'>
                                 <Form.Input label='Location'
                                             name='leasing'
                                             value={this.state.leasing}
@@ -144,6 +208,7 @@ export default class DepartsAdd extends React.Component {
                                             value={this.state.km}
                                             onChange={this.onChangeField.bind(this)}/>
                             </Form.Group>
+
 
                             <Form.TextArea label='Observations'
                                            name='obs'
