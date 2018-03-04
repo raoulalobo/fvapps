@@ -44,7 +44,7 @@ YdeVIP:${filtrage(this.state.departs,'Douala','VIP').length}vges,${sommes(filtra
 YdeCla:${filtrage(this.state.departs,'Douala','classique').length}vges,${sommes(filtrage(this.state.departs,'Douala','classique'))}Fcfa
 Dla:${filtrage(this.state.departs,'Yaounde').length}vges,${sommes(filtrage(this.state.departs,'Yaounde'))}Fcfa
 DlaVIP:${filtrage(this.state.departs,'Yaounde','VIP').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','VIP'))}Fcfa
-YdeCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : `Erreur, conactez le service IT`
+DlaCla:${filtrage(this.state.departs,'Yaounde','classique').length}vges,${sommes(filtrage(this.state.departs,'Yaounde','classique'))}Fcfa` : `Erreur, conactez le service IT`
         return (
             <Button
                 fluid
