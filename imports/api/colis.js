@@ -95,7 +95,7 @@ if (Meteor.isServer) {
             }, (err)=>{ if (!err)  {
                 if ( Meteor.isServer ) {
                     const sender = 'FINEXS VOYAGES' ;
-                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}. Yde: 699297082-Dla: 690680847-Plaintes: 697509899; Ouvert du lun. au sam : 08h-19h`
+                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}. Yde:699297082 -Dla:656968928 -Plaintes:697509899; Ouvert du lun. au sam : 08h-19h`
                     //console.log( telDest+'   '+message );
                     request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&originator='+sender+'&recipient='+telDest+'&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
                         if (!error && response.statusCode == 200) {
