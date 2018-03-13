@@ -93,7 +93,7 @@ export default createContainer(() => {
         vidanges : Vidanges.find().fetch().map((vidange)=>{
             return {
                 ...vidange,
-                dep : Departs.find( { imm : new RegExp( vidange.immatriculation, 'i')  , dateTime: { $gte: vidange.dateTime } } ).fetch().length
+                dep : vidange.visible  ? Departs.find( { imm : new RegExp( vidange.immatriculation, 'i')  , dateTime: { $gte: vidange.dateTime } } ).fetch().length : 0
             }
         })
     };

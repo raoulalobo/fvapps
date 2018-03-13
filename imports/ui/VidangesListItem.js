@@ -53,6 +53,35 @@ export class VidangesListItem extends Component {
             Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
         }
     }
+    disableButton () {
+        if ( Roles.userIsInRole(this.state.currentUser, 'admin' ) ) {
+            return (
+                <Button onClick={this.onDisable.bind(this)} size='mini' icon>
+                    <Icon name='hide'/>
+                </Button>
+            )
+        }
+    }
+    onDisable(e){
+
+        e.preventDefault();
+        if ( this.props.vidange._id ) {
+
+            const suppression = confirm(`Voulez vous desactiver cet element ? `);
+            if (suppression) {
+                Meteor.call('vidanges.disable', this.props.vidange._id , (err, res) => {
+                    if (!err) {
+                        Bert.alert( 'element supprime avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
+                    } else {
+                        Bert.alert( `erreur : ${err}`, 'danger', 'growl-top-right', 'fa-close'  )
+                    }
+                })
+            }
+
+        } else {
+            Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
+        }
+    }
     handleClose(){
         this.setState({
             modalOpen: false,
@@ -206,7 +235,7 @@ export class VidangesListItem extends Component {
     render () {
         return (
             <Table.Row error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(15)  ? true : false }>
-                <Table.Cell>{this.modifyButton()} {this.deleteButton()}</Table.Cell>
+                <Table.Cell>{this.modifyButton()} {this.deleteButton()} {this.disableButton()}</Table.Cell>
                 <Table.Cell>{this.props.vidange.immatriculation}</Table.Cell>
                 <Table.Cell>{this.props.vidange.ordre}</Table.Cell>
                 <Table.Cell>{moment(this.props.vidange.dateTime).format('lll')}</Table.Cell>

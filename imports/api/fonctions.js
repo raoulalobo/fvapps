@@ -11,6 +11,19 @@ export function filtrage(tableauElements = undefined, parVille = undefined, parC
     return R.sort( byDate, filtreMultipleDeparts(tableauElements) );
 }
 
+export function filtrageEmployes(tableauElements = undefined, inferieurDate = new Date(2015 , 11, 31).getTime() , superieurDate = new Date().getTime() , parNom = undefined, parService = undefined, parAssurance = undefined , parContrat) {
+
+    let byDate = R.ascend(R.prop('embauche'));
+    let inferiorDate = (employe)=> R.lte( inferieurDate , employe.embauche );
+    let superiorDate = (employe)=> R.lte( employe.embauche , superieurDate  );
+    let byNom = (employe)=> employe.nom.match(  new RegExp( parNom, 'i') );
+    let byService = (employe)=> employe.service.match(  new RegExp( parService, 'i') );
+    let byAssurance = (employe)=> employe.assurance.match(  new RegExp( parAssurance, 'i') );
+    let byContrat = (employe)=> employe.contrat.match(  new RegExp( parContrat, 'i') );
+    let filtreMultipleEmployes = R.compose( R.filter(inferiorDate), R.filter(superiorDate), R.filter(byContrat),R.filter(byAssurance),R.filter(byService),R.filter(byNom));
+    return R.sort( byDate, filtreMultipleEmployes(tableauElements) );
+}
+
 
 export function filtreVidange( tableauElements = undefined, Immatriculation = undefined, Ordre = undefined ) {
 
@@ -18,7 +31,7 @@ export function filtreVidange( tableauElements = undefined, Immatriculation = un
     let byImmatriculation = (vidange)=> vidange.immatriculation.match(  new RegExp( Immatriculation, 'i') );
     let byOrdre = (vidange)=> vidange.ordre.match(  new RegExp( Ordre , 'i') );
     let byObs = (vidange)=> vidange.observations.match(  new RegExp( Ordre , 'i') );
-    let filtreMultiple = R.compose(R.filter(byObs),R.filter(byImmatriculation));
+    let filtreMultiple = R.compose(R.filter(byOrdre),R.filter(byImmatriculation));
     return R.sort( byDate, filtreMultiple(tableauElements) );
 }
 
