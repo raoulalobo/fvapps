@@ -109,6 +109,22 @@ if ( Meteor.isServer ) {
                 }
             },(err)=>{ if (!err) { console.log(`Vidange du bus ${immatriculation} a ete modifie`) } });
         },
+        'vidanges.disable'( id ) {
+            if ( !this.userId ) {
+                throw new Meteor.Error('not-authorized');
+            }
+
+
+            Vidanges.update({
+                _id : id
+            }, {
+                $set: {
+                    modifieLe : new Date().getTime(),
+                    modifiePar : this.userId,
+                    visible: false,
+                }
+            },(err)=>{ if (!err) { console.log(`Vidange du bus ${immatriculation} a ete modifie`) } });
+        },
         'vidanges.delete'(id) {
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
