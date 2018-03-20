@@ -16,9 +16,13 @@ if (Meteor.isServer) {
     });
 
     Meteor.methods({
-        'colis.insert'( agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc  ) {
+        'colis.insert'( dateTime ,agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc  ) {
 
             new SimpleSchema({
+                dateTime: {
+                    type: Date,
+                    label: 'Date',
+                },
                 agent_recu: {
                     type: String,
                     label: 'Agent recu',
@@ -73,9 +77,10 @@ if (Meteor.isServer) {
                     max : 70,
                 }
 
-            }).validate({ agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc   });
+            }).validate({ dateTime, agent_recu, agent_saisie, code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc   });
 
             Colis.insert({
+                dateTime: new Date().getTime(),
                 agent_recu,
                 agent_saisie,
                 code,
@@ -90,7 +95,7 @@ if (Meteor.isServer) {
                 state : 'A',
                 visible : true ,
                 updatedAt : new Date().getTime(),
-                DateTimeExp : new Date().getTime(),
+                DateTimeExp : dateTime.getTime(),
                 expUserId : this.userId
             }, (err)=>{ if (!err)  {
                 if ( Meteor.isServer ) {

@@ -113,6 +113,8 @@ export class ColisLisItem extends Component {
                                             Recu : {!!this.props.col.agent_recu ? this.props.col.agent_recu:''}
                                             <Divider fitted />
                                             Saisie : {!!this.props.col.agent_saisie ? this.props.col.agent_saisie:''}
+                                            <Divider fitted />
+                                            Heure saisie : {!!this.props.col.dateTime ? moment(this.props.col.dateTime).format('LT'):'...'}
                                         </div> }
                                     trigger={<Button size='mini' icon='add' />}
                                     on='click' />

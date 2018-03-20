@@ -1,11 +1,14 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Button, Modal , Form, Message } from 'semantic-ui-react';
+import Flatpickr from 'react-flatpickr';
+import {fr} from 'flatpickr/dist/l10n/fr.js';
 
 export default class ColisAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            dateTime: '',
             agent_recu: '',
             agent_saisie: '',
             code: '',
@@ -23,13 +26,13 @@ export default class ColisAdd extends React.Component {
         };
     }
     onSubmit(e) {
-        const { agent_recu, agent_saisie,code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc } = this.state;
+        const { dateTime, agent_recu, agent_saisie,code, bus, dest , amount, nameExp, telExp,nameDest, telDest, desc } = this.state;
 
         e.preventDefault();
 
-        if ( agent_recu && agent_saisie && code && bus && dest && amount && nameExp && telExp && nameDest && telDest && desc ) {
+        if ( dateTime && agent_recu && agent_saisie && code && bus && dest && amount && nameExp && telExp && nameDest && telDest && desc ) {
 
-            Meteor.call('colis.insert', agent_recu.trim(), agent_saisie.trim(), code.trim().toUpperCase(), bus.trim().toUpperCase() ,dest.trim().toUpperCase() , parseInt(amount.trim()) ,  nameExp.trim().toUpperCase(), telExp.trim(), nameDest.trim().toUpperCase(), telDest.trim(), desc.trim() , (err, res) => {
+            Meteor.call('colis.insert', dateTime , agent_recu.trim(), agent_saisie.trim(), code.trim().toUpperCase(), bus.trim().toUpperCase() ,dest.trim().toUpperCase() , parseInt(amount.trim()) ,  nameExp.trim().toUpperCase(), telExp.trim(), nameDest.trim().toUpperCase(), telDest.trim(), desc.trim() , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( 'Colis '+code+' ajoute avec succes.', 'danger', 'growl-top-right', 'fa-check'  )
@@ -48,6 +51,7 @@ export default class ColisAdd extends React.Component {
     handleClose() {
         this.setState({
             modalOpen: false,
+            dateTime: '',
             agent_recu: '',
             agent_saisie: '',
             code: '',
@@ -75,7 +79,6 @@ export default class ColisAdd extends React.Component {
                     onSubmit={this.onSubmit.bind(this)}
                     open={this.state.modalOpen}
                     onClose={this.handleClose.bind(this)}
-                    dimmer='blurring'
                     size='small'
                     trigger={<Button onClick={this.handleOpen.bind(this)} fluid basic color='blue'>+ Ajouter un  colis</Button>}>
                     <Modal.Header>Ajouter un colis</Modal.Header>
@@ -88,6 +91,28 @@ export default class ColisAdd extends React.Component {
                             :
                             undefined}
                         <Form>
+                            <Form.Group widths='equal'>
+                                <div className='field'>
+                                    <label>Date heure sur recu</label>
+                                    <div className='ui input'>
+                                        <Flatpickr
+                                            as={Form.Field}
+                                            data-enable-time
+                                            onChange={ (startDate)  => {
+                                                this.setState( { dateTime : startDate[0] } ) ;
+                                                console.log(this.state.dateTime) ;
+                                            } }
+                                            options={
+                                                {
+                                                    altInput: true,
+                                                    time_24hr: true,
+                                                    locale : fr
+                                                }
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            </Form.Group>
                             <Form.Group widths='equal'>
                                 <Form.Input label='Agent recu'
                                             name='agent_recu'
