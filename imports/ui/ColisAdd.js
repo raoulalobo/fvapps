@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Button, Modal , Form, Message } from 'semantic-ui-react';
+import 'flatpickr/dist/themes/material_blue.css'
 import Flatpickr from 'react-flatpickr';
 import {fr} from 'flatpickr/dist/l10n/fr.js';
 
@@ -106,7 +107,7 @@ export default class ColisAdd extends React.Component {
                                                 {
                                                     altInput: true,
                                                     time_24hr: true,
-                                                    locale : fr
+                                                    locale : fr,
                                                 }
                                             }
                                         />
