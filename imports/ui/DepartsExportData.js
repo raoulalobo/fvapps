@@ -7,6 +7,7 @@ import { Button } from 'semantic-ui-react'
 const jsonexport = require('jsonexport');
 const fileDownload = require('react-file-download');
 import { filtrage, sommes } from '../api/fonctions';
+import moment from "moment/moment";
 
 
 
@@ -27,7 +28,19 @@ export class DepartsExportData extends React.Component{
             <Button
                 size='mini'
                 onClick={()=>{
-                    let data = this.state.departs ;
+                    let data = this.state.departs.map((depart)=>{
+                        return {
+                            Date: moment(depart.dateTime).format('lll'),
+                            Immatriculation: depart.imm,
+                            Chauffeur: depart.driver,
+                            Prix: depart.amount,
+                            Nbr_places : depart.seats,
+                            Observations: depart.obs,
+                            Carburant: depart.fuel,
+                            FDR: depart.fdr,
+                            Total :  depart.leasing === 0 ? depart.amount * depart.seats : depart.leasing
+                        }
+                    }) ;
                     if (!!data){
                         let csv = Papa.unparse(data);
                         let blob = new Blob([csv],  {type: "text/csv;charset=utf-8"});
