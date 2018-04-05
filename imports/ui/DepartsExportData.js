@@ -31,7 +31,7 @@ export class DepartsExportData extends React.Component{
                     let data = this.state.departs.map((depart)=>{
                         return {
                             Date: moment(depart.dateTime).format('lll'),
-                            Immatriculation: ` ${depart.imm} `,
+                            Immatriculation: `${depart.imm}.`,
                             Chauffeur: depart.driver,
                             Prix: depart.amount,
                             Nbr_places : depart.seats,
