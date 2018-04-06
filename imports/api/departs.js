@@ -49,7 +49,7 @@ if ( Meteor.isServer ) {
                     fuel: {
                         type: SimpleSchema.Integer,
                         label: 'Fuel',
-                        max : 250
+                        max : 400
                     },
                     fdr: {
                         type: SimpleSchema.Integer,
