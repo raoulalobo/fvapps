@@ -146,7 +146,7 @@ export class ColisLisItem extends Component {
                 </List.Content>
                 {/*<Image avatar src='/assets/images/avatar/small/lena.png' />*/}
                 <List.Content>
-                    <List.Header>{this.props.col.code}</List.Header>
+                    <List.Header>{this.props.col.code}  / {this.props.col.amount}</List.Header>
                     Exp. {moment(this.props.col.DateTimeExp).format('L')}
                 </List.Content>
             </List.Item>
