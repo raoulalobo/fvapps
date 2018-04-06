@@ -2,11 +2,13 @@ const _ = require('lodash');
 const jsonexport = require('jsonexport');
 const fileDownload = require('react-file-download');
 
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Session } from 'meteor/session';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Grid , List , Image , Button, Icon } from 'semantic-ui-react'
+import { sommesColis } from '../api/fonctions';
 
 
 
@@ -29,21 +31,10 @@ export class ColisSearchResults extends React.Component{
             <Button
                 fluid
                 animated
-                onClick={()=>{
-                    var data = this.state.colis ;
-                    if (!!data){
-                        var csv = Papa.unparse(data);
-                        var blob = new Blob([csv],  {type: "text/csv;charset=utf-8"});
-                        fileDownload(blob, 'filename.csv');
-                    } else {
-                        Bert.alert( 'erreur inatendue reessayez.', 'danger', 'growl-top-right', 'fa-close'  )
-                    }
-
-                } }
                 color='green'>
                 <Button.Content visible>
                     {this.state.colis ? this.state.colis.length : '0'} elements .
-                    Cliquez pour exporter au format CSV
+                    Total : {sommesColis(this.state.colis)} Fcfa
                 </Button.Content>
                 <Button.Content hidden>
                     <Icon name='file excel outline' />

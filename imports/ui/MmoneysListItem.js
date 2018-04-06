@@ -55,7 +55,7 @@ export class MmoneysListItem extends Component {
         return (
             <Table.Row>
                 <Table.Cell>{this.deleteButton()}</Table.Cell>
-                <Table.Cell>{this.props.mmoney._id}</Table.Cell>
+                <Table.Cell>{this.props.mmoney._id} - {this.props.mmoney.prest}</Table.Cell>
                 <Table.Cell>{moment(this.props.mmoney.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{moment(this.props.mmoney.dateTimeV).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.mmoney.nom}</Table.Cell>

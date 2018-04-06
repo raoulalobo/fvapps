@@ -12,8 +12,12 @@ export class MmoneySearch extends Component {
         this.state = {
             searchTicket: '',
             searchNom : '',
+            destination : '',
+            prestataire : '',
             mmoneyStartedDate: '',
-            mmoneyEndedDate: ''
+            mmoneyEndedDate: '',
+            travelStartedDate: '',
+            travelEndedDate: ''
         };
 
     }
@@ -21,8 +25,11 @@ export class MmoneySearch extends Component {
 
             Session.set('searchTicket',''),
             Session.set('searchNom',''),
+            Session.set('prestataire',''),
             Session.set('mmoneyStartedDate',''),
-            Session.set('mmoneyEndedDate','')
+            Session.set('mmoneyEndedDate',''),
+            Session.set('travelStartedDate',''),
+            Session.set('travelEndedDate','')
 
     }
     handleChange(e, { name,value }) {
@@ -51,11 +58,26 @@ export class MmoneySearch extends Component {
                 </Form.Group>
 
                 <Form.Group widths='equal'>
+                    <Form.Field
+                        name='destination'
+                        value={this.state.destination}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Destination...' />
+                    <Form.Field
+                        name='prestataire'
+                        value={this.state.prestataire}
+                        control={Input}
+                        onChange={this.handleChange.bind(this)}
+                        placeholder='Prestataire...' />
+                </Form.Group>
+
+                <Form.Group widths='equal'>
                     <div className='field'>
                         <div className='ui input'>
                             <Flatpickr
                                 as={Form.Field}
-                                placeholder="Date debut..."
+                                placeholder="Date debut achat..."
                                 data-enable-time
                                 onChange={ (startDate)  => {
                                     this.setState( { mmoneyStartedDate : startDate[0] } ) ;
@@ -77,7 +99,7 @@ export class MmoneySearch extends Component {
                         <div className='ui input'>
                             <Flatpickr
                                 as={Form.Field}
-                                placeholder="Date fin..."
+                                placeholder="Date fin achat..."
                                 data-enable-time
                                 onChange={ (startDate)  => {
                                     this.setState( { mmoneyEndedDate : startDate[0] } ) ;

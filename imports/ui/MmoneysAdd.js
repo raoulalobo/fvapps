@@ -11,6 +11,7 @@ export default class MmoneysAdd extends React.Component {
         super(props);
         this.state = {
             modalOpen: false,
+            prestataire: '',
             ticket: '' ,
             dateTime: '' ,
             dateTimeV: '' ,
@@ -22,13 +23,13 @@ export default class MmoneysAdd extends React.Component {
         };
     }
     onSubmit(e) {
-        const { ticket , dateTime , dateTimeV , nom , cni, phone , observations } = this.state;
+        const { ticket ,prestataire, dateTime , dateTimeV , nom , cni, phone , observations } = this.state;
 
         e.preventDefault();
 
-        if ( ticket && dateTime && dateTimeV && nom && cni  && phone &&   observations ) {
+        if ( ticket && prestataire && dateTime && dateTimeV && nom && cni  && phone &&   observations ) {
 
-            Meteor.call('mmoneys.insert', ticket.trim().toLowerCase() , dateTime , dateTimeV , nom.trim().toLowerCase() , cni, phone.trim().toLowerCase() , observations.trim().toLowerCase()  , (err, res) => {
+            Meteor.call('mmoneys.insert', ticket.trim().toLowerCase() , prestataire , dateTime , dateTimeV , nom.trim().toLowerCase() , cni, phone.trim().toLowerCase() , observations.trim().toLowerCase()  , (err, res) => {
                 if (!err) {
                     this.handleClose();
                     Bert.alert( `enregistrement ${res} ajoute avec succes.`, 'danger', 'growl-top-right', 'fa-check'  )
@@ -45,6 +46,7 @@ export default class MmoneysAdd extends React.Component {
         this.setState({
             modalOpen: false,
             ticket: '' ,
+            prestataire: '' ,
             dateTime: '' ,
             dateTimeV: '' ,
             nom: '' ,
@@ -139,6 +141,15 @@ export default class MmoneysAdd extends React.Component {
                                         name='ticket'
                                         value={this.state.ticket}
                                         onChange={this.onChangeField.bind(this)}/>
+
+                            <Form.Input label='Prestataire'
+                                        name='prestataire'
+                                        value={this.state.prestataire}
+                                        onChange={this.onChangeField.bind(this)}/>
+
+                        </Form.Group>
+
+                        <Form.Group widths='equal'>
 
                             <Form.Input label='Nom et Prenom'
                                         name='nom'

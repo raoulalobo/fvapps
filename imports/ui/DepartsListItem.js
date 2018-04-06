@@ -32,7 +32,7 @@ export class DepartsListItem extends Component {
 
         e.preventDefault();
 
-        if ( dateTime && imm && dest && driver && fuel && fdr && amount && seat && obs ) {
+        if ( dateTime && imm && dest && driver && fdr && amount && seat && obs ) {
 
             Meteor.call('departs.modify', departId , dateTime instanceof Date ? dateTime : new Date(dateTime),   imm.trim().toUpperCase() , dest.trim().toLocaleLowerCase() ,driver.trim().toLocaleLowerCase() , parseInt(fuel) , parseInt(fdr) ,  parseInt(amount) , parseInt(seat) , parseInt(leasing) , parseInt(km) , obs.trim() , (err, res) => {
                 if (!err) {

@@ -21,11 +21,11 @@ export class MmoneysList extends React.Component{
     }
     componentWillReceiveProps(nextProps) {
 
-        const { mmoneys, searchTicket, searchNom } = nextProps;
+        const { mmoneys, searchTicket, searchNom, destination, prestataire } = nextProps;
 
         this.props.Session.set('mmoneys', mmoneys);
 
-        const filtreMultiple = filtreMomo(mmoneys ,searchNom ,searchTicket );
+        const filtreMultiple = filtreMomo(mmoneys ,searchNom ,searchTicket,prestataire );
         this.props.Session.set('mmoneysFiltered', filtreMultiple);
 
     }
@@ -69,10 +69,14 @@ export default createContainer(() => {
 
     const searchNom = Session.get('searchNom') || undefined ;
     const searchTicket = Session.get('searchTicket') || undefined ;
+    const destination = Session.get('destination') || undefined ;
+    const prestataire = Session.get('prestataire') || undefined ;
     const mmoneyStartedDate = Session.get('mmoneyStartedDate') || new Date().setHours(0, 0, 0, 0) ;
     const mmoneyEndedDate = Session.get('mmoneyEndedDate') || new Date().setHours(23, 59, 0, 0) ;
+    const travelStartedDate = Session.get('travelStartedDate') || new Date().setHours(0, 0, 0, 0) ;
+    const travelEndedDate = Session.get('travelEndedDate') || new Date().setHours(23, 59, 0, 0) ;
 
-    const mmoneysHandle = Meteor.subscribe('mmoneys',mmoneyStartedDate,mmoneyEndedDate);
+    const mmoneysHandle = Meteor.subscribe('mmoneys', mmoneyStartedDate, mmoneyEndedDate );
     const loading = !mmoneysHandle.ready();
 
     return {
@@ -80,9 +84,12 @@ export default createContainer(() => {
         loading,
         searchNom,
         searchTicket,
+        destination,
+        prestataire,
         mmoneys : Mmoneys.find().fetch().map((mmoney)=>{
             return {
-                ...mmoney
+                ...mmoney,
+                prest : !!mmoney.prestataire ? mmoney.prestataire : 'n.a'
             }
         })
     };

@@ -77,7 +77,10 @@ export class DepensesListItem extends Component {
         } );
     }
     modifyButton () {
-        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+        let DCB = new RegExp('dcb','i');
+        let resultat = DCB.test( this.props.depense.genre );
+
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) && !resultat ) {
 
             return (
                 <Modal
@@ -156,7 +159,9 @@ export class DepensesListItem extends Component {
         }
     }
     deleteButton () {
-        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
+        let DCB = new RegExp('dcb','i');
+        let resultat = DCB.test( this.props.depense.genre );
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) && !resultat ) {
             return (
                 <Button onClick={this.onDelete.bind(this)} color='red' size='mini' icon>
                     <Icon name='trash'/>

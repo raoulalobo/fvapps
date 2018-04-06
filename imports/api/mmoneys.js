@@ -8,6 +8,10 @@ const insertion = new SimpleSchema({
         type: String,
         label: 'Numero ticket',
     },
+    prestataire: {
+        type: String,
+        label: 'Prestataire',
+    },
     dateTime: {
         type: Date,
         label: 'Date du paiement',
@@ -50,8 +54,8 @@ export const Mmoneys = new Mongo.Collection('mmoneys');
 if ( Meteor.isServer ) {
 
     Meteor.publish('mmoneys', function(dateStart, dateEnd ) {
-        //return Mmoneys.find({ dateTimeV: { $gte: dateStart , $lte: dateEnd } });
-        return Mmoneys.find({ $or: [ { dateTime: { $gte: dateStart , $lte: dateEnd } } , { dateTimeV: { $gte: dateStart , $lte: dateEnd } }] });
+        return Mmoneys.find({ dateTime: { $gte: dateStart , $lte: dateEnd }  });
+        //return Mmoneys.find({ $or: [ { dateTime: { $gte: dateStart , $lte: dateEnd } } , { dateTimeV: { $gte: dateStart , $lte: dateEnd } }] });
     });
 
     Meteor.publish('cashMmoneys', function() {
@@ -59,14 +63,14 @@ if ( Meteor.isServer ) {
     });
 
     Meteor.methods({
-        'mmoneys.insert'(  ticket, dateTime , dateTimeV , nom , cni ,phone , observations ){
+        'mmoneys.insert'(  ticket, prestataire, dateTime , dateTimeV , nom , cni ,phone , observations ){
 
             if ( !this.userId ) {
                 throw new Meteor.Error('not-authorized');
             }
 
             try {
-                insertion.validate({  ticket, dateTime , dateTimeV , nom , cni , phone , observations });
+                insertion.validate({  ticket, prestataire, dateTime , dateTimeV , nom , cni , phone , observations });
             } catch (e) {
                 throw new Meteor.Error(400, e.message);
             }
@@ -79,6 +83,7 @@ if ( Meteor.isServer ) {
 
                 _id : ticket,
                 ticket,
+                prestataire,
                 dateTime : dateTime.getTime(),
                 dateTimeV : dateTimeV.getTime(),
                 nom,

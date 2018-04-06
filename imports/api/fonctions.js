@@ -44,13 +44,14 @@ export function filtreDepenses(tableauElements = undefined, parType = undefined,
     return filtreMultipleDepenses(tableauElements)
 }
 
-export function filtreMomo(tableauElements = undefined, searchNom = undefined, searchTicket = undefined ) {
+export function filtreMomo(tableauElements = undefined, searchNom = undefined, searchTicket = undefined , searchPrestataire = undefined ) {
 
     let byDate = R.descend(R.prop('dateTimeV'));
     let byNom = (mmoney)=> mmoney.nom.match(  new RegExp( searchNom, 'i') );
     let byTicket = (mmoney)=> mmoney.ticket.match(  new RegExp( searchTicket, 'i') );
+    let byPrestataire = (mmoney)=> mmoney.prest.match(  new RegExp( searchPrestataire, 'i') );
 
-    const filtreMultiple = R.compose(R.filter(byNom),R.filter(byTicket)) ;
+    const filtreMultiple = R.compose( R.filter(byNom), R.filter(byTicket), R.filter(byPrestataire) ) ;
     return R.sort( byDate, filtreMultiple(tableauElements) );
 
 }
@@ -64,6 +65,13 @@ export function sommesLitre(elts) {
     let  summ = (sum,n)=> sum + n.qtte;
     return elts ? R.reduce(summ, 0,elts) : 0
 }
+
+export function sommesColis(elts) {
+    let  summ = (sum,n)=> sum + n.amount;
+    return elts ? R.reduce(summ, 0,elts) : 0
+}
+
+
 
 export function nbrDeparts( tableauElements = undefined , parBus = undefined ) {
     let byBus = (depart)=> depart.imm.match(  new RegExp( parBus, 'i') );
