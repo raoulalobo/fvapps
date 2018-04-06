@@ -26,11 +26,13 @@ export class ColisList extends React.Component{
         this.props.Session.set('colis', colis);
 
         //Filtrer directement les colis
+        let parOrdre = R.ascend(R.prop('code'));
         let byState = (coli)=> coli.state.match(  new RegExp( getState, 'i') );
         let byBus = (coli)=> coli.bus.match(  new RegExp( getBus, 'i') );
         let byCode = (coli)=> coli.code.match(  new RegExp( getId, 'i') );
         let byDest = (coli)=> coli.dest.match(  new RegExp( getDest, 'i') );
-        this.props.Session.set('colisFiltered', R.compose(R.filter(byDest),R.filter(byCode),R.filter(byBus),R.filter(byState))(colis));
+        let filtreColis = R.compose(R.filter(byDest),R.filter(byCode),R.filter(byBus),R.filter(byState))
+        this.props.Session.set('colisFiltered', R.sort( parOrdre, filtreColis(colis) ));
 
         // Les logs
         console.log(nextProps);
