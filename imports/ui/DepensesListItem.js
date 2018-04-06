@@ -80,7 +80,7 @@ export class DepensesListItem extends Component {
         let DCB = new RegExp('dcb','i');
         let resultat = DCB.test( this.props.depense.genre );
 
-        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) && !resultat ) {
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
 
             return (
                 <Modal
@@ -161,7 +161,7 @@ export class DepensesListItem extends Component {
     deleteButton () {
         let DCB = new RegExp('dcb','i');
         let resultat = DCB.test( this.props.depense.genre );
-        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) && !resultat ) {
+        if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse']) ) {
             return (
                 <Button onClick={this.onDelete.bind(this)} color='red' size='mini' icon>
                     <Icon name='trash'/>
