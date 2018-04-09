@@ -236,7 +236,9 @@ export class VidangesListItem extends Component {
         return (
             <Table.Row error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(15)  ? true : false } >
                 <Table.Cell>{this.modifyButton()} {this.deleteButton()} {this.disableButton()}</Table.Cell>
-                <Table.Cell error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(7)  ? true : false }>{this.props.vidange.immatriculation}</Table.Cell>
+                <Table.Cell>
+                    <Icon name={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(7)  ? 'close' : 'checkmark' } />
+                    {this.props.vidange.immatriculation}</Table.Cell>
                 <Table.Cell>{this.props.vidange.ordre}</Table.Cell>
                 <Table.Cell>{moment(this.props.vidange.dateTime).format('lll')}</Table.Cell>
                 <Table.Cell>{this.props.vidange.type}</Table.Cell>
