@@ -234,7 +234,7 @@ export class VidangesListItem extends Component {
     }
     render () {
         return (
-            <Table.Row warning={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(15)  ? true : false }   error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(7)  ? true : false }>
+            <Table.Row warning={ parseInt(8) < parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(15)  ? true : false }   error={ parseInt(this.props.vidange.nbrVoyageSimple) -  parseInt(this.props.vidange.dep)  < parseInt(7)  ? true : false }>
                 <Table.Cell>{this.modifyButton()} {this.deleteButton()} {this.disableButton()}</Table.Cell>
                 <Table.Cell>{this.props.vidange.immatriculation}</Table.Cell>
                 <Table.Cell>{this.props.vidange.ordre}</Table.Cell>
