@@ -126,19 +126,6 @@ export class ColisLisItem extends Component {
                                         }
                                     } }>no sms</Button> : undefined }
 
-                                { ( !this.props.col.DateTimeArr || this.props.col.DateTimeEnd ) ? undefined : <Button
-                                    basic size='mini'
-                                    onClick={ () => {
-                                        const changeState = confirm('Vous confirmez que le colis '+props.col.code+' sera retire par le proprietaire du numero '+this.props.col.telDest.slice(-9)+' ?');
-                                        if (changeState) {
-                                            this.props.call('colis.end', this.props.col._id , (err , res )=> {
-                                                if (!err) {
-                                                    Bert.alert( 'Retrait effectue.', 'danger', 'growl-top-right', 'fa-check'  )
-                                                }
-                                            } );
-                                        }
-                                    } }>Ret.</Button> }
-
                             </Grid.Column>
 
                         </Grid.Row>

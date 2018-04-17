@@ -92,7 +92,7 @@ if (Meteor.isServer) {
                 nameDest,
                 telDest,
                 desc,
-                state : 'A',
+                state : 'AC',
                 visible : true ,
                 updatedAt : new Date().getTime(),
                 DateTimeExp : dateTime.getTime(),
@@ -100,7 +100,7 @@ if (Meteor.isServer) {
             }, (err)=>{ if (!err)  {
                 if ( Meteor.isServer ) {
                     const sender = 'FINEXS VOYAGES' ;
-                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}, il arrivera dans 04 a 05h de temps. Infos, Yde:699755276 -Dla:656968928 -Plaintes:697509899; Ouvert du lun. au sam : 08h-19h`
+                    const message =`${nameDest}, votre colis(${code}) est en route pour ${dest}. Infos Yde:699755276 - infos Dla:656968928 -Plaintes:697509899; Ouvert du lun. au sam : 08h-19h`
                     //console.log( telDest+'   '+message );
                     request('http://api.vassarl.com:9501/api?action=sendmessage&username=FINEXS&password=Finexs12345&originator='+sender+'&recipient='+telDest+'&messagetype=SMS:TEXT&messagedata='+message, function (error, response, body) {
                         if (!error && response.statusCode == 200) {
@@ -128,7 +128,7 @@ if (Meteor.isServer) {
                 _id
             }, {
                 $set: {
-                    state : 'B',
+                    state : 'BC',
                     updatedAt : new Date().getTime(),
                     DateTimeArr : new Date().getTime(),
                     userIdArr : this.userId
@@ -189,7 +189,7 @@ if (Meteor.isServer) {
                 _id
             }, {
                 $set: {
-                    state : 'B',
+                    state : 'BC',
                     updatedAt : new Date().getTime(),
                     DateTimeArr : new Date().getTime(),
                     userIdArr : this.userId

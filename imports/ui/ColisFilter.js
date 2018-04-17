@@ -35,7 +35,7 @@ export class ColisFilter extends React.Component{
                 <div className="mrgnButton">
                     <Button
                         name='A'
-                        content={this.fitre('A')+' Colis envoyes'}
+                        content={this.fitre('AC')+' Colis envoyes'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'A'}
@@ -44,7 +44,7 @@ export class ColisFilter extends React.Component{
                 <div className="mrgnButton">
                     <Button
                         name='B'
-                        content={this.fitre('B')+' Colis a retirer'}
+                        content={this.fitre('BC')+' Colis a retirer'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'B'}
@@ -53,7 +53,7 @@ export class ColisFilter extends React.Component{
                 <div className="mrgnButton">
                     <Button
                         name='C'
-                        content={this.fitre('C')+' Colis retires'}
+                        content={'--'}
                         onClick={this.handleItemClick.bind(this)}
                         fluid
                         active={activeItem === 'C'}
