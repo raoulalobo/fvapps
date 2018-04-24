@@ -74,7 +74,7 @@ export class MainMenu extends Component {
         });
     }
     colisMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser, ['caisse','admin']) ) {
+        if ( Roles.userIsInRole(this.state.currentUser, ['colis','caisse','admin']) ) {
             const { activeItem } = this.props;
             return (
 
@@ -108,7 +108,7 @@ export class MainMenu extends Component {
         }
     }
     departsMenu(){
-        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse','colis'] ) ) {
+        if ( Roles.userIsInRole(this.state.currentUser,  ['admin','caisse'] ) ) {
             const { activeItem } = this.props;
             return (
 
@@ -119,6 +119,23 @@ export class MainMenu extends Component {
                     active={activeItem === '/departs'}>
                     <Icon name='bus' />
                     Departs
+                </Menu.Item>
+
+            )
+        }
+    }
+    employesMenu(){
+        if ( Roles.userIsInRole(this.state.currentUser,  ['admin'] ) ) {
+            const { activeItem } = this.props;
+            return (
+
+                <Menu.Item
+                    as={Link}
+                    to='/employes'
+                    name='employes'
+                    active={activeItem === '/employes'}>
+                    <Icon name='user' />
+                    Employes
                 </Menu.Item>
 
             )
