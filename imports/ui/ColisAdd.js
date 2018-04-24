@@ -4,14 +4,15 @@ import { Button, Modal , Form, Message } from 'semantic-ui-react';
 import 'flatpickr/dist/themes/material_blue.css'
 import Flatpickr from 'react-flatpickr';
 import {fr} from 'flatpickr/dist/l10n/fr.js';
+import { createContainer } from 'meteor/react-meteor-data';
 
-export default class ColisAdd extends React.Component {
+export  class ColisAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             dateTime: '',
-            agent_recu: '',
-            agent_saisie: '',
+            agent_recu: '' ,
+            agent_saisie: Meteor.user().emails[0].address.split('@')[0],
             code: '',
             dest: '',
             bus: '',
@@ -122,7 +123,7 @@ export default class ColisAdd extends React.Component {
                                 <Form.Input label='Agent de saisie'
                                             name='agent_saisie'
                                             value={this.state.agent_saisie}
-                                            onChange={this.onChangeField.bind(this)}/>
+                                            />
                             </Form.Group>
                             <Form.Group widths='equal'>
                                 <Form.Input label='Colis ID'
@@ -179,3 +180,11 @@ export default class ColisAdd extends React.Component {
         );
     }
 }
+
+export default createContainer(() => {
+    const activeItem = Session.get('activeItem');
+    const user = Meteor.user() || null;
+    return {
+        user,
+    };
+}, ColisAdd);
