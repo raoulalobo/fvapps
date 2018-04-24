@@ -55,7 +55,7 @@ export  class ColisAdd extends React.Component {
             modalOpen: false,
             dateTime: '',
             agent_recu: '',
-            agent_saisie: '',
+            agent_saisie: Meteor.user().emails[0].address.split('@')[0],
             code: '',
             dest: '',
             bus: '',
