@@ -42,9 +42,10 @@ export class DepartsExportData extends React.Component {
               FDR: depart.fdr,
               Total_depenses: depart.fuel * 635 + depart.fdr,
               Net:
-                depart.leasing === 0
+                (depart.leasing === 0
                   ? depart.amount * depart.seats
-                  : depart.leasing - (depart.fuel * 635 + depart.fdr)
+                  : depart.leasing) -
+                (depart.fuel * 635 + depart.fdr)
             };
           });
           if (!!data) {
