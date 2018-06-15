@@ -6,9 +6,11 @@ import '../imports/api/resas';
 import '../imports/api/mmoneys';
 import '../imports/api/departs';
 import '../imports/api/depenses';
+import '../imports/api/alertes';
 import '../imports/api/hotesses';
 import '../imports/api/colis';
 import '../imports/api/vidanges';
+import '../imports/api/employes';
 import '../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {

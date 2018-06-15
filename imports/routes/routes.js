@@ -10,6 +10,8 @@ import Login from '../ui/Login';
 import Colis from '../ui/Colis' ;
 import Mmoneys from '../ui/Mmoneys' ;
 import Departs from '../ui/Departs' ;
+import Employes from '../ui/Employes' ;
+import Alertes from '../ui/Alertes' ;
 import Depenses from '../ui/Depenses' ;
 import NotFound from '../ui/NotFound';
 import Parametres from '../ui/Parametres';
@@ -64,6 +66,8 @@ export const routes = (
             <Route path="/mobilemoney" component={Mmoneys} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/parametres" component={Parametres} privacy="auth" nomane={rls_11} onEnter={onEnterRolePage}/>
             <Route path="/departs" component={Departs} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
+            <Route path="/employes" component={Employes} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
+            <Route path="/alertes" component={Alertes} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/vidanges" component={Vidanges} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/colis" component={Colis} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>

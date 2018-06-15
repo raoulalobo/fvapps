@@ -65,6 +65,14 @@ export default class MmoneysAdd extends React.Component {
     }
 
     render() {
+        const prest = [
+            { key: 'o', text: 'Orange', value: 'orange' },
+            { key: 'l', text: 'Lohce', value: 'lohce' },
+        ]
+        const ville = [
+            { key: 'd', text: 'Douala', value: 'douala' },
+            { key: 'y', text: 'Yaounde', value: 'yaounde' },
+        ]
 
         return (
 
@@ -142,10 +150,16 @@ export default class MmoneysAdd extends React.Component {
                                         value={this.state.ticket}
                                         onChange={this.onChangeField.bind(this)}/>
 
-                            <Form.Input label='Prestataire'
-                                        name='prestataire'
-                                        value={this.state.prestataire}
-                                        onChange={this.onChangeField.bind(this)}/>
+                            <Form.Dropdown
+                                label='Prestataire'
+                                minCharacters={0}
+                                name='prestataire'
+                                placeholder='Selectionnez 01 prestataire'
+                                search
+                                selection
+                                options={prest}
+                                onChange={this.onChangeField.bind(this)}/>
+
 
                         </Form.Group>
 
@@ -161,10 +175,16 @@ export default class MmoneysAdd extends React.Component {
 
                         <Form.Group widths='equal'>
 
-                            <Form.Input label='Destination'
-                                        name='cni'
-                                        value={this.state.cni}
-                                        onChange={this.onChangeField.bind(this)}/>
+                            <Form.Dropdown
+                                label='Destination'
+                                minCharacters={0}
+                                name='cni'
+                                placeholder='Selectionnez 01 destination'
+                                search
+                                selection
+                                options={ville}
+                                onChange={this.onChangeField.bind(this)}/>
+
 
                             <Form.Input label='Telephone'
                                         name='phone'

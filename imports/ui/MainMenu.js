@@ -90,6 +90,23 @@ export class MainMenu extends Component {
             )
         }
     }
+    alertes(){
+        if ( Roles.userIsInRole(this.state.currentUser, ['colis','caisse','admin']) ) {
+            const { activeItem } = this.props;
+            return (
+
+                <Menu.Item
+                    as={Link}
+                    to='/alertes'
+                    name='alertes'
+                    active={activeItem === '/alertes'}>
+                    <Icon name='warning' />
+                    Alertes
+                </Menu.Item>
+
+            )
+        }
+    }
     caisseMenu(){
         if ( Roles.userIsInRole(this.state.currentUser, ['admin','caisse'] ) ) {
             const { activeItem } = this.props;
@@ -276,6 +293,7 @@ export class MainMenu extends Component {
                     <Grid>
                         <Grid.Row only='mobile tablet computer'>
                             {this.userMenu()}
+                            {this.alertes()}
                             {this.mobilemMenu()}
                             {this.vidangesMenu()}
                             {this.colisMenu()}

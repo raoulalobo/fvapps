@@ -56,6 +56,19 @@ export function filtreMomo(tableauElements = undefined, searchNom = undefined, s
 
 }
 
+
+export function filtreAlerte(tableauElements = undefined, searchType = undefined , searchCode = undefined , searchImmatriculation = undefined ) {
+
+    let byDate = R.descend(R.prop('validite'));
+    let byType = (alerte)=> alerte.type.match(  new RegExp( searchType, 'i') );
+    let byCode = (alerte)=> alerte.code.match(  new RegExp( searchCode, 'i') );
+    let byImmatriculation = (alerte)=> alerte.immatriculation.match(  new RegExp( searchImmatriculation, 'i') );
+
+    const filtreMultiple = R.compose( R.filter(byType), R.filter(byCode), R.filter(byImmatriculation) ) ;
+    return R.sort( byDate, filtreMultiple(tableauElements) );
+
+}
+
 export function sommes(elts) {
     let  summ = (sum,n)=> sum + n.total;
     return elts ? R.reduce(summ, 0,elts) : 0

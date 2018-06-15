@@ -34,3 +34,5 @@ u2622:persistent-session
 ostrio:files
 harrison:papa-parse
 check
+cfs:standard-packages
+cfs:filesystem
