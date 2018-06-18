@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.meteor/packages" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.meteor/versions" beforeDir="false" afterPath="$PROJECT_DIR$/.meteor/versions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/api/departs.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/api/departs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/api/fonctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/UsrsListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/UsrsListItem.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +49,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartsExportData.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DepartsExportData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="324">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsrsListItem.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -188,7 +184,6 @@
         <option value="$PROJECT_DIR$/imports/ui/ColisListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisFilter.js" />
         <option value="$PROJECT_DIR$/imports/api/colis.js" />
-        <option value="$PROJECT_DIR$/imports/ui/UsrsListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/AlertesAdd.css" />
         <option value="$PROJECT_DIR$/imports/ui/AlerteListItem.js" />
@@ -204,6 +199,7 @@
         <option value="$PROJECT_DIR$/imports/ui/AlertesListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/AlertesAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" />
+        <option value="$PROJECT_DIR$/imports/ui/UsrsListItem.js" />
       </list>
     </option>
   </component>
@@ -225,7 +221,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="320" />
     <option name="y" value="201" />
     <option name="width" value="1371" />
@@ -239,7 +235,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,6 +285,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -659,14 +655,16 @@
       <workItem from="1528389714919" duration="44000" />
       <workItem from="1528729124517" duration="582000" />
       <workItem from="1528983070356" duration="1193000" />
+      <workItem from="1529316807662" duration="743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="996946000" />
+    <option name="totallyTimeSpent" value="997689000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1377" height="912" extended-state="7" />
+    <frame x="64" y="-11" width="1377" height="912" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.89364463" visible="true" weight="0.15636364" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -692,19 +690,19 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.89364463" visible="true" weight="0.15636364" />
       <window_info id="Structure" order="1" sideWeight="0.106355384" side_tool="true" weight="0.20509091" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.19871795" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -841,13 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="80" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -1062,8 +1053,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="324">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
         </state>
       </provider>
     </entry>
