@@ -68,6 +68,9 @@ export default class MmoneysAdd extends React.Component {
         const prest = [
             { key: 'o', text: 'Orange', value: 'orange' },
             { key: 'l', text: 'Lohce', value: 'lohce' },
+            { key: 'k', text: 'Kiwoti', value: 'Kiwoti' },
+            { key: 'j', text: 'JumboPay', value: 'JumboPay' },
+            { key: 'd', text: 'Djangui', value: 'Djanguy' },
         ]
         const ville = [
             { key: 'd', text: 'Douala', value: 'douala' },

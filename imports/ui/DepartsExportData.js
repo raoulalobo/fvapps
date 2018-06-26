@@ -1,10 +1,10 @@
 import React from "react";
-import { Meteor } from "meteor/meteor";
+//import { Meteor } from "meteor/meteor";
 import PropTypes from "prop-types";
 import { Session } from "meteor/session";
 import { createContainer } from "meteor/react-meteor-data";
 import { Button } from "semantic-ui-react";
-import { filtrage, sommes } from "../api/fonctions";
+//import { filtrage, sommes } from "../api/fonctions";
 import moment from "moment/moment";
 
 const jsonexport = require("jsonexport");

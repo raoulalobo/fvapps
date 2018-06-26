@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/imports/ui/UsrsListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/UsrsListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,17 +54,29 @@
       <file leaf-file-name="DepartsExportData.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="18">
+              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+              <folding>
+                <element signature="e#69#104#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsrsListItem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MmoneysAdd.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsrsListItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+            <state relative-caret-position="1512">
+              <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -175,7 +189,6 @@
         <option value="$PROJECT_DIR$/imports/ui/MmoneysList.js" />
         <option value="$PROJECT_DIR$/imports/api/mmoneys.js" />
         <option value="$PROJECT_DIR$/imports/ui/MmoneySearch.js" />
-        <option value="$PROJECT_DIR$/imports/ui/DepartsExportData.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisSearchResults.js" />
         <option value="$PROJECT_DIR$/imports/ui/ColisList.js" />
         <option value="$PROJECT_DIR$/imports/api/departs.js" />
@@ -198,8 +211,9 @@
         <option value="$PROJECT_DIR$/imports/api/alertes.js" />
         <option value="$PROJECT_DIR$/imports/ui/AlertesListItem.js" />
         <option value="$PROJECT_DIR$/imports/ui/AlertesAdd.js" />
-        <option value="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" />
         <option value="$PROJECT_DIR$/imports/ui/UsrsListItem.js" />
+        <option value="$PROJECT_DIR$/imports/ui/DepartsExportData.js" />
+        <option value="$PROJECT_DIR$/imports/ui/MmoneysAdd.js" />
       </list>
     </option>
   </component>
@@ -235,6 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,7 +300,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -655,12 +669,16 @@
       <workItem from="1528389714919" duration="44000" />
       <workItem from="1528729124517" duration="582000" />
       <workItem from="1528983070356" duration="1193000" />
-      <workItem from="1529316807662" duration="743000" />
+      <workItem from="1529316807662" duration="1344000" />
+      <workItem from="1529408403405" duration="1248000" />
+      <workItem from="1529655609069" duration="659000" />
+      <workItem from="1529914751974" duration="601000" />
+      <workItem from="1530001468225" duration="852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="997689000" />
+    <option name="totallyTimeSpent" value="1001650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1377" height="912" extended-state="6" />
@@ -1013,13 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="153" column="35" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/AlertesAdd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -1051,17 +1062,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="1512">
+          <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/UsrsListItem.js">
+    <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
+        <state relative-caret-position="18">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding>
+            <element signature="e#69#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/MmoneysAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
         </state>
       </provider>
     </entry>
