@@ -18,13 +18,22 @@ export class Login extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
-    this.props.loginWithPassword({email}, password, (err) => {
-      if (err) {
-        this.setState({error: 'Unable to login. Check email and password.'});
-      } else {
-        this.setState({error: ''});
-      }
-    });
+    if ( Meteor.status().connected ) {
+      this.props.loginWithPassword({email}, password, (err) => {
+
+        if (err) {
+          this.setState({error: err.reason });
+          console.log( err );
+        } else {
+          this.setState({error: ''});
+        }
+      });
+    } else {
+      this.setState({error: Meteor.status().status });
+      Meteor.reconnect()
+    }
+
+
   }
   render() {
     return (

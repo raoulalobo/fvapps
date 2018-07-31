@@ -10,6 +10,8 @@ import Login from '../ui/Login';
 import Colis from '../ui/Colis' ;
 import Mmoneys from '../ui/Mmoneys' ;
 import Departs from '../ui/Departs' ;
+import Sorties from '../ui/Sorties' ;
+import SortiesAjout from '../ui/SortiesAjout' ;
 import Employes from '../ui/Employes' ;
 import Alertes from '../ui/Alertes' ;
 import Depenses from '../ui/Depenses' ;
@@ -71,6 +73,8 @@ export const routes = (
             <Route path="/vidanges" component={Vidanges} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/depenses" component={Depenses} privacy="auth" nomane={rls_1} onEnter={onEnterRolePage}/>
             <Route path="/colis" component={Colis} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
+            <Route path="/sorties" component={Sorties} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
+            <Route path="/sortiesajout" component={SortiesAjout} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/resas" component={Resa} privacy="auth" nomane={rls_2} onEnter={onEnterRolePage}/>
             <Route path="/" component={Login} privacy="unauth" nomane="joedoe5"/>
             <Route path="*" component={NotFound}/>

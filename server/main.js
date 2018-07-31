@@ -11,6 +11,7 @@ import '../imports/api/hotesses';
 import '../imports/api/colis';
 import '../imports/api/vidanges';
 import '../imports/api/employes';
+import '../imports/api/sorties';
 import '../imports/startup/simple-schema-configuration.js';
 
 Meteor.startup(() => {

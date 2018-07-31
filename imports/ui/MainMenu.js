@@ -90,6 +90,23 @@ export class MainMenu extends Component {
             )
         }
     }
+  sortiesMenu(){
+    if ( Roles.userIsInRole(this.state.currentUser, ['colis','caisse','admin']) ) {
+      const { activeItem } = this.props;
+      return (
+
+          <Menu.Item
+              as={Link}
+              to='/sorties'
+              name='sorties'
+              active={activeItem === '/sorties'}>
+            <Icon name='arrow right' />
+            Sorties
+          </Menu.Item>
+
+      )
+    }
+  }
     alertes(){
         if ( Roles.userIsInRole(this.state.currentUser, ['colis','caisse','admin']) ) {
             const { activeItem } = this.props;
@@ -297,6 +314,7 @@ export class MainMenu extends Component {
                             {this.mobilemMenu()}
                             {this.vidangesMenu()}
                             {this.colisMenu()}
+                            {this.sortiesMenu()}
                             {this.departsMenu()}
                             {this.caisseMenu()}
                         </Grid.Row>

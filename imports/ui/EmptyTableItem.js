@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Container } from 'semantic-ui-react'
 
-const DepartsEmptyListItem = (props) => {
+const EmptyTableItem = (props) => {
     return (
         <Table.Row>
             <Table.Cell colSpan='9'>
@@ -13,4 +13,4 @@ const DepartsEmptyListItem = (props) => {
     );
 };
 
-export default DepartsEmptyListItem;
+export default EmptyTableItem;

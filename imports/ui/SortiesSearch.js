@@ -4,34 +4,54 @@ import { Session } from 'meteor/session';
 import { Form, Input} from 'semantic-ui-react'
 import { createContainer } from 'meteor/react-meteor-data';
 import {fr} from 'flatpickr/dist/l10n/fr.js'
+import {Meteor} from "meteor/meteor";
+import {sommes} from "../api/fonctions";
 
 
-export class DepartSearch extends Component {
+export class SortieSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchClasse: '',
-      searchVille:'',
-      searchBus : '',
-      searchHotesse : '',
+      searchRecu: '',
+      searchCode: '',
+      searchLibelle: '',
+      searchDesignation:'',
+      sortieStartedDateGetTime: '',
       sortieStartedDate: '',
+      sortieEndedDateGetTime: '',
       sortieEndedDate: ''
     };
 
   }
   componentDidMount() {
 
-    Session.set('sortieStartedDate',''),
+        Session.set('sortieStartedDate',''),
         Session.set('sortieEndedDate',''),
-        Session.set('searchClasse',''),
-        Session.set('searchVille',''),
-        Session.set('searchBus',''),
-        Session.set('searchHotesse','')
+        Session.set('searchRecu',''),
+        Session.set('searchCode',''),
+        Session.set('searchLibelle',''),
+        Session.set('searchDesignation','')
+  }
+  onSubmitForm(e) {
+    const {  sortieStartedDateGetTime , sortieEndedDateGetTime , searchRecu , searchCode , searchLibelle, searchDesignation } = this.state;
+
+    e.preventDefault();
+
+    this.props.Session.set('sortieStartedDate', sortieStartedDateGetTime );
+    this.props.Session.set('sortieEndedDate', sortieEndedDateGetTime );
+    this.props.Session.set('searchRecu', searchRecu );
+    this.props.Session.set('searchCode', searchCode );
+    this.props.Session.set('searchLibelle', searchLibelle );
+    this.props.Session.set('searchDesignation', searchDesignation );
+
+    console.log( this.props.Session.get( 'searchDesignation' ) )
+
   }
   handleChange(e, { name,value }) {
-    this.props.Session.set(name, value );
-    this.setState( { [name] : this.props.Session.get(name) });
-    console.log( `${[name]} -> ${this.props.Session.get(name)}` )
+    //this.props.Session.set(name, value );
+    this.setState( { [name] : value });
+    console.log(`${name} -> ${value}`)
+    //console.log( `${[name]} -> ${this.props.Session.get(name)}` )
   }
   render() {
 
@@ -46,7 +66,8 @@ export class DepartSearch extends Component {
                     data-enable-time
                     onChange={ (startDate)  => {
                       this.setState( { sortieStartedDate : startDate[0] } ) ;
-                      this.props.Session.set('sortieStartedDate', startDate[0].getTime() );
+                      this.setState( { sortieStartedDateGetTime : startDate[0].getTime() } ) ;
+                      //this.props.Session.set('sortieStartedDate', startDate[0].getTime() );
                       console.log( this.props.Session.get('sortieStartedDate') );
                     } }
                     options={
@@ -68,7 +89,8 @@ export class DepartSearch extends Component {
                     data-enable-time
                     onChange={ (startDate)  => {
                       this.setState( { sortieEndedDate : startDate[0] } ) ;
-                      this.props.Session.set('sortieEndedDate', startDate[0].getTime() );
+                      this.setState( { sortieEndedDateGetTime : startDate[0].getTime() } ) ;
+                      //this.props.Session.set('sortieEndedDate', startDate[0].getTime() );
                       console.log( this.props.Session.get('sortieEndedDate') );
                     } }
                     options={
@@ -84,42 +106,45 @@ export class DepartSearch extends Component {
           </Form.Group>
           <Form.Group widths='equal'>
             <Form.Field
-                name='searchClasse'
-                value={this.state.searchClasse}
+                name='searchRecu'
+                value={this.state.searchRecu}
                 control={Input}
                 onChange={this.handleChange.bind(this)}
-                placeholder='Ville arrivee...' />
+                placeholder='Recu...' />
             <Form.Field
-                name='searchVille'
-                value={this.state.searchVille}
+                name='searchCode'
+                value={this.state.searchCode}
                 control={Input}
                 onChange={this.handleChange.bind(this)}
-                placeholder='Classe...' />
+                placeholder='Code...' />
             <Form.Field
-                name='searchBus'
-                value={this.state.searchBus}
+                name='searchLibelle'
+                value={this.state.searchLibelle}
                 control={Input}
                 onChange={this.handleChange.bind(this)}
-                placeholder='Bus...' />
+                placeholder='Libelle...' />
             <Form.Field
-                name='searchHotesse'
-                value={this.state.hotesse}
+                name='searchDesignation'
+                value={this.state.searchDesignation}
                 control={Input}
                 onChange={this.handleChange.bind(this)}
-                placeholder='Hotesse...' />
+                placeholder='Designation...' />
+
           </Form.Group>
+
+          <Form.Button onClick={this.onSubmitForm.bind(this)} fluid basic color='blue'>rechercher</Form.Button>
         </Form>
     )
   }
 }
 
-DepartSearch.propTypes = {
+SortieSearch.propTypes = {
 };
 
 export default createContainer(() => {
 
-    return {
-        Session
-    };
+  return {
+    Session
+  };
 
-}, DepartSearch);
+}, SortieSearch);

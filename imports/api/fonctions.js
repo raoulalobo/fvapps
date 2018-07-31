@@ -1,5 +1,14 @@
 const R = require('ramda');
 
+
+export function recus( tableauElements = undefined ) {
+
+  let byRecu = (sortie)=> sortie.retour.match(  new RegExp( 'oui', 'i') );
+  let filtreMultipleRecu = R.compose(R.filter(byRecu));
+
+  return filtreMultipleRecu(tableauElements) ;
+}
+
 export function filtrage(tableauElements = undefined, parVille = undefined, parClasse = undefined, parBus = undefined , parHotesse) {
 
     let byDate = R.ascend(R.prop('dateTime'));
@@ -9,6 +18,17 @@ export function filtrage(tableauElements = undefined, parVille = undefined, parC
     let byHotesse = (depart)=> depart.obs.match(  new RegExp( parHotesse, 'i') );
     let filtreMultipleDeparts = R.compose(R.filter(byHotesse),R.filter(byClasse),R.filter(byVille),R.filter(byBus));
     return R.sort( byDate, filtreMultipleDeparts(tableauElements) );
+}
+
+export function filtrageSorties(tableauElements = undefined, parOrdonnateur = undefined, parDemandeur = undefined, parCode = undefined , parLibelle = undefined ) {
+
+  let byDate = R.ascend(R.prop('date_sortie'));
+  let Ordonnateur = (elt)=> elt.ordonnateur.match(  new RegExp( parOrdonnateur, 'i') );
+  let Demandeur = (elt)=> elt.demandeur.match(  new RegExp( parDemandeur, 'i') );
+  let Code = (elt)=> elt.code_sortie.match(  new RegExp( parCode, 'i') );
+  let Libelle = (elt)=> elt.libelle.match(  new RegExp( parLibelle, 'i') );
+  let filtreMultipleSorties = R.compose(R.filter(Libelle),R.filter(Code),R.filter(Demandeur),R.filter(Ordonnateur));
+  return R.sort( byDate, filtreMultipleSorties(tableauElements) );
 }
 
 export function filtrageEmployes(tableauElements = undefined, inferieurDate = new Date(2015 , 11, 31).getTime() , superieurDate = new Date().getTime() , parNom = undefined, parService = undefined, parAssurance = undefined , parContrat) {
@@ -82,6 +102,11 @@ export function sommesLitre(elts) {
 export function sommesColis(elts) {
     let  summ = (sum,n)=> sum + n.amount;
     return elts ? R.reduce(summ, 0,elts) : 0
+}
+
+export function sommeSorties(elts) {
+  let  summ = (sum,n)=> sum + n.montant;
+  return elts ? R.reduce(summ, 0,elts) : 0
 }
 
 
