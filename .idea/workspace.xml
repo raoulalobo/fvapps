@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b0f057d-9f65-4bed-bcba-6f9e7888cd0a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/api/fonctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/api/fonctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/DepartsAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsAdd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/DepartsExportData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/EmptyTableItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/EmptyTableItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,8 +79,8 @@
       <file leaf-file-name="DepartsExportData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="60" column="63" lean-forward="true" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+            <state relative-caret-position="464">
+              <caret line="66" column="76" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -706,12 +695,12 @@
       <workItem from="1532917892051" duration="1447000" />
       <workItem from="1532935321798" duration="16989000" />
       <workItem from="1532983845220" duration="339000" />
-      <workItem from="1533023928466" duration="1400000" />
+      <workItem from="1533023928466" duration="2422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1146373000" />
+    <option name="totallyTimeSpent" value="1147395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1377" height="912" extended-state="6" />
@@ -1110,8 +1099,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/DepartsExportData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="60" column="63" lean-forward="true" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+        <state relative-caret-position="464">
+          <caret line="66" column="76" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="76" />
         </state>
       </provider>
     </entry>

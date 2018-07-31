@@ -53,6 +53,18 @@ export class DepartsExportData extends React.Component {
               (!!depart.choco ? depart.choco : 0) * 250 +
               (!!depart.biscuit ? depart.biscuit : 0) * 50 +
               (!!depart.mouchoir ? depart.mouchoir : 0) * 0,
+              SAB_per_passenger : ( (!!depart.eau ? depart.eau : 0) * 116.6 +
+              (!!depart.cafe ? depart.cafe : 0) * 144.1 +
+              (!!depart.the ? depart.the : 0) * 17.92 +
+              (!!depart.sucre ? depart.sucre : 0) * 0 +
+              (!!depart.cuillere ? depart.cuillere : 0) * 6.75 +
+              (!!depart.gobelet ? depart.gobelet : 0) * 0 +
+              (!!depart.couvercle ? depart.couvercle : 0) * 0 +
+              (!!depart.sandwich ? depart.sandwich : 0) * 300 +
+              (!!depart.croissant ? depart.croissant : 0) * 250 +
+              (!!depart.choco ? depart.choco : 0) * 250 +
+              (!!depart.biscuit ? depart.biscuit : 0) * 50 +
+              (!!depart.mouchoir ? depart.mouchoir : 0) * 0 ) / depart.seats,
 /*              eau_QTT: !!depart.eau ? depart.eau : 0,
               eau_CFA: (!!depart.eau ? depart.eau : 0) * 100,
               cafe_QTT: !!depart.cafe ? depart.cafe : 0,
@@ -93,9 +105,7 @@ export class DepartsExportData extends React.Component {
                 (!!depart.biscuit ? depart.biscuit : 0) * 50 +
                 (!!depart.mouchoir ? depart.mouchoir : 0) * 0, */
               Net: Math.round(
-                (depart.leasing === 0
-                  ? depart.amount * depart.seats
-                  : depart.leasing) -
+                (depart.leasing === 0 ? depart.amount * depart.seats : depart.leasing) -
                   (depart.fuel * 635 +
                     depart.fdr +
                     (!!depart.eau ? depart.eau : 0) * 100 +
