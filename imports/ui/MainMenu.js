@@ -91,7 +91,7 @@ export class MainMenu extends Component {
         }
     }
   sortiesMenu(){
-    if ( Roles.userIsInRole(this.state.currentUser, ['colis','caisse','admin']) ) {
+    if ( Roles.userIsInRole(this.state.currentUser, ['admin']) ) {
       const { activeItem } = this.props;
       return (
 

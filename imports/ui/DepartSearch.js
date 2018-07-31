@@ -14,15 +14,15 @@ export class DepartSearch extends Component {
       searchVille:'',
       searchBus : '',
       searchHotesse : '',
-      sortieStartedDate: '',
-      sortieEndedDate: ''
+      departStartedDate: '',
+      departEndedDate: ''
     };
 
   }
   componentDidMount() {
 
-    Session.set('sortieStartedDate',''),
-        Session.set('sortieEndedDate',''),
+    Session.set('departStartedDate',''),
+        Session.set('departEndedDate',''),
         Session.set('searchClasse',''),
         Session.set('searchVille',''),
         Session.set('searchBus',''),
@@ -45,9 +45,9 @@ export class DepartSearch extends Component {
                     placeholder="Date debut..."
                     data-enable-time
                     onChange={ (startDate)  => {
-                      this.setState( { sortieStartedDate : startDate[0] } ) ;
-                      this.props.Session.set('sortieStartedDate', startDate[0].getTime() );
-                      console.log( this.props.Session.get('sortieStartedDate') );
+                      this.setState( { departStartedDate : startDate[0] } ) ;
+                      this.props.Session.set('departStartedDate', startDate[0].getTime() );
+                      console.log( this.props.Session.get('departStartedDate') );
                     } }
                     options={
                       {
@@ -67,9 +67,9 @@ export class DepartSearch extends Component {
                     placeholder="Date fin..."
                     data-enable-time
                     onChange={ (startDate)  => {
-                      this.setState( { sortieEndedDate : startDate[0] } ) ;
-                      this.props.Session.set('sortieEndedDate', startDate[0].getTime() );
-                      console.log( this.props.Session.get('sortieEndedDate') );
+                      this.setState( { departEndedDate : startDate[0] } ) ;
+                      this.props.Session.set('departEndedDate', startDate[0].getTime() );
+                      console.log( this.props.Session.get('departEndedDate') );
                     } }
                     options={
                       {
